@@ -145,6 +145,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AbstracFactory.h" />
+    <ClInclude Include="Boss.h" />
+    <ClInclude Include="BossBullet.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="MathMgr.h" />
@@ -162,6 +164,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneMgr.h" />
     <ClInclude Include="Shooting Game.h" />
+    <ClInclude Include="Stag1Boss.h" />
     <ClInclude Include="StageScene.h" />
     <ClInclude Include="StartScene.h" />
     <ClInclude Include="Struct.h" />
@@ -169,6 +172,8 @@
     <ClInclude Include="Typedef.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="BossBullet.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="MathMgr.cpp" />
@@ -179,6 +184,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
     <ClCompile Include="Shooting Game.cpp" />
+    <ClCompile Include="Stag1Boss.cpp" />
     <ClCompile Include="StageScene.cpp" />
     <ClCompile Include="StartScene.cpp" />
   </ItemGroup>

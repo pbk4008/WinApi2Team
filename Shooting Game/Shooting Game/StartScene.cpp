@@ -17,8 +17,8 @@ void CStartScene::Initialize()
 {
 	if(!m_ObjMgr)
 		m_ObjMgr = CObjMgr::getInstance();
-	m_ObjMgr->AddObject(OBJ::BUTTON, CreateButton(BUTTON::START,200,400));
-	m_ObjMgr->AddObject(OBJ::BUTTON, CreateButton(BUTTON::QUIT,600,400));
+	m_ObjMgr->AddObject(OBJ::BUTTON, CreateButton(BUTTON::START,WINCX/4,WINCY*2/3));
+	m_ObjMgr->AddObject(OBJ::BUTTON, CreateButton(BUTTON::QUIT,WINCX*3/4,WINCY*2/3));
 	CObj* pObj = CAbstractFactory<CMouse>::CreateObj();
 	pObj->setNotDestory();
 	m_ObjMgr->AddObject(OBJ::MOUSE, pObj);

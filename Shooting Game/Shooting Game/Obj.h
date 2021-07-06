@@ -7,6 +7,7 @@ protected:
 	INFO m_tInfo;
 	RECT m_tRect;
 	CObj* m_pCollisionTarget;
+	float m_fSpeed;
 	bool m_bNotDestroy;
 	bool m_bDead;
 	SCENE::TAG m_eScene;

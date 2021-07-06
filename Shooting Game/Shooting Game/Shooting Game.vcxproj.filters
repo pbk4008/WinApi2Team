@@ -55,6 +55,18 @@
     <Filter Include="소스 파일\02.Scene\01.StagScene">
       <UniqueIdentifier>{a1209a07-3e5b-4974-83a1-ddc1476b34a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\01.Obj\03.Boss">
+      <UniqueIdentifier>{826b5a9e-b530-42f8-9325-873a022653e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.Obj\03.Boss\00.Stage1">
+      <UniqueIdentifier>{ea2db620-554b-430d-98d6-a3acfd091475}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.Obj\04.Bullet">
+      <UniqueIdentifier>{17c72889-7a5d-406b-8711-65ec881fca4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.Obj\04.Bullet\00.BossBullet">
+      <UniqueIdentifier>{77c2d315-685b-45a1-9942-622dbb6d6134}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -126,6 +138,15 @@
     <ClInclude Include="StageScene.h">
       <Filter>소스 파일\02.Scene\01.StagScene</Filter>
     </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>소스 파일\01.Obj\03.Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Stag1Boss.h">
+      <Filter>소스 파일\01.Obj\03.Boss\00.Stage1</Filter>
+    </ClInclude>
+    <ClInclude Include="BossBullet.h">
+      <Filter>소스 파일\01.Obj\04.Bullet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Shooting Game.cpp">
@@ -163,6 +184,15 @@
     </ClCompile>
     <ClCompile Include="StageScene.cpp">
       <Filter>소스 파일\02.Scene\01.StagScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>소스 파일\01.Obj\03.Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Stag1Boss.cpp">
+      <Filter>소스 파일\01.Obj\03.Boss\00.Stage1</Filter>
+    </ClCompile>
+    <ClCompile Include="BossBullet.cpp">
+      <Filter>소스 파일\01.Obj\04.Bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

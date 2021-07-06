@@ -1,5 +1,6 @@
 #include "framework.h"
 #include "StageScene.h"
+#include "Stag1Boss.h"
 #include "CollisionMgr.h"
 
 CStageScene::CStageScene()
@@ -14,6 +15,7 @@ CStageScene::~CStageScene()
 void CStageScene::Initialize()
 {
 	m_ObjMgr = CObjMgr::getInstance();
+	m_ObjMgr->AddObject(OBJ::BOSS, CAbstractFactory<CStag1Boss>::CreateObj(100, 200));
 }
 
 void CStageScene::LateInit()
@@ -35,7 +37,6 @@ void CStageScene::LateUpdate()
 void CStageScene::Render(HDC _hDC)
 {
 	m_ObjMgr->Render(_hDC);
-	
 }
 
 void CStageScene::Release()

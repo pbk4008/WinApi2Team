@@ -24,6 +24,7 @@ public:
 public:
 	inline void AddObject(OBJ::ID _eID, CObj* pObj) { m_ObjList[_eID].emplace_back(pObj); }
 	inline CObj* getPlayer() { return m_ObjList[OBJ::PLAYER].back(); }
+	inline CObj* getObj(OBJ::ID _eID) { return m_ObjList[_eID].back(); }
 	inline OBJLIST& getList(OBJ::ID _eID) { return m_ObjList[_eID]; }
 };
 #endif
