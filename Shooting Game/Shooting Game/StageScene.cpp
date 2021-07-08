@@ -37,6 +37,9 @@ void CStageScene::LateUpdate()
 void CStageScene::Render(HDC _hDC)
 {
 	m_ObjMgr->Render(_hDC);
+	TCHAR szText[32] = {};
+	swprintf_s(szText, L"Bullet : %d", CObjMgr::getInstance()->getList(OBJ::BOSSBULLET).size());
+	TextOut(_hDC, 10, 10, szText, lstrlen(szText));
 }
 
 void CStageScene::Release()

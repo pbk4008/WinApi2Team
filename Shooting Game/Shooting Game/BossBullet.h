@@ -7,7 +7,6 @@ class CBossBullet :
     public CObj
 {
 private:
-    CBoss* m_pTarget;
     BOSS::PATTERN m_ePattern;
 public:
     CBossBullet();
@@ -19,6 +18,8 @@ public:
     virtual void LateUpdate() override;
     virtual void Render(HDC _hDC) override;
     virtual void Release() override;
+public:
+    inline void setPattern(BOSS::PATTERN _ePattern) { m_ePattern = _ePattern; }
 };
 #endif
 

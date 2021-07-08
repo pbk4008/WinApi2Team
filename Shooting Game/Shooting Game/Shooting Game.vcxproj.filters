@@ -67,6 +67,9 @@
     <Filter Include="소스 파일\01.Obj\04.Bullet\00.BossBullet">
       <UniqueIdentifier>{77c2d315-685b-45a1-9942-622dbb6d6134}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\97.Manager\04.KeyMgr">
+      <UniqueIdentifier>{a2507886-69af-43d5-82f7-ba476b0c1a93}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">

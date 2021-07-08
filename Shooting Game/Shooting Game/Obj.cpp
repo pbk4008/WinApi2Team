@@ -1,7 +1,8 @@
 #include"framework.h"
 #include "Obj.h"
 CObj::CObj() : m_bNotDestroy(false), m_eScene(SCENE::END)
-, m_pCollisionTarget(nullptr), m_bDead(false), m_fSpeed(0.f)
+, m_pCollisionTarget(nullptr), m_bDead(false), m_fSpeed(0.f),m_bPollingCheck(false)
+,m_pTarget(nullptr)
 {
 	ZeroMemory(&m_tInfo, sizeof(m_tInfo));
 	ZeroMemory(&m_tRect, sizeof(m_tRect));

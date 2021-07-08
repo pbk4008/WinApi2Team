@@ -19,7 +19,9 @@ void CObjMgr::LateInit()
 		{
 			SCENE::TAG eScene = CSceneMgr::getInstance()->getCurrentScene();
 			if (eScene == pObj->getScene())
+			{
 				pObj->LateInit();
+			}
 		}
 	}
 }
@@ -37,11 +39,13 @@ int CObjMgr::Update()
 			int iEvent = (*iter)->Update();
 			if (iEvent == EVENT::DEAD)
 			{
-				if (!(*iter)->getNotDestory())
+				if (!(*iter)->getNotDestory() && !(*iter)->getPoolingCheck())
 				{
 					Safe_Delete(*iter);
 					iter = pList.erase(iter);
 				}
+				else
+					++iter;
 			}
 			else if (iEvent == EVENT::GAME_START)
 			{
@@ -66,7 +70,9 @@ void CObjMgr::LateUpdate()
 		for (auto pObj : pList)
 		{
 			if (eScene == pObj->getScene())
+			{
 				pObj->LateUpdate();
+			}
 		}
 	}
 }
@@ -79,7 +85,9 @@ void CObjMgr::Render(HDC _hDC)
 		for (auto pObj : pList)
 		{
 			if (eScene == pObj->getScene())
+			{
 				pObj->Render(_hDC);
+			}
 		}
 	}
 }
@@ -122,6 +130,25 @@ void CObjMgr::SceneObjectRemove(SCENE::TAG _eTag)
 		}
 	}
 }
+
+CObj* CObjMgr::ObjPooling(OBJ::ID _eID)
+{
+	if (m_ObjList[_eID].empty())
+		return nullptr;
+	for (auto pObj : m_ObjList[_eID])
+	{
+		if (pObj->getDead())
+		{
+			pObj->setDead(false);
+			pObj->setPos(pObj->getTarget()->getInfo().fX, pObj->getTarget()->getInfo().fY);
+			return pObj;
+		}
+		if(pObj==m_ObjList[_eID].back())
+			return nullptr;
+	}
+
+}
+
 
 CObj* CObjMgr::DeadCheck(OBJ::ID _eID)
 {

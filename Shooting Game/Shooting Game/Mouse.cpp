@@ -16,6 +16,7 @@ void CMouse::Initialize()
 {
 	m_tInfo.iCX = 10.f;
 	m_tInfo.iCY = 10.f;
+	m_bNotDestroy = true;
 }
 
 void CMouse::LateInit()

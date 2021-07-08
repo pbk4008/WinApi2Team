@@ -7,6 +7,7 @@ class CStag1Boss :
 {
 private:
     DWORD m_bulletDelayTime;
+    float m_fBulletAngle;
 public:
     CStag1Boss();
     virtual ~CStag1Boss();
@@ -20,7 +21,8 @@ public:
 private:
     void setPattern();
     void RunPattern();
-    CObj* CreateBossBullet();
+    void CreateBossBullet();
+    void CreateBossBullet(float _fAngle);
 };
 #endif
 
