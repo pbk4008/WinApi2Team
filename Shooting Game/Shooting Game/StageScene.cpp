@@ -2,6 +2,7 @@
 #include "StageScene.h"
 #include "Stag1Boss.h"
 #include "CollisionMgr.h"
+#include "Player.h"
 
 CStageScene::CStageScene()
 {
@@ -16,6 +17,7 @@ void CStageScene::Initialize()
 {
 	m_ObjMgr = CObjMgr::getInstance();
 	m_ObjMgr->AddObject(OBJ::BOSS, CAbstractFactory<CStag1Boss>::CreateObj(100, 200));
+	m_ObjMgr->AddObject(OBJ::PLAYER, CAbstractFactory<CPlayer>::CreateObj((float)WINCX/2, 500.f));
 }
 
 void CStageScene::LateInit()

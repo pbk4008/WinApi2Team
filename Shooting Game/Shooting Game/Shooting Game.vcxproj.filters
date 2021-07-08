@@ -67,8 +67,13 @@
     <Filter Include="소스 파일\01.Obj\04.Bullet\00.BossBullet">
       <UniqueIdentifier>{77c2d315-685b-45a1-9942-622dbb6d6134}</UniqueIdentifier>
     </Filter>
+<<<<<<< HEAD
     <Filter Include="소스 파일\97.Manager\04.KeyMgr">
       <UniqueIdentifier>{a2507886-69af-43d5-82f7-ba476b0c1a93}</UniqueIdentifier>
+=======
+    <Filter Include="소스 파일\01.Obj\00.Player">
+      <UniqueIdentifier>{7c0c7bc9-6e49-4893-b83b-2f41da109790}</UniqueIdentifier>
+>>>>>>> 4306be6a4fba9f8c7ef8a416db156cea002f9d7c
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +155,9 @@
     <ClInclude Include="BossBullet.h">
       <Filter>소스 파일\01.Obj\04.Bullet</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>소스 파일\01.Obj\00.Player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Shooting Game.cpp">
@@ -196,6 +204,9 @@
     </ClCompile>
     <ClCompile Include="BossBullet.cpp">
       <Filter>소스 파일\01.Obj\04.Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\01.Obj\00.Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
