@@ -12,5 +12,6 @@
 #include "SceneMgr.h"
 #include "ObjMgr.h"
 #include "AbstracFactory.h"
+#include <time.h>
 
 #endif

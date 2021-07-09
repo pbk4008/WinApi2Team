@@ -15,6 +15,8 @@ void CMainGame::Initialize()
 {
 	m_hDC = GetDC(g_hWnd);
 	
+	srand(unsigned(time(NULL)));
+
 	if (!m_pSceneMgr)
 		m_pSceneMgr = CSceneMgr::getInstance();	
 	m_pSceneMgr->AddScene(CAbstractFactory<CStartScene>::CreateScene(SCENE::START));

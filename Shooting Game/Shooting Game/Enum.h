@@ -29,7 +29,8 @@ namespace BOSS
 
 namespace ENEMY
 {
-	enum TYPE { ENEMY1, ENEMY2, ENEMY3, END };
+	enum TYPE { ENEMY_1, ENEMY_2, ENEMY_3, TYPE_END };
+	enum PATTERN { PATTERN_1, PATTERN_2 , PATTERN_END };
 }
 
 #endif

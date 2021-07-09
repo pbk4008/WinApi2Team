@@ -1,7 +1,7 @@
 #include "framework.h"
 #include "Monster.h"
 
-CMonster::CMonster() : m_eType(ENEMY::END)
+CMonster::CMonster() : m_eType(ENEMY::TYPE_END), m_bIsSpawn(false)
 {
 }
 
@@ -20,7 +20,7 @@ void CMonster::Initialize()
 
 void CMonster::LateInit()
 {
-	SetEnemy(ENEMY::ENEMY1);
+	SetEnemy(ENEMY::ENEMY_1);
 }
 
 int CMonster::Update()
@@ -28,9 +28,10 @@ int CMonster::Update()
 	if (m_bDead)
 		return EVENT::DEAD;
 
-	//m_tInfo.fX += m_fSpeed;
-
-
+	if (m_eType == ENEMY::ENEMY_1)
+	{
+		m_tInfo.fY += m_fSpeed;
+	}	
 
 	return EVENT::NOEVENT;
 }
@@ -46,14 +47,14 @@ void CMonster::LateUpdate()
 
 void CMonster::Render(HDC _hDC)
 {
-	if (m_eType == ENEMY::ENEMY1)
+	if (m_eType == ENEMY::ENEMY_1)
 	{
 		MoveToEx(_hDC, m_tRect.left, m_tRect.top, NULL);
 		LineTo(_hDC, m_tRect.right, m_tRect.top);
 		LineTo(_hDC, (m_tRect.right - m_tRect.left) / 2 + m_tRect.left, m_tRect.bottom);
 		LineTo(_hDC, m_tRect.left, m_tRect.top);
 	}
-	else if (m_eType == ENEMY::ENEMY2)
+	else if (m_eType == ENEMY::ENEMY_2)
 	{
 		Rectangle(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 	}

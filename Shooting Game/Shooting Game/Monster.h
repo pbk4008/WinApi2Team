@@ -20,11 +20,15 @@ public:
 	virtual void Render(HDC _hDC) override;
 	virtual void Release() override;
 
+public: inline bool GetIsSpawn() { return m_bIsSpawn; }
+
 public: inline void SetEnemy(ENEMY::TYPE _type) { m_eType = _type; }
+public: inline void SetSpawn() { m_bIsSpawn = !m_bIsSpawn; }
 
 public: void CreateMonBullet();
 
 private: ENEMY::TYPE m_eType;
+private: bool m_bIsSpawn;
 
 };
 
