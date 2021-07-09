@@ -2,20 +2,23 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="Shooting Game.cpp" />
+    <ClCompile Include="MainGame.cpp">
+      <Filter>00.MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Obj.cpp">
+      <Filter>01.Obj</Filter>
+    </ClCompile>
     <ClCompile Include="ObjMgr.cpp">
       <Filter>97.Manager\00.ObjMgr</Filter>
     </ClCompile>
     <ClCompile Include="SceneMgr.cpp">
       <Filter>97.Manager\01.SceneMgr</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionMgr.cpp">
+      <Filter>97.Manager\02.CollisionMgr</Filter>
+    </ClCompile>
     <ClCompile Include="MathMgr.cpp">
-      <Filter>97.Manager\02.MathMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="MainGame.cpp">
-      <Filter>00.MainGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Obj.cpp">
-      <Filter>01.Obj</Filter>
+      <Filter>97.Manager\03.MathMgr</Filter>
     </ClCompile>
     <ClCompile Include="Mouse.cpp">
       <Filter>01.Obj\00.Mouse</Filter>
@@ -23,11 +26,20 @@
     <ClCompile Include="Button.cpp">
       <Filter>01.Obj\01.Button</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>01.Obj\02.Player</Filter>
+    <ClCompile Include="Boss.cpp">
+      <Filter>01.Obj\02.Boss</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionMgr.cpp">
-      <Filter>97.Manager\03.CollisionMgr</Filter>
+    <ClCompile Include="Stag1Boss.cpp">
+      <Filter>01.Obj\02.Boss\00.Stage1Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>01.Obj\03.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>01.Obj\04.Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="BossBullet.cpp">
+      <Filter>01.Obj\05.Bullet\00.BossBullet</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>02.Scene</Filter>
@@ -38,17 +50,10 @@
     <ClCompile Include="StageScene.cpp">
       <Filter>02.Scene\01.StageScene</Filter>
     </ClCompile>
-    <ClCompile Include="Boss.cpp">
-      <Filter>01.Obj\03.Boss</Filter>
-    </ClCompile>
-    <ClCompile Include="Stag1Boss.cpp">
-      <Filter>01.Obj\03.Boss\00.Stage1Boss</Filter>
-    </ClCompile>
-    <ClCompile Include="BossBullet.cpp">
-      <Filter>01.Obj\04.Bullet\00.BossBullet</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="Include.h" />
     <ClInclude Include="Shooting Game.h">
       <Filter>99.Default</Filter>
     </ClInclude>
@@ -70,11 +75,11 @@
     <ClInclude Include="Function.h">
       <Filter>98.Include</Filter>
     </ClInclude>
-    <ClInclude Include="Struct.h">
-      <Filter>98.Include</Filter>
+    <ClInclude Include="MainGame.h">
+      <Filter>00.MainGame</Filter>
     </ClInclude>
-    <ClInclude Include="Typedef.h">
-      <Filter>98.Include</Filter>
+    <ClInclude Include="Obj.h">
+      <Filter>01.Obj</Filter>
     </ClInclude>
     <ClInclude Include="ObjMgr.h">
       <Filter>97.Manager\00.ObjMgr</Filter>
@@ -82,14 +87,11 @@
     <ClInclude Include="SceneMgr.h">
       <Filter>97.Manager\01.SceneMgr</Filter>
     </ClInclude>
+    <ClInclude Include="CollisionMgr.h">
+      <Filter>97.Manager\02.CollisionMgr</Filter>
+    </ClInclude>
     <ClInclude Include="MathMgr.h">
-      <Filter>97.Manager\02.MathMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="MainGame.h">
-      <Filter>00.MainGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Obj.h">
-      <Filter>01.Obj</Filter>
+      <Filter>97.Manager\03.MathMgr</Filter>
     </ClInclude>
     <ClInclude Include="Mouse.h">
       <Filter>01.Obj\00.Mouse</Filter>
@@ -97,11 +99,23 @@
     <ClInclude Include="Button.h">
       <Filter>01.Obj\01.Button</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>01.Obj\02.Player</Filter>
+    <ClInclude Include="Boss.h">
+      <Filter>01.Obj\02.Boss</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionMgr.h">
-      <Filter>97.Manager\03.CollisionMgr</Filter>
+    <ClInclude Include="Stag1Boss.h">
+      <Filter>01.Obj\02.Boss\00.Stage1Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>01.Obj\03.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>01.Obj\04.Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="BossBullet.h">
+      <Filter>01.Obj\05.Bullet\00.BossBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>99.Default</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>02.Scene</Filter>
@@ -112,20 +126,12 @@
     <ClInclude Include="StageScene.h">
       <Filter>02.Scene\01.StageScene</Filter>
     </ClInclude>
-    <ClInclude Include="Boss.h">
-      <Filter>01.Obj\03.Boss</Filter>
+    <ClInclude Include="Struct.h">
+      <Filter>98.Include</Filter>
     </ClInclude>
-    <ClInclude Include="Stag1Boss.h">
-      <Filter>01.Obj\03.Boss\00.Stage1Boss</Filter>
+    <ClInclude Include="Typedef.h">
+      <Filter>98.Include</Filter>
     </ClInclude>
-    <ClInclude Include="BossBullet.h">
-      <Filter>01.Obj\04.Bullet\00.BossBullet</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>99.Default</Filter>
-    </ClInclude>
-    <ClInclude Include="Include.h" />
-    <ClInclude Include="framework.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="small.ico">
@@ -137,61 +143,64 @@
   </ItemGroup>
   <ItemGroup>
     <Filter Include="99.Default">
-      <UniqueIdentifier>{b350477d-f88b-4b96-8b4e-83c8c41fb842}</UniqueIdentifier>
+      <UniqueIdentifier>{02fa7dcc-6ee9-4590-b51f-60a91e09f784}</UniqueIdentifier>
     </Filter>
     <Filter Include="98.Include">
-      <UniqueIdentifier>{bd7f07cd-662c-4157-884d-dd1e18622c28}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="97.Manager">
-      <UniqueIdentifier>{7b1f564c-291b-4494-bf66-4b84da557b69}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="97.Manager\00.ObjMgr">
-      <UniqueIdentifier>{6a99f233-a12e-440d-ac7d-f05c5dfe8e1e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="97.Manager\01.SceneMgr">
-      <UniqueIdentifier>{9603a68d-2ea2-4477-b932-f2a820996194}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="97.Manager\02.MathMgr">
-      <UniqueIdentifier>{89399eda-f63e-4a75-a87b-9e1fa8fa99ff}</UniqueIdentifier>
+      <UniqueIdentifier>{558084b5-16f4-476a-85c8-91cc0513bb15}</UniqueIdentifier>
     </Filter>
     <Filter Include="00.MainGame">
-      <UniqueIdentifier>{5552e175-dae4-439a-999c-374a6522e5fa}</UniqueIdentifier>
+      <UniqueIdentifier>{b63dc1fb-22ad-49e8-9912-11f7f2a9c929}</UniqueIdentifier>
     </Filter>
     <Filter Include="01.Obj">
-      <UniqueIdentifier>{be4d329e-0b2d-4422-a024-71159c1e5847}</UniqueIdentifier>
+      <UniqueIdentifier>{300c8543-3a24-43e4-afd0-8cdf82beae16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97.Manager">
+      <UniqueIdentifier>{1aff2521-12cc-472a-b5e7-45f837bb9655}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97.Manager\00.ObjMgr">
+      <UniqueIdentifier>{c0d9dbe7-6372-4fa8-a161-76568be7da31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97.Manager\01.SceneMgr">
+      <UniqueIdentifier>{672c7f2a-2831-4fff-b476-f6f546d79ec0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97.Manager\02.CollisionMgr">
+      <UniqueIdentifier>{e16b88c9-7170-4b1a-95a4-bf2e218e37e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97.Manager\03.MathMgr">
+      <UniqueIdentifier>{3d7eb6bf-39ed-4881-8f6b-1511d259d537}</UniqueIdentifier>
     </Filter>
     <Filter Include="01.Obj\00.Mouse">
-      <UniqueIdentifier>{8dd55357-cfbc-4354-9f66-5dde302112ad}</UniqueIdentifier>
+      <UniqueIdentifier>{3ba26857-dfd3-4695-bf32-cfa424aa717c}</UniqueIdentifier>
     </Filter>
     <Filter Include="01.Obj\01.Button">
-      <UniqueIdentifier>{84fc09fd-d8b6-4bb8-b46f-c276a76ac19e}</UniqueIdentifier>
+      <UniqueIdentifier>{dbf5ec7c-7a00-444b-9fde-7a258f2bea33}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01.Obj\02.Player">
-      <UniqueIdentifier>{2b8c3972-8465-41b7-a176-7db0220905d1}</UniqueIdentifier>
+    <Filter Include="01.Obj\02.Boss">
+      <UniqueIdentifier>{7776d666-3deb-4b0e-8926-295a8b97c452}</UniqueIdentifier>
     </Filter>
-    <Filter Include="97.Manager\03.CollisionMgr">
-      <UniqueIdentifier>{da9c8858-246e-40ba-80a9-4c428511c04b}</UniqueIdentifier>
+    <Filter Include="01.Obj\02.Boss\00.Stage1Boss">
+      <UniqueIdentifier>{7a07b0a5-7179-41be-8c0f-13be7d640da9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\03.Player">
+      <UniqueIdentifier>{24b9053c-b8f5-474b-a80c-181e1d8ad6ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\04.Monster">
+      <UniqueIdentifier>{44c71c12-ca41-4556-98cc-b2dbeab0d968}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\05.Bullet">
+      <UniqueIdentifier>{6a18a3f3-604e-4fba-8768-2f261c68ee84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\05.Bullet\00.BossBullet">
+      <UniqueIdentifier>{aa8905d4-3c6d-4a7d-9790-d4b9ca8888a3}</UniqueIdentifier>
     </Filter>
     <Filter Include="02.Scene">
-      <UniqueIdentifier>{ff657eb0-f026-4a1a-985f-7157e7ea9170}</UniqueIdentifier>
+      <UniqueIdentifier>{bddb0f8a-2c50-4b4f-8d73-30339672c148}</UniqueIdentifier>
     </Filter>
     <Filter Include="02.Scene\00.StartScene">
-      <UniqueIdentifier>{1e7e17de-4984-4b43-9f47-6ac6fac13d46}</UniqueIdentifier>
+      <UniqueIdentifier>{45a3d137-0401-4dbb-a895-4a13ff046b0d}</UniqueIdentifier>
     </Filter>
     <Filter Include="02.Scene\01.StageScene">
-      <UniqueIdentifier>{05820590-c077-46dd-a0ca-947960e406c7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj\03.Boss">
-      <UniqueIdentifier>{7dbad60c-b170-409d-8216-f7d85db59217}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj\03.Boss\00.Stage1Boss">
-      <UniqueIdentifier>{218000f2-b5c7-4272-91cd-8a473c13fd58}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj\04.Bullet">
-      <UniqueIdentifier>{dd9e740a-54ec-4e56-9768-ca377a9d98f3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj\04.Bullet\00.BossBullet">
-      <UniqueIdentifier>{90db76aa-e760-4f15-9e7b-b868be986251}</UniqueIdentifier>
+      <UniqueIdentifier>{a7ce59d0-66d3-4e16-b498-e16c25d45c46}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
