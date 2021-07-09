@@ -20,6 +20,12 @@ public:
 	virtual void Render(HDC _hDC) override;
 	virtual void Release() override;
 
+public: inline void SetEnemy(ENEMY::TYPE _type) { m_eType = _type; }
+
+public: void CreateMonBullet();
+
+private: ENEMY::TYPE m_eType;
+
 };
 
 

@@ -26,4 +26,10 @@ namespace BOSS
 	enum STAGE {STAGE1,STAGE_END};
 	enum PATTERN {BASIC=0,PATTERN_1, PATTERN_2, PATTERN_3, PATTENR_END};
 }
+
+namespace ENEMY
+{
+	enum TYPE { ENEMY1, ENEMY2, ENEMY3, END };
+}
+
 #endif

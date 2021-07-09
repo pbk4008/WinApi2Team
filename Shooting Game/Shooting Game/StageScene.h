@@ -15,6 +15,11 @@ public:
     virtual void LateUpdate() override;
     virtual void Render(HDC _hDC) override;
     virtual void Release() override;
+
+private: int m_iPlayTime;
+private: int m_iControlTime;
+private: DWORD m_dwPlayTime;
+
 };
 #endif
 

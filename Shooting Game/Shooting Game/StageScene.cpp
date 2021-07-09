@@ -5,7 +5,7 @@
 #include "Player.h"
 #include "Monster.h"
 
-CStageScene::CStageScene()
+CStageScene::CStageScene() : m_iPlayTime(0), m_iControlTime(0), m_dwPlayTime(0)
 {
 }
 
@@ -19,7 +19,10 @@ void CStageScene::Initialize()
 	m_ObjMgr = CObjMgr::getInstance();
 	m_ObjMgr->AddObject(OBJ::BOSS, CAbstractFactory<CStag1Boss>::CreateObj(100, 200));
 	m_ObjMgr->AddObject(OBJ::PLAYER, CAbstractFactory<CPlayer>::CreateObj((float)WINCX/2, 500.f));
-	m_ObjMgr->AddObject(OBJ::MONSTER, CAbstractFactory<CMonster>::CreateObj(300, 300));
+	for (int i = 0; i < 20; ++i)
+	{
+		m_ObjMgr->AddObject(OBJ::MONSTER, CAbstractFactory<CMonster>::CreateObj(1200 + i * 50, 600));
+	}
 }
 
 void CStageScene::LateInit()
@@ -31,6 +34,7 @@ int CStageScene::Update()
 {
 	int iEvent=m_ObjMgr->Update();
 	return SCENE_STATE::NO;
+
 }
 
 void CStageScene::LateUpdate()
@@ -44,6 +48,22 @@ void CStageScene::Render(HDC _hDC)
 	TCHAR szText[32] = {};
 	swprintf_s(szText, L"Bullet : %d", CObjMgr::getInstance()->getList(OBJ::BOSSBULLET).size());
 	TextOut(_hDC, 10, 10, szText, lstrlen(szText));
+
+	if (m_dwPlayTime + 10 < GetTickCount())
+	{
+		++m_iControlTime;
+		if (m_iControlTime > 63)
+		{
+			++m_iPlayTime;
+			m_iControlTime = 0;
+		}
+
+		TCHAR	szPlayTime[32] = L"";
+		swprintf_s(szPlayTime, L"PlayTime: %d", m_iPlayTime);
+		TextOut(_hDC, 460, 10, szPlayTime, lstrlen(szPlayTime));
+
+		m_dwPlayTime = GetTickCount();
+	}
 }
 
 void CStageScene::Release()
