@@ -29,7 +29,7 @@ int CMonster::Update()
 	if (m_bDead)
 		return EVENT::DEAD;
 
-
+	m_tInfo.fX += m_fSpeed;
 
 
 	return EVENT::NOEVENT;
