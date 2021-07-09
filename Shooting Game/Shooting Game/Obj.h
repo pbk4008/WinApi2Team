@@ -34,6 +34,7 @@ public:
 	inline void setDead(bool _bDead) { m_bDead = _bDead; }
 	inline void setPollingCheck(bool _bPoolingCheck) { m_bPollingCheck = _bPoolingCheck; }
 	inline void setCollisionTarget(CObj* _pTarget) { m_pCollisionTarget = _pTarget; }
+	inline void setTarget(CObj* _pTarget) { m_pTarget = _pTarget; }
 public:
 	inline SCENE::TAG getScene() { return m_eScene; }
 	inline bool getNotDestory() { return m_bNotDestroy; }

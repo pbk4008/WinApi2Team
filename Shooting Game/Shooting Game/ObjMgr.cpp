@@ -131,7 +131,7 @@ void CObjMgr::SceneObjectRemove(SCENE::TAG _eTag)
 	}
 }
 
-CObj* CObjMgr::ObjPooling(OBJ::ID _eID)
+CObj* CObjMgr::ObjPooling(OBJ::ID _eID,CObj* _pTarget)
 {
 	if (m_ObjList[_eID].empty())
 		return nullptr;
@@ -139,7 +139,10 @@ CObj* CObjMgr::ObjPooling(OBJ::ID _eID)
 	{
 		if (pObj->getDead())
 		{
+			if (pObj == _pTarget)
+				continue;
 			pObj->setDead(false);
+			pObj->setTarget(_pTarget);
 			pObj->setPos(pObj->getTarget()->getInfo().fX, pObj->getTarget()->getInfo().fY);
 			return pObj;
 		}

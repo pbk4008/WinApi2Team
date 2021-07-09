@@ -20,7 +20,7 @@ public:
 public:
 	void DestroyInstance();
 	void SceneObjectRemove(SCENE::TAG _eTag);
-	CObj* ObjPooling(OBJ::ID _eID);
+	CObj* ObjPooling(OBJ::ID _eID,CObj* _pTarget);
 	CObj* DeadCheck(OBJ::ID _eID);
 public:
 	inline void AddObject(OBJ::ID _eID, CObj* pObj) { m_ObjList[_eID].emplace_back(pObj); }

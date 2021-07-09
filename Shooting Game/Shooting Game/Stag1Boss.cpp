@@ -18,8 +18,11 @@ void CStag1Boss::Initialize()
 	m_iMaxHp = 100;
 	m_iCurrentHp = m_iMaxHp;
 	m_fSpeed = 5.f;
-	m_ePattern = BOSS::BASIC;
-	m_dwPatternTime = GetTickCount();
+	m_eNextPattern = BOSS::PATTERN_1;
+	m_ePausePattern = BOSS::BASIC;
+	m_eCurPattern = m_ePausePattern;
+	m_dwCurTime = GetTickCount();
+	m_dwPatternTime = 3000;
 }
 
 void CStag1Boss::LateInit()
@@ -53,17 +56,30 @@ void CStag1Boss::Release()
 }
 
 void CStag1Boss::setPattern()
-{
-	if (m_dwPatternTime + 3000 <= GetTickCount())
+{ 
+
+	if (m_dwCurTime + m_dwPatternTime <= GetTickCount())
 	{
-		m_dwPatternTime = GetTickCount();
-		m_ePattern = BOSS::PATTERN(m_ePattern + 1);
+		m_dwCurTime = GetTickCount();
+		if (m_eCurPattern == m_ePausePattern)
+		{
+			m_eCurPattern = m_eNextPattern;
+			m_eNextPattern = BOSS::PATTERN(m_eNextPattern + 1);
+			if (m_eNextPattern == BOSS::PATTENR_END)
+				m_eNextPattern = BOSS::PATTERN_1;
+			m_dwPatternTime = 5000;
+		}
+		else
+		{
+			m_eCurPattern = m_ePausePattern;
+			m_dwPatternTime = 3000;
+		}
 	}
 }
 
 void CStag1Boss::RunPattern()
 {
-	switch (m_ePattern)
+	switch (m_eCurPattern)
 	{
 	case BOSS::BASIC:
 		m_tInfo.fX += m_fSpeed;
@@ -80,43 +96,59 @@ void CStag1Boss::RunPattern()
 		{
 			m_bulletDelayTime = GetTickCount();
 			for (int i = 0; i < 20; i++)
-			{
 				CreateBossBullet(180 + (m_fBulletAngle += 18));
-			}
 		}
-		
 		break;
 	case BOSS::PATTERN_2:
+		m_tInfo.fX += m_fSpeed;
+		if (m_bulletDelayTime + 500 <= GetTickCount())
+		{
+			m_bulletDelayTime = GetTickCount();
+			CreateBossBullet(true);
+		}
 		break;
 	case BOSS::PATTERN_3:
 		break;
 	}
 }
 
-void CStag1Boss::CreateBossBullet()
+void CStag1Boss::CreateBossBullet(bool _bCheck)
 {
 	CObj* pObj=nullptr;
-	pObj=CObjMgr::getInstance()->ObjPooling(OBJ::BOSSBULLET);
+	pObj=CObjMgr::getInstance()->ObjPooling(OBJ::BOSSBULLET,this);
 	if (!pObj)
 	{
 		pObj = CAbstractFactory<CBossBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
+		dynamic_cast<CBossBullet*>(pObj)->setSizeCheck(_bCheck);
+		pObj->LateInit();
 		CObjMgr::getInstance()->getList(OBJ::BOSSBULLET).emplace_back(pObj);
+	}
+	else
+	{
+		dynamic_cast<CBossBullet*>(pObj)->setPattern(m_eCurPattern);
+		dynamic_cast<CBossBullet*>(pObj)->setSizeCheck(_bCheck);
+		pObj->LateInit();
 	}
 }
 
-void CStag1Boss::CreateBossBullet(float _fAngle)
+void CStag1Boss::CreateBossBullet(float _fAngle, bool _bCheck)
 {
 	CObj* pObj = nullptr;
-	pObj = CObjMgr::getInstance()->ObjPooling(OBJ::BOSSBULLET);
+	pObj = CObjMgr::getInstance()->ObjPooling(OBJ::BOSSBULLET,this);
 	if (!pObj)
 	{
 		pObj = CAbstractFactory<CBossBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
 		pObj->setAngle(_fAngle);
+		dynamic_cast<CBossBullet*>(pObj)->setSizeCheck(_bCheck);
+		pObj->LateInit();
 		CObjMgr::getInstance()->getList(OBJ::BOSSBULLET).emplace_back(pObj);
 	}
 	else
 	{
 		pObj->setAngle(_fAngle);
-		dynamic_cast<CBossBullet*>(pObj)->setPattern(m_ePattern);
+		dynamic_cast<CBossBullet*>(pObj)->setPattern(m_eCurPattern);
+		dynamic_cast<CBossBullet*>(pObj)->setSizeCheck(_bCheck);
+		pObj->LateInit();
 	}
 }
+

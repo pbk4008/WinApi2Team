@@ -6,8 +6,11 @@ class CBoss :
     public CObj
 {
 protected:
-    BOSS::PATTERN m_ePattern;
+    BOSS::PATTERN m_eNextPattern;
+    BOSS::PATTERN m_ePausePattern;
+    BOSS::PATTERN m_eCurPattern;
     BOSS::STAGE m_eType;
+    DWORD m_dwCurTime;
     DWORD m_dwPatternTime;
     int m_iMaxHp;
     int m_iCurrentHp;
@@ -16,7 +19,8 @@ public:
     virtual ~CBoss();
 public:
     inline BOSS::STAGE getStage() { return m_eType; }
-    inline BOSS::PATTERN getPattern() { return m_ePattern; }
+    inline BOSS::PATTERN getPattern() { return m_eCurPattern; }
+
 };
 #endif
 
