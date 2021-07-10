@@ -1,2 +1,12 @@
+<<<<<<< HEAD
 PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.26.28801:TargetPlatformVersion=10.0.18362.0:
 Debug|Win32|C:\Users\User\Desktop\TeamProject\Shooting Game\|
+=======
+<<<<<<< HEAD
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.28.29910:TargetPlatformVersion=10.0.18362.0:
+Debug|Win32|C:\heejeong\gitHub\team_Project\first\Shooting Game\|
+=======
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.29.30037:VCServicingVersionATL=14.29.30038:VCServicingVersionCrtHeaders=14.29.30038:VCServicingVersionCompilers=14.29.30038:TargetPlatformVersion=10.0.19041.0:
+Debug|Win32|C:\Users\pbk40\Desktop\Shooting Game\Shooting Game\|
+>>>>>>> 7f12aaaaa38066ff2cd7e91c9b3dc32c4a97defb
+>>>>>>> fff4e07e067a11e8d091768184cd96951d61ef9d
