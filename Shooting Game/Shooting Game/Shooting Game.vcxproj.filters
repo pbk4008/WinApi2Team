@@ -68,6 +68,12 @@
     <ClCompile Include="HpBar.cpp">
       <Filter>01.Obj\02.Boss\01.HpBar</Filter>
     </ClCompile>
+    <ClCompile Include="ScrewBullet.cpp">
+      <Filter>01.Obj\05.Bullet\00.PlayerBullet\01.ScrewBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="HomingBullet.cpp">
+      <Filter>01.Obj\05.Bullet\00.PlayerBullet\02.HomingBullet</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
@@ -168,6 +174,12 @@
     <ClInclude Include="HpBar.h">
       <Filter>01.Obj\02.Boss\01.HpBar</Filter>
     </ClInclude>
+    <ClInclude Include="ScrewBullet.h">
+      <Filter>01.Obj\05.Bullet\00.PlayerBullet\01.ScrewBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="HomingBullet.h">
+      <Filter>01.Obj\05.Bullet\00.PlayerBullet\02.HomingBullet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Shooting Game.ico">
@@ -255,6 +267,12 @@
     </Filter>
     <Filter Include="01.Obj\02.Boss\01.HpBar">
       <UniqueIdentifier>{bd295065-dd19-440e-9f09-1bc80aee9071}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\05.Bullet\00.PlayerBullet\01.ScrewBullet">
+      <UniqueIdentifier>{1be6802e-8d5e-4ff8-8d88-766171f26ec1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\05.Bullet\00.PlayerBullet\02.HomingBullet">
+      <UniqueIdentifier>{483493ba-3023-4431-bcbc-476df843f0ea}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -149,6 +149,7 @@
     <ClInclude Include="Boss.h" />
     <ClInclude Include="BossBullet.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="HomingBullet.h" />
     <ClInclude Include="HpBar.h" />
     <ClInclude Include="KeyMgr.h" />
     <ClInclude Include="MonBullet.h" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneMgr.h" />
+    <ClInclude Include="ScrewBullet.h" />
     <ClInclude Include="Shield.h" />
     <ClInclude Include="Shooting Game.h" />
     <ClInclude Include="Stag1Boss.h" />
@@ -184,6 +186,7 @@
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="BossBullet.cpp" />
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="HomingBullet.cpp" />
     <ClCompile Include="HpBar.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="MonBullet.cpp" />
@@ -198,6 +201,7 @@
     <ClCompile Include="PlayerBullet.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
+    <ClCompile Include="ScrewBullet.cpp" />
     <ClCompile Include="Shield.cpp" />
     <ClCompile Include="Shooting Game.cpp" />
     <ClCompile Include="Stag1Boss.cpp" />
