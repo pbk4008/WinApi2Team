@@ -108,6 +108,12 @@ void CStag1Boss::RunPattern()
 		}
 		break;
 	case BOSS::PATTERN_3:
+		m_tInfo.fX += m_fSpeed;
+		if (m_bulletDelayTime + 2000 <= GetTickCount())
+		{
+			m_bulletDelayTime = GetTickCount();
+			CreateBossBullet();
+		}
 		break;
 	}
 }
