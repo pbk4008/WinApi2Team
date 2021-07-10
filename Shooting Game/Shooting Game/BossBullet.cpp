@@ -84,6 +84,10 @@ int CBossBullet::Update()
 		m_tInfo.fY -= sinf(m_fAngle) * m_fSpeed;
 		break;
 	}
+
+
+
+	
 	return EVENT::NOEVENT;
 }
 

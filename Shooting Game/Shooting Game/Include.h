@@ -13,5 +13,6 @@
 #include "ObjMgr.h"
 #include "AbstracFactory.h"
 #include <time.h>
+#include "KeyMgr.h"
 
 #endif
