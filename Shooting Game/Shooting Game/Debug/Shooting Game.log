@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-﻿  MainGame.cpp
+﻿  BackGround.cpp
+  LINK : C:\Users\pbk40\Desktop\Shooting Game\Shooting Game\Debug\Shooting Game.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
   Shooting Game.vcxproj -> C:\Users\pbk40\Desktop\Shooting Game\Shooting Game\Debug\Shooting Game.exe
-=======
-﻿  StageScene.cpp
-  Shooting Game.vcxproj -> C:\Users\User\Desktop\TeamProject\Shooting Game\Debug\Shooting Game.exe
->>>>>>> a397cb6a218380b47acab884fe6617669d1ec669
