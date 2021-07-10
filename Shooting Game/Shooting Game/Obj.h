@@ -46,6 +46,7 @@ public:
 	inline CObj* getTarget() { return m_pTarget; }
 	inline const INFO getInfo()const { return m_tInfo; }
 	inline float getAngle() { return m_fAngle; }
+	inline int Get_Hp() { return m_iCurrentHp; }
 };
 #endif
 

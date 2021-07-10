@@ -20,10 +20,12 @@ public:
 
 private:
 	CObj* Create_Bullet();
+	void Create_Shield();
 
 
 private:
 	list<CObj*>* m_pBullet;
+	int m_shieldCount;
 };
 
 #endif

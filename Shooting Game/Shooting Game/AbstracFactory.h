@@ -22,6 +22,12 @@ public:
 		pObj->setPos(_x, _y);
 		return pObj;
 	}
+	static CObj* CreateObj(CObj* _pTarget)
+	{
+		CObj* pObj = CreateObj();
+		pObj->setTarget(_pTarget);
+		return pObj;
+	}
 	static CScene* CreateScene(SCENE::TAG _eTag)
 	{
 		CScene* pScene = new T;
