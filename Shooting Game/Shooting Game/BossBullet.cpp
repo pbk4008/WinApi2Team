@@ -89,6 +89,8 @@ int CBossBullet::Update()
 
 void CBossBullet::LateUpdate()
 {
+	if (m_pTarget->getDead())
+		m_bDead = true;
 	if (!m_bDead)
 	{
 		RectUpdate();

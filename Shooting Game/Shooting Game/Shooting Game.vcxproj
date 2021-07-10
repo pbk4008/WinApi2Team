@@ -149,6 +149,7 @@
     <ClInclude Include="Boss.h" />
     <ClInclude Include="BossBullet.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="HpBar.h" />
     <ClInclude Include="MonBullet.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="CollisionMgr.h" />
@@ -181,6 +182,7 @@
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="BossBullet.cpp" />
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="HpBar.cpp" />
     <ClCompile Include="MonBullet.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />

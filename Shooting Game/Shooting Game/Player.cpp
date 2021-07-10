@@ -77,16 +77,17 @@ int CPlayer::Update()
 	}
 
 	if (GetAsyncKeyState(VK_SPACE) & 0x8000)
-	{
+	{ 
 		CObjMgr::getInstance()->AddObject(OBJ::BULLET, Create_Bullet());
 	}
 
-	RectUpdate();
+	
 	return EVENT::NOEVENT;
 }
 
 void CPlayer::LateUpdate()
 {
+	RectUpdate();
 	if( 0 >= m_tRect.left)
 	{
 		m_tInfo.fX -= m_tRect.left;
@@ -120,7 +121,5 @@ void CPlayer::Release()
 
 CObj* CPlayer::Create_Bullet()
 {
-	
 	return CAbstractFactory<CPlayerBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
-	
 }

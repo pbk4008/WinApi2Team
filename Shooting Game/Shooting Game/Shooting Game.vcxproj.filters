@@ -59,6 +59,9 @@
     <ClCompile Include="BackGround.cpp">
       <Filter>01.Obj\06.BackGroundObj</Filter>
     </ClCompile>
+    <ClCompile Include="HpBar.cpp">
+      <Filter>01.Obj\02.Boss\01.HpBar</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
@@ -150,6 +153,9 @@
     <ClInclude Include="targetver.h">
       <Filter>99.Default</Filter>
     </ClInclude>
+    <ClInclude Include="HpBar.h">
+      <Filter>01.Obj\02.Boss\01.HpBar</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Shooting Game.ico">
@@ -228,6 +234,9 @@
     </Filter>
     <Filter Include="01.Obj\06.BackGroundObj">
       <UniqueIdentifier>{5e27cb4d-9a19-44fb-8c42-d83ea367a01c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\02.Boss\01.HpBar">
+      <UniqueIdentifier>{e8a35cf1-4f59-4633-b08d-f43a298d356c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

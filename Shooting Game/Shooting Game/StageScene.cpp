@@ -17,7 +17,7 @@ CStageScene::~CStageScene()
 void CStageScene::Initialize()
 {
 	m_ObjMgr = CObjMgr::getInstance();
-	//m_ObjMgr->AddObject(OBJ::BOSS, CAbstractFactory<CStag1Boss>::CreateObj(100, 200));
+	m_ObjMgr->AddObject(OBJ::BOSS, CAbstractFactory<CStag1Boss>::CreateObj(100, 200));
 	m_ObjMgr->AddObject(OBJ::PLAYER, CAbstractFactory<CPlayer>::CreateObj((float)WINCX/2, 500.f));
 	for (int i = 0; i < 20; ++i)
 	{
@@ -47,17 +47,18 @@ int CStageScene::Update()
 void CStageScene::LateUpdate()
 {
 	m_ObjMgr->LateUpdate();
+	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::BULLET),
+		CObjMgr::getInstance()->getList(OBJ::BOSS));
 }
 
 void CStageScene::Render(HDC _hDC)
 {
 	/*HBRUSH hBrush = CreateSolidBrush(RGB)*/
-	Rectangle(_hDC, 0, 0, WINCX, WINCY);
 	m_ObjMgr->Render(_hDC);
 	TCHAR szText[32] = {};
 	swprintf_s(szText, L"Bullet : %d", CObjMgr::getInstance()->getList(OBJ::BOSSBULLET).size());
 	TextOut(_hDC, 10, 10, szText, lstrlen(szText));
-
+	
 	PlayTime(_hDC);
 }
 
