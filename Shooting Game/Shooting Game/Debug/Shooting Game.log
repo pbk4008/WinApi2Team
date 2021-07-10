@@ -1,7 +1,67 @@
-<<<<<<< HEAD
-﻿  MainGame.cpp
-  Shooting Game.vcxproj -> C:\Users\pbk40\Desktop\Shooting Game\Shooting Game\Debug\Shooting Game.exe
-=======
-﻿  StageScene.cpp
-  Shooting Game.vcxproj -> C:\Users\User\Desktop\TeamProject\Shooting Game\Debug\Shooting Game.exe
->>>>>>> a397cb6a218380b47acab884fe6617669d1ec669
+﻿  BackGround.cpp
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\BackGround.cpp(41,21): warning C4477: 'swprintf_s' : 서식 문자열 '%s'에 'wchar_t *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
+D:\VS\VC\Tools\MSVC\14.26.28801\include\xmemory(671,82): error C2440: '초기화 중': 'POINT'에서 '_Objty'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Objty=POINT *
+          ]
+D:\VS\VC\Tools\MSVC\14.26.28801\include\xmemory(671,82): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+D:\VS\VC\Tools\MSVC\14.26.28801\include\list(585): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,POINT&>(_Alloc &,_Objty *const ,POINT &)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Alloc=std::allocator<std::_List_node<tagPOINT *,std::_Default_allocator_traits<std::allocator<POINT *>>::void_pointer>>,
+              _Ty=POINT *,
+              _Objty=POINT *
+          ]
+D:\VS\VC\Tools\MSVC\14.26.28801\include\list(587): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,POINT&>(_Alloc &,_Objty *const ,POINT &)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Alloc=std::allocator<std::_List_node<tagPOINT *,std::_Default_allocator_traits<std::allocator<POINT *>>::void_pointer>>,
+              _Ty=POINT *,
+              _Objty=POINT *
+          ]
+D:\VS\VC\Tools\MSVC\14.26.28801\include\list(1013): message : 컴파일되는 함수 템플릿 인스턴스화 'std::_List_node_emplace_op2<std::allocator<std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer>>>::_List_node_emplace_op2<POINT&>(_Alnode &,POINT &)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=POINT *,
+              _Alloc=std::allocator<POINT *>,
+              _Alnode=std::allocator<std::_List_node<tagPOINT *,std::_Default_allocator_traits<std::allocator<POINT *>>::void_pointer>>
+          ]
+D:\VS\VC\Tools\MSVC\14.26.28801\include\list(1019): message : 컴파일되는 함수 템플릿 인스턴스화 'std::_List_node_emplace_op2<std::allocator<std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer>>>::_List_node_emplace_op2<POINT&>(_Alnode &,POINT &)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=POINT *,
+              _Alloc=std::allocator<POINT *>,
+              _Alnode=std::allocator<std::_List_node<tagPOINT *,std::_Default_allocator_traits<std::allocator<POINT *>>::void_pointer>>
+          ]
+D:\VS\VC\Tools\MSVC\14.26.28801\include\list(993): message : 컴파일되는 함수 템플릿 인스턴스화 'std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *std::list<_Ty,_Alloc>::_Emplace<POINT&>(std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *const ,POINT &)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=POINT *,
+              _Alloc=std::allocator<POINT *>
+          ]
+D:\VS\VC\Tools\MSVC\14.26.28801\include\list(994): message : 컴파일되는 함수 템플릿 인스턴스화 'std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *std::list<_Ty,_Alloc>::_Emplace<POINT&>(std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *const ,POINT &)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=POINT *,
+              _Alloc=std::allocator<POINT *>
+          ]
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\BackGround.cpp(55): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::list<POINT *,std::allocator<POINT *>>::emplace_back<POINT&>(POINT &)'에 대한 참조를 확인하세요.
+  Mouse.cpp
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\Mouse.cpp(17,16): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\Mouse.cpp(18,16): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\AbstracFactory.h(27): error C2259: 'CStageScene': 추상 클래스를 인스턴스화할 수 없습니다.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\StageScene.h(5): message : 'CStageScene' 선언을 참조하십시오.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\AbstracFactory.h(27): message : 다음 멤버가 원인입니다.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\AbstracFactory.h(27): message : 'void CScene::CreateBackGround(HDC)': abstract입니다.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\Scene.h(23): message : 'CScene::CreateBackGround' 선언을 참조하십시오.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\AbstracFactory.h(26): message : 클래스 템플릿 멤버 함수 'CScene *CAbstractFactory<CStageScene>::CreateScene(SCENE::TAG)'을(를) 컴파일하는 중입니다.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\Mouse.cpp(44): message : 컴파일되는 함수 템플릿 인스턴스화 'CScene *CAbstractFactory<CStageScene>::CreateScene(SCENE::TAG)'에 대한 참조를 확인하세요.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\Mouse.cpp(44): message : 컴파일되는 클래스 템플릿 인스턴스화 'CAbstractFactory<CStageScene>'에 대한 참조를 확인하세요.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\AbstracFactory.h(27,20): error C2259: 'CStageScene': 추상 클래스를 인스턴스화할 수 없습니다.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\StageScene.h(5): message : 'CStageScene' 선언을 참조하십시오.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\AbstracFactory.h(27,20): message : 다음 멤버가 원인입니다.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\AbstracFactory.h(27,20): message : 'void CScene::CreateBackGround(HDC)': abstract입니다.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\Scene.h(23): message : 'CScene::CreateBackGround' 선언을 참조하십시오.
+  StageScene.cpp
+  코드를 생성하고 있습니다...
