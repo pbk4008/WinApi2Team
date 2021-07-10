@@ -59,16 +59,14 @@
     <ClCompile Include="BackGround.cpp">
       <Filter>01.Obj\06.BackGroundObj</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="Shield.cpp">
       <Filter>01.Obj\07.Shield</Filter>
     </ClCompile>
     <ClCompile Include="KeyMgr.cpp">
       <Filter>97.Manager\04.KeyMgr</Filter>
-=======
+    </ClCompile>
     <ClCompile Include="HpBar.cpp">
       <Filter>01.Obj\02.Boss\01.HpBar</Filter>
->>>>>>> cb29629bb709bcc44cd475271c899daa0745df32
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -161,16 +159,14 @@
     <ClInclude Include="targetver.h">
       <Filter>99.Default</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="Shield.h">
       <Filter>01.Obj\07.Shield</Filter>
     </ClInclude>
     <ClInclude Include="KeyMgr.h">
       <Filter>97.Manager\04.KeyMgr</Filter>
-=======
+    </ClInclude>
     <ClInclude Include="HpBar.h">
       <Filter>01.Obj\02.Boss\01.HpBar</Filter>
->>>>>>> cb29629bb709bcc44cd475271c899daa0745df32
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -251,16 +247,14 @@
     <Filter Include="01.Obj\06.BackGroundObj">
       <UniqueIdentifier>{5e27cb4d-9a19-44fb-8c42-d83ea367a01c}</UniqueIdentifier>
     </Filter>
-<<<<<<< HEAD
     <Filter Include="01.Obj\07.Shield">
       <UniqueIdentifier>{68b7c66b-b3ef-4db3-9916-584b2b487a16}</UniqueIdentifier>
     </Filter>
     <Filter Include="97.Manager\04.KeyMgr">
       <UniqueIdentifier>{1bff623f-937e-4320-9f95-27e706b91b0c}</UniqueIdentifier>
-=======
+    </Filter>
     <Filter Include="01.Obj\02.Boss\01.HpBar">
-      <UniqueIdentifier>{e8a35cf1-4f59-4633-b08d-f43a298d356c}</UniqueIdentifier>
->>>>>>> cb29629bb709bcc44cd475271c899daa0745df32
+      <UniqueIdentifier>{bd295065-dd19-440e-9f09-1bc80aee9071}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

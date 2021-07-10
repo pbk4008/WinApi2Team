@@ -18,7 +18,6 @@ void CStag1Boss::Initialize()
 	m_tInfo.iCY = 200;
 	m_iMaxHp = 100;
 	m_iCurrentHp = m_iMaxHp;
-
 	m_fSpeed = 5.f;
 	m_eNextPattern = BOSS::PATTERN_1;
 	m_ePausePattern = BOSS::BASIC;
@@ -38,7 +37,6 @@ int CStag1Boss::Update()
 		return EVENT::DEAD;
 	setPattern();
 	RunPattern();
-
 	if (m_pCollisionTarget)
 	{
 		m_iCurrentHp -= m_pCollisionTarget->getAtk();
@@ -47,10 +45,11 @@ int CStag1Boss::Update()
 	}
 	return EVENT::NOEVENT;
 }
+
 void CStag1Boss::LateUpdate()
 {
 	if (m_iCurrentHp <= 0)
-   		m_bDead = true;
+		m_bDead = true;
 	RectUpdate();
 	if (m_tRect.left <= 0 || m_tRect.right >= WINCX)
 		m_fSpeed *= -1;

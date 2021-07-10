@@ -4,7 +4,7 @@
 
 
 CBossBullet::CBossBullet() : m_ePattern(BOSS::PATTENR_END), m_bSizeCheck(false), m_dwCurTime(0)
-,m_bSplitCheck(false)
+, m_bSplitCheck(false)
 {
 }
 
@@ -27,8 +27,8 @@ void CBossBullet::LateInit()
 {
 	if (m_bSizeCheck)
 	{
-		m_tInfo.iCX  = 40;
-		m_tInfo.iCY  = 40;
+		m_tInfo.iCX = 40;
+		m_tInfo.iCY = 40;
 		m_fSpeed = 5.f;
 		m_dwCurTime = GetTickCount();
 	}
@@ -42,7 +42,7 @@ void CBossBullet::LateInit()
 
 int CBossBullet::Update()
 {
-	if (!m_pTarget||m_bDead)
+	if (!m_pTarget || m_bDead)
 		return EVENT::DEAD;
 	switch (m_ePattern)
 	{
@@ -50,8 +50,8 @@ int CBossBullet::Update()
 		m_tInfo.fY += m_fSpeed;
 		break;
 	case BOSS::PATTERN_1:
-		m_tInfo.fX += cosf(DEGREE2RADIAN(m_fAngle))*m_fSpeed;
-		m_tInfo.fY -= sinf(DEGREE2RADIAN(m_fAngle))*m_fSpeed;
+		m_tInfo.fX += cosf(DEGREE2RADIAN(m_fAngle)) * m_fSpeed;
+		m_tInfo.fY -= sinf(DEGREE2RADIAN(m_fAngle)) * m_fSpeed;
 		break;
 	case BOSS::PATTERN_2:
 		if (m_bSizeCheck)
@@ -66,7 +66,7 @@ int CBossBullet::Update()
 			{
 				m_bSplitCheck = false;
 				for (int i = 0; i < 5; i++)
-					Split(216+(i*30));
+					Split(216 + (i * 30));
 			}
 		}
 		else
@@ -84,10 +84,6 @@ int CBossBullet::Update()
 		m_tInfo.fY -= sinf(m_fAngle) * m_fSpeed;
 		break;
 	}
-
-
-
-	
 	return EVENT::NOEVENT;
 }
 
@@ -99,25 +95,25 @@ void CBossBullet::LateUpdate()
 	{
 		RectUpdate();
 		if (m_tRect.left <= 0
-			||m_tRect.right>=WINCX
-			||m_tRect.top<=0
-			||m_tRect.bottom>=WINCY)
+			|| m_tRect.right >= WINCX
+			|| m_tRect.top <= 0
+			|| m_tRect.bottom >= WINCY)
 			m_bDead = true;
 	}
 }
 
 void CBossBullet::Render(HDC _hDC)
 {
-	if(!m_bDead)
+	if (!m_bDead)
 		Ellipse(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 }
 void CBossBullet::Release()
-{	
+{
 }
 
 void CBossBullet::Split(float _Angle)
 {
-	CObj* pBullet = CObjMgr::getInstance()->ObjPooling(OBJ::BOSSBULLET,this);
+	CObj* pBullet = CObjMgr::getInstance()->ObjPooling(OBJ::BOSSBULLET, this);
 	if (!pBullet)
 	{
 		pBullet = CAbstractFactory<CBossBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);

@@ -47,27 +47,24 @@ int CStageScene::Update()
 void CStageScene::LateUpdate()
 {
 	m_ObjMgr->LateUpdate();
-<<<<<<< HEAD
 
 	//CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::PLAYER), CObjMgr::getInstance()->getList(OBJ::BOSSBULLET));
 
 	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::SHIELD), CObjMgr::getInstance()->getList(OBJ::BOSSBULLET));
-=======
 	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::BULLET),
 		CObjMgr::getInstance()->getList(OBJ::BOSS));
->>>>>>> cb29629bb709bcc44cd475271c899daa0745df32
 }
 
 void CStageScene::Render(HDC _hDC)
 {
 	/*HBRUSH hBrush = CreateSolidBrush(RGB)*/
+	Rectangle(_hDC, 0, 0, WINCX, WINCY);
 	m_ObjMgr->Render(_hDC);
 	TCHAR szText[32] = {};
 
 	
 	swprintf_s(szText, L"Boss Bullet : %d", CObjMgr::getInstance()->getList(OBJ::BOSSBULLET).size());
 	TextOut(_hDC, 10, 10, szText, lstrlen(szText));
-<<<<<<< HEAD
 	// Monster Bullet
 
 	TCHAR szText2[32] = {};
@@ -79,14 +76,11 @@ void CStageScene::Render(HDC _hDC)
 	TextOut(_hDC, 10, 30, PlayerBulletText, lstrlen(PlayerBulletText));
 
 	TCHAR PlayerHp[32] = {};
-	swprintf_s(PlayerHp, L"Player Hp : %d", CObjMgr::getInstance()->getPlayer()->Get_Hp());
+	swprintf_s(PlayerHp, L"Player Hp : %d", CObjMgr::getInstance()->getPlayer()->getHp());
 	TextOut(_hDC, 10, 50, PlayerHp, lstrlen(PlayerHp));
 
 	
 
-=======
-	
->>>>>>> cb29629bb709bcc44cd475271c899daa0745df32
 	PlayTime(_hDC);
 }
 

@@ -149,7 +149,7 @@ CObj* CObjMgr::ObjPooling(OBJ::ID _eID,CObj* _pTarget)
 			pObj->setDead(false);
 			return pObj;
 		}
-		if(pObj==m_ObjList[_eID].back())
+		if (pObj == m_ObjList[_eID].back())
 			return nullptr;
 	}
 }
