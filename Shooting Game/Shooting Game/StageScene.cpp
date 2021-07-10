@@ -57,6 +57,11 @@ void CStageScene::Render(HDC _hDC)
 	TCHAR szText[32] = {};
 	swprintf_s(szText, L"Bullet : %d", CObjMgr::getInstance()->getList(OBJ::BOSSBULLET).size());
 	TextOut(_hDC, 10, 10, szText, lstrlen(szText));
+	// Monster Bullet
+
+	TCHAR szText2[32] = {};
+	swprintf_s(szText2, L"MonBullet : %d", CObjMgr::getInstance()->getList(OBJ::MONBULLET).size());
+	TextOut(_hDC, 10, 50, szText2, lstrlen(szText2));
 
 	PlayTime(_hDC);
 }

@@ -1,7 +1,9 @@
 #include "framework.h"
 #include "Monster.h"
+#include "MonBullet.h"
 
-CMonster::CMonster() : m_eType(ENEMY::TYPE_END), m_bIsSpawn(false), m_fPosinDis(0.f)
+CMonster::CMonster() : m_eType(ENEMY::TYPE_END), m_bIsSpawn(false), m_fPosinDis(0.f), m_eCurPattern(ENEMY::PATTERN_END), m_ePattern(ENEMY::PATTERN_END)
+	, m_bulletDelayTime(0)
 {
 	ZeroMemory(&m_tPosin, sizeof(m_tPosin));
 }
@@ -20,11 +22,15 @@ void CMonster::Initialize()
 	m_fSpeed = 3.f;
 
 	m_fAngle = -90.f;
+
+	SetEnemy(ENEMY::ENEMY_1);	
+	m_eCurPattern = ENEMY::PATTERN_1;
+	SetPattern(ENEMY::PATTERN_1);
 }
 
 void CMonster::LateInit()
 {
-	SetEnemy(ENEMY::ENEMY_1);
+
 }
 
 int CMonster::Update()
@@ -54,8 +60,10 @@ int CMonster::Update()
 
 	m_tPosin.x = (LONG)(m_tInfo.fX + cosf(m_fAngle * PI / 180.f) * m_fPosinDis);
 	m_tPosin.y = (LONG)(m_tInfo.fY - sinf(m_fAngle * PI / 180.f) * m_fPosinDis);
+	
 
-//	RectUpdate();
+	PlayPattern(ENEMY::PATTERN_1);	
+	
 	return EVENT::NOEVENT;
 }
 
@@ -64,12 +72,10 @@ void CMonster::LateUpdate()
 	RectUpdate();
 	if (m_tRect.left <= 0 || m_tRect.right >= WINCX)
 		m_fSpeed *= -1;
-
-
 }
 
 void CMonster::Render(HDC _hDC)
-{
+{	
 	if (m_eType == ENEMY::ENEMY_1)
 	{
 		MoveToEx(_hDC, m_tRect.left, m_tRect.top, nullptr);
@@ -103,16 +109,31 @@ void CMonster::Release()
 void CMonster::RendPosin(HDC _hDC)
 {
 	MoveToEx(_hDC, (int)m_tInfo.fX, (int)m_tInfo.fY, nullptr);
-	LineTo(_hDC, m_tPosin.x, m_tPosin.y);
+	LineTo(_hDC, m_tPosin.x, m_tPosin.y); 
 }
 
-void CMonster::CreateMonBullet()
+void CMonster::CreateMonBullet(float _x, float _y)
 {
-	//CObj* pObj = nullptr;
-	//pObj = CObjMgr::getInstance()->ObjPooling(OBJ::BOSSBULLET);
-	//if (!pObj)
-	//{
-	//	pObj = CAbstractFactory<여기MonBullet구현하고 추가>::CreateObj(m_tInfo.fX, m_tInfo.fY);
-	//	CObjMgr::getInstance()->getList(OBJ::BOSSBULLET).emplace_back(pObj);
-	//}
+	CObj* pObj = nullptr;
+	pObj = CObjMgr::getInstance()->ObjPooling(OBJ::MONBULLET, this);
+	if (!pObj)
+	{
+		pObj = CAbstractFactory<CMonBullet>::CreateObj(_x, _y);
+		CObjMgr::getInstance()->getList(OBJ::MONBULLET).emplace_back(pObj);
+	}
+}
+
+void CMonster::PlayPattern(ENEMY::PATTERN _type)
+{
+	switch (m_eCurPattern)
+	{
+	case ENEMY::PATTERN_1:
+		//m_tInfo.fX += m_fSpeed;
+		if (m_bulletDelayTime + 1000 <= GetTickCount())
+		{
+			m_bulletDelayTime = GetTickCount();
+			CreateMonBullet(m_tPosin.x, m_tPosin.y);
+		}
+		break;
+	}
 }
