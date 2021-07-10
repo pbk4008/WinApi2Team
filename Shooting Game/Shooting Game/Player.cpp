@@ -20,6 +20,9 @@ void CPlayer::Initialize()
 	m_tInfo.iCX = 100;
 	m_tInfo.iCY = 100;
 	m_fSpeed = 5.f;
+
+	m_iMaxHp = 3;
+	m_iCurrentHp = m_iMaxHp;
 }
 
 void CPlayer::LateInit()
