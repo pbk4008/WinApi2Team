@@ -13,6 +13,7 @@ public: virtual void LateUpdate() override;
 public: virtual void Render(HDC _hDC) override;
 public: virtual void Release() override;
 
+private: ENEMY::PATTERN m_ePattern;
 
 
 };
