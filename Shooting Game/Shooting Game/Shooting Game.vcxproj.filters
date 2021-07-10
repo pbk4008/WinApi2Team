@@ -50,8 +50,18 @@
     <ClCompile Include="StageScene.cpp">
       <Filter>02.Scene\01.StageScene</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="BackGround.cpp">
       <Filter>01.Obj\06.BackGround</Filter>
+=======
+<<<<<<< HEAD
+    <ClCompile Include="MonBullet.cpp">
+      <Filter>01.Obj\05.Bullet\01.MonBullet</Filter>
+=======
+    <ClCompile Include="PlayerBullet.cpp">
+      <Filter>01.Obj\05.Bullet\01.PlayerBullet</Filter>
+>>>>>>> fff4e07e067a11e8d091768184cd96951d61ef9d
+>>>>>>> a397cb6a218380b47acab884fe6617669d1ec669
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -135,8 +145,18 @@
     <ClInclude Include="Typedef.h">
       <Filter>98.Include</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="BackGround.h">
       <Filter>01.Obj\06.BackGround</Filter>
+=======
+<<<<<<< HEAD
+    <ClInclude Include="MonBullet.h">
+      <Filter>01.Obj\05.Bullet\01.MonBullet</Filter>
+=======
+    <ClInclude Include="PlayerBullet.h">
+      <Filter>01.Obj\05.Bullet\01.PlayerBullet</Filter>
+>>>>>>> fff4e07e067a11e8d091768184cd96951d61ef9d
+>>>>>>> a397cb6a218380b47acab884fe6617669d1ec669
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -208,8 +228,18 @@
     <Filter Include="02.Scene\01.StageScene">
       <UniqueIdentifier>{a7ce59d0-66d3-4e16-b498-e16c25d45c46}</UniqueIdentifier>
     </Filter>
+<<<<<<< HEAD
     <Filter Include="01.Obj\06.BackGround">
       <UniqueIdentifier>{ed8ea2e0-73db-4e11-a8e2-292ed8e163cd}</UniqueIdentifier>
+=======
+<<<<<<< HEAD
+    <Filter Include="01.Obj\05.Bullet\01.MonBullet">
+      <UniqueIdentifier>{784ff30f-b281-4ca8-861d-38a51255507a}</UniqueIdentifier>
+=======
+    <Filter Include="01.Obj\05.Bullet\01.PlayerBullet">
+      <UniqueIdentifier>{0a7a3b30-4e76-4d2e-861f-32b0b98bc172}</UniqueIdentifier>
+>>>>>>> fff4e07e067a11e8d091768184cd96951d61ef9d
+>>>>>>> a397cb6a218380b47acab884fe6617669d1ec669
     </Filter>
   </ItemGroup>
   <ItemGroup>

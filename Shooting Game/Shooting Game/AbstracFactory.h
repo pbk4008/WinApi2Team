@@ -1,12 +1,14 @@
 #pragma once
 #ifndef __ABSTRACTFACTORY_H__
 #define __ABSTRACTFACTORY_H__
+#include "Obj.h"
 class CObj;
 class CScene;
 template<typename T>
 class CAbstractFactory
 {
 public:
+	
 	static CObj* CreateObj()
 	{
 		CObj* pObj = new T;

@@ -17,11 +17,11 @@ CStageScene::~CStageScene()
 void CStageScene::Initialize()
 {
 	m_ObjMgr = CObjMgr::getInstance();
-	m_ObjMgr->AddObject(OBJ::BOSS, CAbstractFactory<CStag1Boss>::CreateObj(100, 200));
+	//m_ObjMgr->AddObject(OBJ::BOSS, CAbstractFactory<CStag1Boss>::CreateObj(100, 200));
 	m_ObjMgr->AddObject(OBJ::PLAYER, CAbstractFactory<CPlayer>::CreateObj((float)WINCX/2, 500.f));
 	for (int i = 0; i < 20; ++i)
 	{
-		m_ObjMgr->AddObject(OBJ::MONSTER, CAbstractFactory<CMonster>::CreateObj(1200 + i * 50, 600));
+		m_ObjMgr->AddObject(OBJ::MONSTER, CAbstractFactory<CMonster>::CreateObj(0 , -600));
 	}
 }
 
@@ -34,14 +34,11 @@ int CStageScene::Update()
 {
 	int iEvent=m_ObjMgr->Update();
 
-	//// 몬스터 테스트중
-	//if (m_ObjMgr->getInstance()->getObj(OBJ::MONSTER))
-	//{
-	//	if (m_iPlayTime >= 3)
-	//	{
-	//		MonPattern(ENEMY::PATTERN_1);
-	//	}
-	//}
+	// 몬스터 테스트중
+	if (m_ObjMgr->getInstance()->getObj(OBJ::MONSTER))
+	{				
+		MonPattern(ENEMY::PATTERN_1);		
+	}
 
 	return SCENE_STATE::NO;
 
@@ -61,6 +58,58 @@ void CStageScene::Render(HDC _hDC)
 	swprintf_s(szText, L"Bullet : %d", CObjMgr::getInstance()->getList(OBJ::BOSSBULLET).size());
 	TextOut(_hDC, 10, 10, szText, lstrlen(szText));
 
+	PlayTime(_hDC);
+}
+
+void CStageScene::Release()
+{
+	m_ObjMgr->SceneObjectRemove(SCENE::STAGE1);
+}
+
+void CStageScene::MonPattern(ENEMY::PATTERN _pattern)
+{
+	list<CObj*> pMonlist = m_ObjMgr->getInstance()->getList(OBJ::MONSTER);
+
+	int iRandArr[13] = {};
+	int k = 0;
+
+	// 중복처리 해야함
+	if (m_iPlayTime % 4 == 3 && _pattern == ENEMY::PATTERN_1)
+	{
+		for (int i = 0; i < (sizeof(iRandArr) / 4); ++i)
+		{
+			iRandArr[i] = i + 1;
+		}
+
+		for (int i = 0; i < 60; ++i)
+		{
+			int iRandPos = rand() % 12;
+			int temp = iRandArr[iRandPos];
+			iRandArr[iRandPos] = iRandArr[iRandPos + 1];
+			iRandArr[iRandPos + 1] = temp;
+		}
+
+		for (auto obj : pMonlist)
+		{
+			//0~19 * 50 950				
+			if (!static_cast<CMonster*>(obj)->GetIsSpawn())
+			{
+				static_cast<CMonster*>(obj)->SetSpawn();
+				obj->setPos((70.f * iRandArr[k]), 50.f);
+
+				//static_cast<CMonster*>(obj)->LateUpdate();
+			}
+			++k;
+			if (k >= 5)
+				break;
+		}		
+	}
+	//CObj* pBullet = CObjMgr::getInstance()->ObjPooling(OBJ::MONSTER, CObjMgr::getInstance()->getPlayer());
+	//pBullet->setPos(iRandPos * 50.f, 50.f);
+}
+
+void CStageScene::PlayTime(HDC _hDC)
+{
 	if (m_dwPlayTime + 10 < GetTickCount())
 	{
 		++m_iControlTime;
@@ -76,43 +125,4 @@ void CStageScene::Render(HDC _hDC)
 
 		m_dwPlayTime = GetTickCount();
 	}
-}
-
-void CStageScene::Release()
-{
-	m_ObjMgr->SceneObjectRemove(SCENE::STAGE1);
-}
-
-void CStageScene::MonPattern(ENEMY::PATTERN _pattern)
-{
-	list<CObj*> pMonlist = m_ObjMgr->getInstance()->getList(OBJ::MONSTER);
-
-	int iRandArr[13] = {};
-	int k = 0;
-
-	for (int i = 0; i < (sizeof(iRandArr)/4); ++i)
-	{
-		iRandArr[i] = i+1;
-	}
-
-	for (int i = 0; i < 60; ++i)
-	{
-		int iRandPos = rand() % 12;
-		int temp = iRandArr[iRandPos];
-		iRandArr[iRandPos] = iRandArr[iRandPos + 1];
-		iRandArr[iRandPos + 1] = temp;
-	}
-
-	for (auto obj : pMonlist)
-	{
-		//0~19 * 50 950		
-
-		if (!static_cast<CMonster*>(obj)->GetIsSpawn())
-		{
-			static_cast<CMonster*>(obj)->SetSpawn();
-			obj->setPos((70.f * iRandArr[k]), 50.f);
-		}
-	}
-	//CObj* pBullet = CObjMgr::getInstance()->ObjPooling(OBJ::MONSTER, CObjMgr::getInstance()->getPlayer());
-	//pBullet->setPos(iRandPos * 50.f, 50.f);
 }
