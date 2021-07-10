@@ -14,6 +14,9 @@ protected:
 	bool m_bDead;
 	CObj* m_pTarget;
 	SCENE::TAG m_eScene;
+
+	int m_iMaxHp;
+	int m_iCurrentHp;
 public:
 	CObj();
 	virtual ~CObj();

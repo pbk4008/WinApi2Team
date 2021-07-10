@@ -17,6 +17,13 @@ public:
 	virtual void LateUpdate() override;
 	virtual void Render(HDC _hDC) override;
 	virtual void Release() override;
+
+private:
+	CObj* Create_Bullet();
+
+
+private:
+	list<CObj*>* m_pBullet;
 };
 
 #endif

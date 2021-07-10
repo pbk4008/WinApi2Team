@@ -1,6 +1,8 @@
 #include"framework.h"
 #include "Player.h"
 
+#include "PlayerBullet.h"
+
 CPlayer::CPlayer()
 {
 }
@@ -30,39 +32,95 @@ int CPlayer::Update()
 	if (m_bDead)
 		return EVENT::DEAD;
 
-	if(GetAsyncKeyState(VK_LEFT) & 0x8000) // TODO HJ : 措阿急老锭 风飘2 加档 贸府 & keyMgr 积己
+	if(GetAsyncKeyState(VK_LEFT) & 0x8000) // TODO HJ : keyMgr 积己
 	{
-		m_tInfo.fX -= m_fSpeed;
+		if (GetAsyncKeyState(VK_UP) & 0x8000)
+		{
+			m_tInfo.fX -= m_fSpeed / sqrtf(2.f);
+			m_tInfo.fY -= m_fSpeed / sqrtf(2.f);
+		}
+
+		else if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+		{
+			m_tInfo.fX -= m_fSpeed / sqrtf(2.f);
+			m_tInfo.fY += m_fSpeed / sqrtf(2.f);
+		}
+		else
+			m_tInfo.fX -= m_fSpeed;
 	}
 
-	if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
+	else if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
 	{
-		m_tInfo.fX += m_fSpeed;
+		if (GetAsyncKeyState(VK_UP) & 0x8000)
+		{
+			m_tInfo.fX += m_fSpeed / sqrtf(2.f);
+			m_tInfo.fY -= m_fSpeed / sqrtf(2.f);
+		}
+
+		else if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+		{
+			m_tInfo.fX += m_fSpeed / sqrtf(2.f);
+			m_tInfo.fY += m_fSpeed / sqrtf(2.f);
+		}
+		else
+			m_tInfo.fX += m_fSpeed;
 	}
 
-	if (GetAsyncKeyState(VK_UP) & 0x8000)
+	else if (GetAsyncKeyState(VK_UP) & 0x8000)
 	{
 		m_tInfo.fY -= m_fSpeed;
 	}
 	
-	if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+	else if (GetAsyncKeyState(VK_DOWN) & 0x8000)
 	{
 		m_tInfo.fY += m_fSpeed;
 	}
-	
+
+	if (GetAsyncKeyState(VK_SPACE) & 0x8000)
+	{
+		CObjMgr::getInstance()->AddObject(OBJ::BULLET, Create_Bullet());
+	}
+
+	RectUpdate();
 	return EVENT::NOEVENT;
 }
 
 void CPlayer::LateUpdate()
 {
-	RectUpdate();
+	if( 0 >= m_tRect.left)
+	{
+		m_tInfo.fX -= m_tRect.left;
+	}
+
+	if (WINCX <= m_tRect.right)
+	{
+		m_tInfo.fX -= m_tRect.right - WINCX;
+	}
+
+	if (0 >= m_tRect.top)
+	{
+		m_tInfo.fY -= m_tRect.top;
+	}
+	
+	if (WINCY <= m_tRect.bottom)
+	{
+		m_tInfo.fY -= m_tRect.bottom - WINCY;
+	}
 }
 
 void CPlayer::Render(HDC _hDC)
 {
-	Rectangle(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	RectUpdate();
+	Ellipse(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 }
 
 void CPlayer::Release()
 {
+}
+
+CObj* CPlayer::Create_Bullet()
+{
+	
+	return CAbstractFactory<CPlayerBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
+	
 }
