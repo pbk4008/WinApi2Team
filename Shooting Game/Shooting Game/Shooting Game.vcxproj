@@ -149,7 +149,11 @@
     <ClInclude Include="Boss.h" />
     <ClInclude Include="BossBullet.h" />
     <ClInclude Include="Button.h" />
+<<<<<<< HEAD
     <ClInclude Include="KeyMgr.h" />
+=======
+    <ClInclude Include="HpBar.h" />
+>>>>>>> cb29629bb709bcc44cd475271c899daa0745df32
     <ClInclude Include="MonBullet.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="CollisionMgr.h" />
@@ -183,7 +187,11 @@
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="BossBullet.cpp" />
     <ClCompile Include="Button.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="KeyMgr.cpp" />
+=======
+    <ClCompile Include="HpBar.cpp" />
+>>>>>>> cb29629bb709bcc44cd475271c899daa0745df32
     <ClCompile Include="MonBullet.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />

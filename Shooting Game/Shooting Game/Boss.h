@@ -12,14 +12,13 @@ protected:
     BOSS::STAGE m_eType;
     DWORD m_dwCurTime;
     DWORD m_dwPatternTime;
-    int m_iMaxHp;
-    int m_iCurrentHp;
 public:
     CBoss();
     virtual ~CBoss();
 public:
     inline BOSS::STAGE getStage() { return m_eType; }
     inline BOSS::PATTERN getPattern() { return m_eCurPattern; }
+    inline float getRatio() { return (float)m_iCurrentHp / (float)m_iMaxHp; }
 
 };
 #endif

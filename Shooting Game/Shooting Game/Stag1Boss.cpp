@@ -1,6 +1,7 @@
 #include "framework.h"
 #include "Stag1Boss.h"
 #include "BossBullet.h"
+#include "HpBar.h"
 
 CStag1Boss::CStag1Boss() :m_bulletDelayTime(0)
 {
@@ -17,6 +18,7 @@ void CStag1Boss::Initialize()
 	m_tInfo.iCY = 200;
 	m_iMaxHp = 100;
 	m_iCurrentHp = m_iMaxHp;
+
 	m_fSpeed = 5.f;
 	m_eNextPattern = BOSS::PATTERN_1;
 	m_ePausePattern = BOSS::BASIC;
@@ -27,6 +29,7 @@ void CStag1Boss::Initialize()
 
 void CStag1Boss::LateInit()
 {
+	CObjMgr::getInstance()->AddObject(OBJ::HPBAR, CAbstractFactory<CHpBar>::CreateObj());
 }
 
 int CStag1Boss::Update()
@@ -36,11 +39,18 @@ int CStag1Boss::Update()
 	setPattern();
 	RunPattern();
 
+	if (m_pCollisionTarget)
+	{
+		m_iCurrentHp -= m_pCollisionTarget->getAtk();
+		m_pCollisionTarget->setDead(true);
+		m_pCollisionTarget = nullptr;
+	}
 	return EVENT::NOEVENT;
 }
-
 void CStag1Boss::LateUpdate()
 {
+	if (m_iCurrentHp <= 0)
+   		m_bDead = true;
 	RectUpdate();
 	if (m_tRect.left <= 0 || m_tRect.right >= WINCX)
 		m_fSpeed *= -1;

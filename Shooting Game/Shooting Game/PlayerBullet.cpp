@@ -14,7 +14,7 @@ void CPlayerBullet::Initialize()
 {
 	m_tInfo.iCX = 30;
 	m_tInfo.iCY = 30;
-
+	m_iAtk = 1;
 	m_fSpeed = 10.f;
 }
 
@@ -38,7 +38,10 @@ int CPlayerBullet::Update()
 void CPlayerBullet::LateUpdate()
 {
 	RectUpdate();
+<<<<<<< HEAD
 	
+=======
+>>>>>>> cb29629bb709bcc44cd475271c899daa0745df32
 	if(m_tRect.left <= 0 || m_tRect.top <= 0 || m_tRect.right >= WINCX || m_tRect.bottom >= WINCY)
 	{
 		m_bDead = true;

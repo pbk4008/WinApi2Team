@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿  MonBullet.cpp
   Monster.cpp
 C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\Monster.cpp(135,40): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
@@ -9,3 +10,7 @@ C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\Monster.cpp(135,28
 ﻿  Player.cpp
   Shooting Game.vcxproj -> C:\heejeong\gitHub\team_Project\first\Shooting Game\Debug\Shooting Game.exe
 >>>>>>> HJBranch
+=======
+﻿  StageScene.cpp
+  Shooting Game.vcxproj -> C:\Users\pbk40\Desktop\Shooting Game\Shooting Game\Debug\Shooting Game.exe
+>>>>>>> cb29629bb709bcc44cd475271c899daa0745df32

@@ -90,6 +90,7 @@ int CPlayer::Update()
 			CObjMgr::getInstance()->AddObject(OBJ::BULLET, Create_Bullet());
 		}
 
+<<<<<<< HEAD
 		
 		if (CKeyMgr::Get_Instance()->Key_Pressing('S') && m_shieldCount <= 35)
 		{
@@ -119,13 +120,36 @@ int CPlayer::Update()
 	}
 
 
+=======
+	if (GetAsyncKeyState(VK_SPACE) & 0x8000)
+	{ 
+		CObjMgr::getInstance()->AddObject(OBJ::BULLET, Create_Bullet());
+	}
+
+	
+>>>>>>> cb29629bb709bcc44cd475271c899daa0745df32
 	return EVENT::NOEVENT;
 }
 
 void CPlayer::LateUpdate()
 {
+<<<<<<< HEAD
 	
 	if(0 == m_iCurrentHp)
+=======
+	RectUpdate();
+	if( 0 >= m_tRect.left)
+	{
+		m_tInfo.fX -= m_tRect.left;
+	}
+
+	if (WINCX <= m_tRect.right)
+	{
+		m_tInfo.fX -= m_tRect.right - WINCX;
+	}
+
+	if (0 >= m_tRect.top)
+>>>>>>> cb29629bb709bcc44cd475271c899daa0745df32
 	{
 		m_bDead = true;
 	}
@@ -170,9 +194,7 @@ void CPlayer::Release()
 
 CObj* CPlayer::Create_Bullet()
 {
-	
 	return CAbstractFactory<CPlayerBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
-	
 }
 
 void CPlayer::Create_Shield()

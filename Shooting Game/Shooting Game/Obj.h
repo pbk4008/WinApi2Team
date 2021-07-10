@@ -17,6 +17,7 @@ protected:
 
 	int m_iMaxHp;
 	int m_iCurrentHp;
+	int m_iAtk;
 public:
 	CObj();
 	virtual ~CObj();
@@ -46,7 +47,12 @@ public:
 	inline CObj* getTarget() { return m_pTarget; }
 	inline const INFO getInfo()const { return m_tInfo; }
 	inline float getAngle() { return m_fAngle; }
+<<<<<<< HEAD
 	inline int Get_Hp() { return m_iCurrentHp; }
+=======
+	inline int getAtk() { return m_iAtk; }
+	inline int getHp() { return m_iCurrentHp; }
+>>>>>>> cb29629bb709bcc44cd475271c899daa0745df32
 };
 #endif
 
