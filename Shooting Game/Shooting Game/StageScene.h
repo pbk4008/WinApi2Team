@@ -17,6 +17,7 @@ public:
     virtual void Release() override;
 
 public: void MonPattern(ENEMY::PATTERN _pattern);
+public: void PlayTime(HDC _hDC);
 
 private: int m_iPlayTime;
 private: int m_iControlTime;

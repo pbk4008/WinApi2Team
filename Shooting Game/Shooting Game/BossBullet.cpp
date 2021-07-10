@@ -65,11 +65,8 @@ int CBossBullet::Update()
 			if (m_bSplitCheck)
 			{
 				m_bSplitCheck = false;
-				Split(200);
-				Split(230);
-				Split(270);
-				Split(300);
-				Split(330);
+				for (int i = 0; i < 5; i++)
+					Split(216+(i*30));
 			}
 		}
 		else
@@ -79,6 +76,12 @@ int CBossBullet::Update()
 		}
 		break;
 	case BOSS::PATTERN_3:
+		m_tInfo.iCX = 80;
+		m_tInfo.iCY = 80;
+		m_fSpeed = 3.f;
+		m_fAngle = CMathMgr::getAngle(CObjMgr::getInstance()->getPlayer(), this);
+		m_tInfo.fX += cosf(m_fAngle) * m_fSpeed;
+		m_tInfo.fY -= sinf(m_fAngle) * m_fSpeed;
 		break;
 	}
 	return EVENT::NOEVENT;
@@ -89,7 +92,10 @@ void CBossBullet::LateUpdate()
 	if (!m_bDead)
 	{
 		RectUpdate();
-		if (m_tRect.bottom >= WINCY)
+		if (m_tRect.left <= 0
+			||m_tRect.right>=WINCX
+			||m_tRect.top<=0
+			||m_tRect.bottom>=WINCY)
 			m_bDead = true;
 	}
 }
@@ -119,7 +125,7 @@ void CBossBullet::Split(float _Angle)
 		pBullet->setAngle(_Angle);
 		pBullet->setPos(m_tInfo.fX, m_tInfo.fY);
 		dynamic_cast<CBossBullet*>(pBullet)->setSizeCheck(false);
-		dynamic_cast<CBossBullet*>(pBullet)->setPattern(dynamic_cast<CBoss*>(m_pTarget)->getPattern());
+		dynamic_cast<CBossBullet*>(pBullet)->setPattern(BOSS::PATTERN_2);
 		pBullet->LateInit();
 	}
 }

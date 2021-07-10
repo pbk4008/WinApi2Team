@@ -7,6 +7,7 @@ CMonster::CMonster() : m_eType(ENEMY::TYPE_END), m_bIsSpawn(false)
 
 CMonster::~CMonster()
 {
+	Release();
 }
 
 void CMonster::Initialize()
