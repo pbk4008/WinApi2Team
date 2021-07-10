@@ -31,12 +31,14 @@ int CPlayerBullet::Update()
 
 	m_tInfo.fY -= m_fSpeed;
 	
-	RectUpdate();
+	
 	return EVENT::NOEVENT;
 }
 
 void CPlayerBullet::LateUpdate()
 {
+	RectUpdate();
+	
 	if(m_tRect.left <= 0 || m_tRect.top <= 0 || m_tRect.right >= WINCX || m_tRect.bottom >= WINCY)
 	{
 		m_bDead = true;
