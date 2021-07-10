@@ -141,6 +141,7 @@ CObj* CObjMgr::ObjPooling(OBJ::ID _eID,CObj* _pTarget)
 		{
 			if (pObj == _pTarget)
 				continue;
+
 			pObj->setDead(false);
 			if(!_pTarget)
 			
