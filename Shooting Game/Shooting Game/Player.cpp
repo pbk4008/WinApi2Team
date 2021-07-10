@@ -1,10 +1,12 @@
 #include"framework.h"
 #include "Player.h"
 
+#include "HomingBullet.h"
 #include "PlayerBullet.h"
+#include "ScrewBullet.h"
 #include "Shield.h"
 
-CPlayer::CPlayer() : m_shieldCount(0)
+CPlayer::CPlayer() : m_shieldCount(0) , dwTime(GetTickCount())
 {
 }
 
@@ -85,9 +87,10 @@ int CPlayer::Update()
 			m_tInfo.fY += m_fSpeed;
 		}
 
-		if (CKeyMgr::Get_Instance()->Key_Pressing(VK_SPACE))
+		if (CKeyMgr::Get_Instance()->Key_Pressing(VK_SPACE) && dwTime + 50 <= GetTickCount())
 		{
 			CObjMgr::getInstance()->AddObject(OBJ::BULLET, Create_Bullet());
+			dwTime = GetTickCount();
 		}
 
 		
@@ -106,6 +109,19 @@ int CPlayer::Update()
 			}
 			m_shieldCount = 0;
 		}
+
+
+		if(CKeyMgr::Get_Instance()->Key_Pressing('A'))
+		{
+			CObjMgr::getInstance()->AddObject(OBJ::SCREWBULLET, Create_ScrewBullet());
+		}
+
+
+		if (CKeyMgr::Get_Instance()->Key_Pressing('D'))
+		{
+			CObjMgr::getInstance()->AddObject(OBJ::HOMINGBULLET, Create_HomingBullet());
+		}
+
 
 		if (m_pCollisionTarget)
 		{
@@ -173,6 +189,16 @@ CObj* CPlayer::Create_Bullet()
 	
 	return CAbstractFactory<CPlayerBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
 	
+}
+
+CObj* CPlayer::Create_ScrewBullet()
+{
+	return CAbstractFactory<CScrewBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
+}
+
+CObj* CPlayer::Create_HomingBullet()
+{
+	return CAbstractFactory<CHomingBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
 }
 
 void CPlayer::Create_Shield()

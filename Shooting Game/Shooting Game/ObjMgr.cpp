@@ -168,3 +168,32 @@ CObj* CObjMgr::DeadCheck(OBJ::ID _eID)
 	}
 	return nullptr;
 }
+
+CObj* CObjMgr::getTarget(OBJ::ID _eID, CObj* _pObj)
+{
+	if(m_ObjList[_eID].empty())
+	{
+		return nullptr;
+	}
+
+	CObj* pTarget = nullptr;
+	float fDis = 0.f;
+
+	for(auto& pDst : m_ObjList[_eID])
+	{
+		float fX = pDst->getInfo().fX - _pObj->getInfo().fX;
+		float fY = pDst->getInfo().fY - _pObj->getInfo().fY;
+		float fDia = sqrtf(fX * fX + fY * fY);
+
+		if(fDis >= fDia || !pTarget)
+		{
+			pTarget = pDst;
+			fDis = fDia;
+		}
+	}
+
+	return pTarget;
+
+
+	
+}

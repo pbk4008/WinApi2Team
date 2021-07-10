@@ -20,12 +20,15 @@ public:
 
 private:
 	CObj* Create_Bullet();
+	CObj* Create_ScrewBullet();
+	CObj* Create_HomingBullet();
 	void Create_Shield();
 
 
 private:
 	list<CObj*>* m_pBullet;
 	int m_shieldCount;
+	DWORD dwTime;
 };
 
 #endif

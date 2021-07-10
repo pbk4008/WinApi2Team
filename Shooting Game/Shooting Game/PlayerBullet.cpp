@@ -12,8 +12,8 @@ CPlayerBullet::~CPlayerBullet()
 
 void CPlayerBullet::Initialize()
 {
-	m_tInfo.iCX = 30;
-	m_tInfo.iCY = 30;
+	m_tInfo.iCX = 20;
+	m_tInfo.iCY = 20;
 
 	m_fSpeed = 10.f;
 }

@@ -65,6 +65,12 @@
     <ClCompile Include="KeyMgr.cpp">
       <Filter>97.Manager\04.KeyMgr</Filter>
     </ClCompile>
+    <ClCompile Include="ScrewBullet.cpp">
+      <Filter>01.Obj\05.Bullet\00.PlayerBullet\01.ScrewBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="HomingBullet.cpp">
+      <Filter>01.Obj\05.Bullet\00.PlayerBullet\02.HomingBullet</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
@@ -162,6 +168,12 @@
     <ClInclude Include="KeyMgr.h">
       <Filter>97.Manager\04.KeyMgr</Filter>
     </ClInclude>
+    <ClInclude Include="ScrewBullet.h">
+      <Filter>01.Obj\05.Bullet\00.PlayerBullet\01.ScrewBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="HomingBullet.h">
+      <Filter>01.Obj\05.Bullet\00.PlayerBullet\02.HomingBullet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Shooting Game.ico">
@@ -246,6 +258,12 @@
     </Filter>
     <Filter Include="97.Manager\04.KeyMgr">
       <UniqueIdentifier>{1bff623f-937e-4320-9f95-27e706b91b0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\05.Bullet\00.PlayerBullet\01.ScrewBullet">
+      <UniqueIdentifier>{d669adf5-4b3b-4c7c-88a6-8f89622185a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\05.Bullet\00.PlayerBullet\02.HomingBullet">
+      <UniqueIdentifier>{cc2c11a8-9171-44b9-babf-490e47827cc0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
