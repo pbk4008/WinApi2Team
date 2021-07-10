@@ -1,17 +1,48 @@
 <<<<<<< HEAD
+﻿  Boss.cpp
+  BossBullet.cpp
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\BossBullet.cpp(69,15): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Button.cpp
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\Button.cpp(47,38): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\Button.cpp(47,26): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  CollisionMgr.cpp
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\CollisionMgr.cpp(49,19): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\CollisionMgr.cpp(61,14): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\CollisionMgr.cpp(62,14): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  MainGame.cpp
+  MathMgr.cpp
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\MathMgr.cpp(27,15): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  MonBullet.cpp
+  Monster.cpp
+  Mouse.cpp
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\Mouse.cpp(17,16): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\Mouse.cpp(18,16): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Obj.cpp
+  ObjMgr.cpp
+  Player.cpp
+  Scene.cpp
+  SceneMgr.cpp
+  Shooting Game.cpp
+  Stag1Boss.cpp
+=======
+<<<<<<< HEAD
 ﻿  Player.cpp
   Shooting Game.vcxproj -> C:\heejeong\gitHub\team_Project\first\Shooting Game\Debug\Shooting Game.exe
 =======
 <<<<<<< HEAD
 ﻿  ObjMgr.cpp
+>>>>>>> fff4e07e067a11e8d091768184cd96951d61ef9d
   StageScene.cpp
-C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\StageScene.cpp(24,80): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  StartScene.cpp
   코드를 생성하고 있습니다...
 C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\ObjMgr.cpp(153): warning C4715: 'CObjMgr::ObjPooling': 모든 제어 경로에서 값을 반환하지는 않습니다.
   Shooting Game.vcxproj -> C:\Users\User\Desktop\TeamProject\Shooting Game\Debug\Shooting Game.exe
+<<<<<<< HEAD
+=======
 =======
 ﻿  BossBullet.cpp
 C:\Users\pbk40\Desktop\Shooting Game\Shooting Game\Shooting Game\BossBullet.cpp(69,15): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Shooting Game.vcxproj -> C:\Users\pbk40\Desktop\Shooting Game\Shooting Game\Debug\Shooting Game.exe
 >>>>>>> a0226edd0b3f80f842cb434c1f61d5d39577beec
 >>>>>>> 7f12aaaaa38066ff2cd7e91c9b3dc32c4a97defb
+>>>>>>> fff4e07e067a11e8d091768184cd96951d61ef9d
