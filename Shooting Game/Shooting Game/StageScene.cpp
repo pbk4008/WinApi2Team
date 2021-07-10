@@ -54,6 +54,8 @@ void CStageScene::LateUpdate()
 
 void CStageScene::Render(HDC _hDC)
 {
+	HBRUSH hBrush = CreateSolidBrush(RGB)
+	Rectangle(_hDC, 0, 0, WINCX, WINCY);
 	m_ObjMgr->Render(_hDC);
 	TCHAR szText[32] = {};
 	swprintf_s(szText, L"Bullet : %d", CObjMgr::getInstance()->getList(OBJ::BOSSBULLET).size());

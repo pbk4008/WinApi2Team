@@ -17,6 +17,9 @@ public:
     virtual void Release() override;
 private:
     CObj* CreateButton(BUTTON::NAME _eName, float _x, float _y);
+
+protected:
+    virtual void CreateBackGround(HDC _hDC) override;
 };
 #endif
 

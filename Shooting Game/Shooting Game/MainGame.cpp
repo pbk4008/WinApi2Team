@@ -14,7 +14,10 @@ CMainGame::~CMainGame()
 void CMainGame::Initialize()
 {
 	m_hDC = GetDC(g_hWnd);
-	
+	m_MemDC = CreateCompatibleDC(m_hDC);
+	m_hBitMap = CreateCompatibleBitmap(m_hDC,WINCX,WINCY);
+	m_hOldBitMap = (HBITMAP)SelectObject(m_MemDC,m_hBitMap);
+
 	srand(unsigned(time(NULL)));
 
 	if (!m_pSceneMgr)
@@ -37,11 +40,19 @@ void CMainGame::LateUpdate()
 }
 void CMainGame::Render()
 {
-	Rectangle(m_hDC,0, 0, WINCX, WINCY);
-	m_pSceneMgr->Render(m_hDC);
+	Rectangle(m_MemDC,0, 0, WINCX, WINCY);
+	m_pSceneMgr->Render(m_MemDC);
+	BitBlt(m_hDC, 0, 0, WINCX, WINCY, m_MemDC, 0, 0, SRCCOPY);
 }
 
 void CMainGame::Release()
 {
+	CSceneMgr::getInstance()->DestroyInstance();
+	CObjMgr::getInstance()->DestroyInstance();
+
+	SelectObject(m_MemDC, m_hOldBitMap);
+	DeleteObject(m_hOldBitMap);
+	DeleteDC(m_MemDC);
+
 	ReleaseDC(g_hWnd, m_hDC);
 }

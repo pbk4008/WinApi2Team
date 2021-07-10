@@ -145,6 +145,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AbstracFactory.h" />
+    <ClInclude Include="BackGround.h" />
     <ClInclude Include="Boss.h" />
     <ClInclude Include="BossBullet.h" />
     <ClInclude Include="Button.h" />
@@ -174,6 +175,7 @@
     <ClInclude Include="Typedef.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BackGround.cpp" />
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="BossBullet.cpp" />
     <ClCompile Include="Button.cpp" />

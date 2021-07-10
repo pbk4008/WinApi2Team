@@ -50,6 +50,9 @@
     <ClCompile Include="StageScene.cpp">
       <Filter>02.Scene\01.StageScene</Filter>
     </ClCompile>
+    <ClCompile Include="BackGround.cpp">
+      <Filter>01.Obj\06.BackGround</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
@@ -132,6 +135,9 @@
     <ClInclude Include="Typedef.h">
       <Filter>98.Include</Filter>
     </ClInclude>
+    <ClInclude Include="BackGround.h">
+      <Filter>01.Obj\06.BackGround</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="small.ico">
@@ -201,6 +207,9 @@
     </Filter>
     <Filter Include="02.Scene\01.StageScene">
       <UniqueIdentifier>{a7ce59d0-66d3-4e16-b498-e16c25d45c46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\06.BackGround">
+      <UniqueIdentifier>{ed8ea2e0-73db-4e11-a8e2-292ed8e163cd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

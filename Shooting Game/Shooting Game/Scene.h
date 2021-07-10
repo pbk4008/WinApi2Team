@@ -19,6 +19,8 @@ public:
 	virtual void Release()PURE;
 public:
 	inline void setTag(SCENE::TAG _eTag) { m_eTag = _eTag; }
+protected:
+	virtual void CreateBackGround(HDC _hDC) PURE;
 };
 #endif
 

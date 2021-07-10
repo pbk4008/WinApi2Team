@@ -4,5 +4,6 @@
 class CObj;
 class CScene;
 typedef list<CObj*> OBJLIST;
+typedef list<POINT*> POSLIST;
 typedef vector<CScene*> SCENEVEC;
 #endif 

@@ -46,6 +46,7 @@ void CStartScene::LateUpdate()
 
 void CStartScene::Render(HDC _hDC)
 {
+	CreateBackGround(_hDC);
 	m_ObjMgr->Render(_hDC);
 }
 
@@ -59,4 +60,13 @@ CObj* CStartScene::CreateButton(BUTTON::NAME _eName,float _x, float _y)
 	CObj* pObj = CAbstractFactory<CButton>::CreateObj(_x, _y);
 	dynamic_cast<CButton*>(pObj)->setName(_eName);
 	return pObj;
+}
+
+void CStartScene::CreateBackGround(HDC _hDC)
+{
+	HBRUSH hBrush = (HBRUSH)CreateSolidBrush(RGB(0, 191, 255));
+	HBRUSH hObj = (HBRUSH)SelectObject(_hDC, hBrush);
+	Rectangle(_hDC, 0, 0, WINCX, WINCY);
+	SelectObject(_hDC, hObj);
+	DeleteObject(hBrush);
 }
