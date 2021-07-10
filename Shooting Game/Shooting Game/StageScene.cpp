@@ -17,11 +17,11 @@ CStageScene::~CStageScene()
 void CStageScene::Initialize()
 {
 	m_ObjMgr = CObjMgr::getInstance();
-	m_ObjMgr->AddObject(OBJ::BOSS, CAbstractFactory<CStag1Boss>::CreateObj(100, 200));
+	//m_ObjMgr->AddObject(OBJ::BOSS, CAbstractFactory<CStag1Boss>::CreateObj(100, 200));
 	m_ObjMgr->AddObject(OBJ::PLAYER, CAbstractFactory<CPlayer>::CreateObj((float)WINCX/2, 500.f));
 	for (int i = 0; i < 20; ++i)
 	{
-		m_ObjMgr->AddObject(OBJ::MONSTER, CAbstractFactory<CMonster>::CreateObj(1200 + i * 50, 600));
+		m_ObjMgr->AddObject(OBJ::MONSTER, CAbstractFactory<CMonster>::CreateObj(0 , -600));
 	}
 }
 
@@ -94,10 +94,13 @@ void CStageScene::MonPattern(ENEMY::PATTERN _pattern)
 			{
 				static_cast<CMonster*>(obj)->SetSpawn();
 				obj->setPos((70.f * iRandArr[k]), 50.f);
-				static_cast<CMonster*>(obj)->LateUpdate();
+
+				//static_cast<CMonster*>(obj)->LateUpdate();
 			}
 			++k;
-		}
+			if (k >= 5)
+				break;
+		}		
 	}
 	//CObj* pBullet = CObjMgr::getInstance()->ObjPooling(OBJ::MONSTER, CObjMgr::getInstance()->getPlayer());
 	//pBullet->setPos(iRandPos * 50.f, 50.f);
