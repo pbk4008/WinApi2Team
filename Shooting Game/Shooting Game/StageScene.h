@@ -23,6 +23,10 @@ private: int m_iPlayTime;
 private: int m_iControlTime;
 private: DWORD m_dwPlayTime;
 
+
+       // CScene을(를) 통해 상속됨
+       virtual void CreateBackGround(HDC _hDC) override;
+
 };
 #endif
 
