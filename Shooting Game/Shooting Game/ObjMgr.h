@@ -27,6 +27,9 @@ public:
 	inline CObj* getPlayer() { return m_ObjList[OBJ::PLAYER].back(); }
 	inline CObj* getObj(OBJ::ID _eID) { return m_ObjList[_eID].back(); }
 	inline OBJLIST& getList(OBJ::ID _eID) { return m_ObjList[_eID]; }
+
+public:
+	CObj* getTarget(OBJ::ID _eID, CObj* _pObj);
 };
 #endif
 

@@ -17,7 +17,7 @@ CStageScene::~CStageScene()
 void CStageScene::Initialize()
 {
 	m_ObjMgr = CObjMgr::getInstance();
-	m_ObjMgr->AddObject(OBJ::BOSS, CAbstractFactory<CStag1Boss>::CreateObj(100, 200));
+	//m_ObjMgr->AddObject(OBJ::BOSS, CAbstractFactory<CStag1Boss>::CreateObj(100, 200));
 	m_ObjMgr->AddObject(OBJ::PLAYER, CAbstractFactory<CPlayer>::CreateObj((float)WINCX/2, 500.f));
 	for (int i = 0; i < 20; ++i)
 	{
@@ -51,8 +51,6 @@ void CStageScene::LateUpdate()
 	//CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::PLAYER), CObjMgr::getInstance()->getList(OBJ::BOSSBULLET));
 
 	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::SHIELD), CObjMgr::getInstance()->getList(OBJ::BOSSBULLET));
-	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::BULLET),
-		CObjMgr::getInstance()->getList(OBJ::BOSS));
 }
 
 void CStageScene::Render(HDC _hDC)
@@ -80,7 +78,6 @@ void CStageScene::Render(HDC _hDC)
 	TextOut(_hDC, 10, 50, PlayerHp, lstrlen(PlayerHp));
 
 	
-
 	PlayTime(_hDC);
 }
 
