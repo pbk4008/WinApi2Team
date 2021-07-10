@@ -51,7 +51,7 @@ void CStageScene::LateUpdate()
 
 void CStageScene::Render(HDC _hDC)
 {
-	HBRUSH hBrush = CreateSolidBrush(RGB)
+	/*HBRUSH hBrush = CreateSolidBrush(RGB)*/
 	Rectangle(_hDC, 0, 0, WINCX, WINCY);
 	m_ObjMgr->Render(_hDC);
 	TCHAR szText[32] = {};
@@ -125,4 +125,8 @@ void CStageScene::PlayTime(HDC _hDC)
 
 		m_dwPlayTime = GetTickCount();
 	}
+}
+
+void CStageScene::CreateBackGround(HDC _hDC)
+{
 }

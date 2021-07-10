@@ -1,4 +1,5 @@
 ﻿  BackGround.cpp
+<<<<<<< HEAD
 C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\BackGround.cpp(41,21): warning C4477: 'swprintf_s' : 서식 문자열 '%s'에 'wchar_t *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
 D:\VS\VC\Tools\MSVC\14.26.28801\include\xmemory(671,82): error C2440: '초기화 중': 'POINT'에서 '_Objty'(으)로 변환할 수 없습니다.
           with
@@ -65,3 +66,7 @@ C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\AbstracFactory.h(2
 C:\Users\User\Desktop\TeamProject\Shooting Game\Shooting Game\Scene.h(23): message : 'CScene::CreateBackGround' 선언을 참조하십시오.
   StageScene.cpp
   코드를 생성하고 있습니다...
+=======
+  LINK : C:\Users\pbk40\Desktop\Shooting Game\Shooting Game\Debug\Shooting Game.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
+  Shooting Game.vcxproj -> C:\Users\pbk40\Desktop\Shooting Game\Shooting Game\Debug\Shooting Game.exe
+>>>>>>> main
