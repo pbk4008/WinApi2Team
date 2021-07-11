@@ -36,7 +36,7 @@ int CMonBullet::Update()
 	if (m_pCollisionTarget)
 	{
 		//m_pCollisionTarget->setDead(true);
-		//m_pCollisionTarget = nullptr;
+		m_pCollisionTarget = nullptr;
 	}
 
 	switch (m_ePattern)
