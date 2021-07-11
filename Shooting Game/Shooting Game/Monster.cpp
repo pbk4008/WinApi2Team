@@ -68,6 +68,15 @@ int CMonster::Update()
 		m_tHitBox.bottom = m_tInfo.fY + 10;
 	}
 
+	if (m_eType == ENEMY::ENEMY_1 && m_eDir == ENEMY::LEFT)
+	{
+		m_tInfo.fX -= m_fSpeed;
+		m_tHitBox.left = m_tInfo.fX - 10;
+		m_tHitBox.right = m_tInfo.fX + 10;
+		m_tHitBox.top = m_tInfo.fY - 10;
+		m_tHitBox.bottom = m_tInfo.fY + 10;
+	}
+
 	setTarget(CObjMgr::getInstance()->getPlayer());
 
 	if (m_pTarget)

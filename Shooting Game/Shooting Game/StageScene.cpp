@@ -45,6 +45,20 @@ int CStageScene::Update()
 		++m_iPattern;
 	}
 
+	if (m_iPlayTime % 18 == 17 && m_iPattern == 3)
+	{
+		MonPattern(ENEMY::PATTERN_3);
+		m_ObjMgr->AddObject(OBJ::BOSS, CAbstractFactory<CStag1Boss>::CreateObj(100, 200));
+		m_ObjMgr->getObj(OBJ::BOSS)->LateInit();
+		++m_iPattern;
+	}
+
+	if (m_iPlayTime % 18 == 17 && m_iPattern == 4)
+	{
+
+		++m_iPattern;
+	}
+
 	return SCENE_STATE::NO;
 
 }
@@ -118,13 +132,13 @@ void CStageScene::MonPattern(ENEMY::PATTERN _pattern)
 	int k = 0;
 	int Cnt = 0;
 
-	for (int i = 0; i < 20; ++i)
+	for (int i = 0; i < 6; ++i)
 	{
 		
 		CObj* obj = m_ObjMgr->getInstance()->ObjPooling(OBJ::MONSTER);
 		if (obj == nullptr)
 		{
-			obj = CreateMonster(50.f, 50.f);
+			obj = CreateMonster(50.f, 50.f);			
 			monlist.emplace_back(obj);
 		}
 		else
@@ -169,7 +183,22 @@ void CStageScene::MonPattern(ENEMY::PATTERN _pattern)
 			static_cast<CMonster*>(obj)->SetDir(ENEMY::RIGHT);
 			if (!obj->getDead())
 			{
-				obj->setPos(100.f, 50.f);
+				obj->setPos(50.f * k, 70.f * k);
+			}
+			++k;
+			if (k >= monlist.size())
+				break;
+
+			m_dwCheckPatternTime = GetTickCount();
+		}
+		break;
+	case ENEMY::PATTERN_3:
+		for (auto obj : monlist)
+		{
+			static_cast<CMonster*>(obj)->SetDir(ENEMY::LEFT);
+			if (!obj->getDead())
+			{
+				obj->setPos(800.f , 70.f * k);
 			}
 			++k;
 			if (k >= monlist.size())
