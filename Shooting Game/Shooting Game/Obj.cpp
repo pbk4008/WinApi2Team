@@ -6,6 +6,7 @@ CObj::CObj() : m_bNotDestroy(false), m_eScene(SCENE::END)
 {
 	ZeroMemory(&m_tInfo, sizeof(m_tInfo));
 	ZeroMemory(&m_tRect, sizeof(m_tRect));
+	ZeroMemory(&m_tHitBox, sizeof(m_tHitBox));
 }
 
 CObj::~CObj()

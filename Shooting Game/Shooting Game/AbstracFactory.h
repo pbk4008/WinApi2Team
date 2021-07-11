@@ -29,7 +29,7 @@ public:
 		CObj* pObj = CreateObj();
 		pObj->Initialize();
 		pObj->setPos(_x, _y);
-		pObj->setAngle(_angle);
+		pObj->setAngle(_angle);		
 		return pObj;
 	}
 
