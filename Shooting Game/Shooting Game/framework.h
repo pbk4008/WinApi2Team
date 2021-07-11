@@ -17,6 +17,15 @@
 #include <list>
 #include <vector>
 #include <algorithm>
+#include <time.h>
+
 using namespace std;
 
 #include "Include.h"
+#include "Typedef.h"
+
+#include "MathMgr.h"
+#include "SceneMgr.h"
+#include "AbstracFactory.h"
+#include "ObjMgr.h"
+#include "KeyMgr.h"

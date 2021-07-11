@@ -19,7 +19,7 @@ public:
 	virtual void Release() override;
 
 private:
-	CObj* Create_Bullet();
+	void Create_Bullet();
 	void Create_Shield();
 
 

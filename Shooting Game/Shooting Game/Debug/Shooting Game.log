@@ -1,27 +1,27 @@
 ﻿  BackGround.cpp
   Boss.cpp
   BossBullet.cpp
-C:\Users\pbk40\Desktop\Shooting Game Main\Shooting Game\BossBullet.cpp(69,16): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\BossBullet.cpp(70,16): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Button.cpp
-C:\Users\pbk40\Desktop\Shooting Game Main\Shooting Game\Button.cpp(47,38): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\pbk40\Desktop\Shooting Game Main\Shooting Game\Button.cpp(47,26): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\Button.cpp(47,38): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\Button.cpp(47,26): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   HpBar.cpp
-C:\Users\pbk40\Desktop\Shooting Game Main\Shooting Game\HpBar.cpp(36,31): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\pbk40\Desktop\Shooting Game Main\Shooting Game\HpBar.cpp(43,55): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\HpBar.cpp(36,31): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\HpBar.cpp(43,55): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   KeyMgr.cpp
   MonBullet.cpp
   Monster.cpp
-C:\Users\pbk40\Desktop\Shooting Game Main\Shooting Game\Monster.cpp(135,40): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\pbk40\Desktop\Shooting Game Main\Shooting Game\Monster.cpp(135,28): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\Monster.cpp(135,40): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\Monster.cpp(135,28): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   CollisionMgr.cpp
-C:\Users\pbk40\Desktop\Shooting Game Main\Shooting Game\CollisionMgr.cpp(49,19): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\pbk40\Desktop\Shooting Game Main\Shooting Game\CollisionMgr.cpp(61,14): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\pbk40\Desktop\Shooting Game Main\Shooting Game\CollisionMgr.cpp(62,14): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\CollisionMgr.cpp(49,19): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\CollisionMgr.cpp(61,14): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\CollisionMgr.cpp(62,14): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   MathMgr.cpp
-C:\Users\pbk40\Desktop\Shooting Game Main\Shooting Game\MathMgr.cpp(27,15): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\MathMgr.cpp(27,15): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Mouse.cpp
-C:\Users\pbk40\Desktop\Shooting Game Main\Shooting Game\Mouse.cpp(17,16): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\pbk40\Desktop\Shooting Game Main\Shooting Game\Mouse.cpp(18,16): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\Mouse.cpp(17,16): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\Mouse.cpp(18,16): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   MainGame.cpp
   Obj.cpp
   ObjMgr.cpp
@@ -32,11 +32,10 @@ C:\Users\pbk40\Desktop\Shooting Game Main\Shooting Game\Mouse.cpp(18,16): warnin
   Shield.cpp
   Shooting Game.cpp
   코드를 생성하고 있습니다...
-C:\Users\pbk40\Desktop\Shooting Game Main\Shooting Game\ObjMgr.cpp(155): warning C4715: 'CObjMgr::ObjPooling': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\ObjMgr.cpp(155): warning C4715: 'CObjMgr::ObjPooling': 모든 제어 경로에서 값을 반환하지는 않습니다.
   컴파일하고 있습니다...
   Stag1Boss.cpp
   StageScene.cpp
   StartScene.cpp
   코드를 생성하고 있습니다...
-  LINK : C:\Users\pbk40\Desktop\Shooting Game Main\Debug\Shooting Game.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
-  Shooting Game.vcxproj -> C:\Users\pbk40\Desktop\Shooting Game Main\Debug\Shooting Game.exe
+  Shooting Game.vcxproj -> C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Debug\Shooting Game.exe

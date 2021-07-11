@@ -71,33 +71,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
-    <ClInclude Include="Include.h" />
     <ClInclude Include="Shooting Game.h">
       <Filter>99.Default</Filter>
     </ClInclude>
     <ClInclude Include="MainGame.h">
       <Filter>00.MainGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Define.h">
-      <Filter>98.Include</Filter>
-    </ClInclude>
-    <ClInclude Include="Enum.h">
-      <Filter>98.Include</Filter>
-    </ClInclude>
-    <ClInclude Include="Extern.h">
-      <Filter>98.Include</Filter>
-    </ClInclude>
-    <ClInclude Include="Function.h">
-      <Filter>98.Include</Filter>
-    </ClInclude>
-    <ClInclude Include="Typedef.h">
-      <Filter>98.Include</Filter>
-    </ClInclude>
-    <ClInclude Include="Struct.h">
-      <Filter>98.Include</Filter>
-    </ClInclude>
-    <ClInclude Include="AbstracFactory.h">
-      <Filter>98.Include</Filter>
     </ClInclude>
     <ClInclude Include="ObjMgr.h">
       <Filter>97.Manager\00.ObjMgr</Filter>
@@ -167,6 +145,12 @@
     </ClInclude>
     <ClInclude Include="HpBar.h">
       <Filter>01.Obj\02.Boss\01.HpBar</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstracFactory.h">
+      <Filter>98.Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Typedef.h">
+      <Filter>98.Include</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

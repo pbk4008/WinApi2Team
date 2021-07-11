@@ -5,6 +5,18 @@ VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Shooting Game", "Shooting Game\Shooting Game.vcxproj", "{6BC36374-629E-4277-B692-11287571D856}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphicTool", "GraphicTool\GraphicTool.vcxproj", "{E20508E4-F078-4E1D-B43A-0D1EAB25E0AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Header", "Header", "{0715FA1C-9E34-415A-8921-9FA7B920DC52}"
+	ProjectSection(SolutionItems) = preProject
+		Headers\Define.h = Headers\Define.h
+		Headers\Enum.h = Headers\Enum.h
+		Headers\Extern.h = Headers\Extern.h
+		Headers\Function.h = Headers\Function.h
+		Headers\Include.h = Headers\Include.h
+		Headers\Struct.h = Headers\Struct.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +33,14 @@ Global
 		{6BC36374-629E-4277-B692-11287571D856}.Release|x64.Build.0 = Release|x64
 		{6BC36374-629E-4277-B692-11287571D856}.Release|x86.ActiveCfg = Release|Win32
 		{6BC36374-629E-4277-B692-11287571D856}.Release|x86.Build.0 = Release|Win32
+		{E20508E4-F078-4E1D-B43A-0D1EAB25E0AE}.Debug|x64.ActiveCfg = Debug|x64
+		{E20508E4-F078-4E1D-B43A-0D1EAB25E0AE}.Debug|x64.Build.0 = Debug|x64
+		{E20508E4-F078-4E1D-B43A-0D1EAB25E0AE}.Debug|x86.ActiveCfg = Debug|Win32
+		{E20508E4-F078-4E1D-B43A-0D1EAB25E0AE}.Debug|x86.Build.0 = Debug|Win32
+		{E20508E4-F078-4E1D-B43A-0D1EAB25E0AE}.Release|x64.ActiveCfg = Release|x64
+		{E20508E4-F078-4E1D-B43A-0D1EAB25E0AE}.Release|x64.Build.0 = Release|x64
+		{E20508E4-F078-4E1D-B43A-0D1EAB25E0AE}.Release|x86.ActiveCfg = Release|Win32
+		{E20508E4-F078-4E1D-B43A-0D1EAB25E0AE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
