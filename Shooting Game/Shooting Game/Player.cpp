@@ -161,12 +161,10 @@ void CPlayer::Render(HDC _hDC)
 {
 	if(!m_bDead)
 	{
-		RectUpdate();
-		Ellipse(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
-
-		//Polyline(_hDC, m_PolygonList, m_PosList.size());
+		/*RectUpdate();
+		Ellipse(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);*/
+		Polyline(_hDC, m_PolygonList, m_PosList.size());
 	}
-
 }
 
 void CPlayer::Release()

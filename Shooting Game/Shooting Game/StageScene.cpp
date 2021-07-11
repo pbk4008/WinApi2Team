@@ -17,8 +17,6 @@ CStageScene::~CStageScene()
 void CStageScene::Initialize()
 {
 	m_ObjMgr = CObjMgr::getInstance();
-	// 스테이지 마지막에 복붙
-	//m_ObjMgr->AddObject(OBJ::BOSS, CAbstractFactory<CStag1Boss>::CreateObj(100, 200));
 	m_ObjMgr->AddObject(OBJ::PLAYER, CAbstractFactory<CPlayer>::CreateObj());
 }
 
@@ -68,7 +66,7 @@ void CStageScene::LateUpdate()
 	m_ObjMgr->LateUpdate();
 
 	//플레이어가 몬스터총알에 맞는 코드
-	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::PLAYER), CObjMgr::getInstance()->getList(OBJ::BOSSBULLET));
+	//CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::PLAYER), CObjMgr::getInstance()->getList(OBJ::BOSSBULLET));
 
 	//player가 Monster충돌 or MonsterBulle과 충돌 시 Player --HP;
 	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::MONSTER), CObjMgr::getInstance()->getList(OBJ::PLAYER));

@@ -81,6 +81,8 @@ int CBossBullet::Update()
 		m_tInfo.iCY = 80;
 		m_fSpeed = 3.f;
 		m_fAngle = CMathMgr::getAngle(CObjMgr::getInstance()->getPlayer(), this);
+		if (CObjMgr::getInstance()->getPlayer()->getInfo().fY > m_tInfo.fY)
+			m_fAngle *= -1;
 		m_tInfo.fX += cosf(m_fAngle) * m_fSpeed;
 		m_tInfo.fY -= sinf(m_fAngle) * m_fSpeed;
 		if (m_pCollisionTarget)
