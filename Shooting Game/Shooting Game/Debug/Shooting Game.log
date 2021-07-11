@@ -1,5 +1,1 @@
-﻿  StageScene.cpp
-C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\StageScene.cpp(176,11): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\StageScene.cpp(189,10): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\StageScene.cpp(204,10): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-  Shooting Game.vcxproj -> C:\Users\User\Documents\WinApi2Team\Shooting Game\Debug\Shooting Game.exe
+﻿  Shooting Game.vcxproj -> C:\Users\User\Documents\WinApi2Team\Shooting Game\Debug\Shooting Game.exe

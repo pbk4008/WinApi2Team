@@ -48,7 +48,7 @@ int CStageScene::Update()
 	if (m_iPlayTime % 18 == 17 && m_iPattern == 3)
 	{
 		MonPattern(ENEMY::PATTERN_3);
-		m_ObjMgr->AddObject(OBJ::BOSS, CAbstractFactory<CStag1Boss>::CreateObj(100, 200));
+		m_ObjMgr->AddObject(OBJ::BOSS, CAbstractFactory<CStag1Boss>::CreateObj(300, 200));
 		m_ObjMgr->getObj(OBJ::BOSS)->LateInit();
 		++m_iPattern;
 	}

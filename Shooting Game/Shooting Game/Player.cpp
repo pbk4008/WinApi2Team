@@ -29,7 +29,7 @@ void CPlayer::Initialize()
 	m_bPollingCheck = true;
 
 	LoadPoint(L"../Data/Player");
-	SetGraphicPos();
+   	SetGraphicPos();
 	SetPivot();
 	m_PolygonList = new POINT[m_PosList.size()];
 	for (int i = 0; i < m_PosList.size(); i++)
