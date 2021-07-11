@@ -70,4 +70,6 @@ void CShield::Render(HDC _hDC)
 
 void CShield::Release()
 {
+	SAFE_DELETE_ARR(m_PolygonList);
+	SAFE_DELETE_ARR(m_iPosDisArr);
 }

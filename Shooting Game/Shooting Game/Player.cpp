@@ -27,6 +27,17 @@ void CPlayer::Initialize()
 	m_iMaxHp = 3;
 	m_iCurrentHp = m_iMaxHp;
 	m_bPollingCheck = true;
+
+	LoadPoint(L"../Data/Player");
+	SetGraphicPos();
+	SetPivot();
+	m_PolygonList = new POINT[m_PosList.size()];
+	for (int i = 0; i < m_PosList.size(); i++)
+	{
+		POINT pt = { m_PosList[i]->fX,m_PosList[i]->fY };
+		m_PolygonList[i] = pt;
+	}
+	setDis();
 }
 
 void CPlayer::LateInit()
@@ -129,12 +140,7 @@ int CPlayer::Update()
 			m_pCollisionTarget->setDead(true);
 			m_pCollisionTarget = nullptr;
 		}
-
-
-	
 	}
-
-
 	return EVENT::NOEVENT;
 }
 
@@ -169,20 +175,26 @@ void CPlayer::LateUpdate()
 			m_tInfo.fY -= m_tRect.bottom - WINCY;
 		}
 	}
+	PosUpdate();
 }
 
 void CPlayer::Render(HDC _hDC)
 {
 	if(!m_bDead)
 	{
-		RectUpdate();
-		Ellipse(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+		/*RectUpdate();*/
+		//Ellipse(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+
+		
+		Polyline(_hDC, m_PolygonList, m_PosList.size());
 	}
 
 }
 
 void CPlayer::Release()
 {
+	SAFE_DELETE_ARR(m_PolygonList);
+	SAFE_DELETE_ARR(m_iPosDisArr);
 }
 
 void CPlayer::Create_Bullet()

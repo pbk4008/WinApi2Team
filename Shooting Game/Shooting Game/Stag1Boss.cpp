@@ -62,6 +62,8 @@ void CStag1Boss::Render(HDC _hDC)
 
 void CStag1Boss::Release()
 {
+	SAFE_DELETE_ARR(m_PolygonList);
+	SAFE_DELETE_ARR(m_iPosDisArr);
 }
 
 void CStag1Boss::setPattern()

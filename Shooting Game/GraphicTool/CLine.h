@@ -12,6 +12,8 @@ public:
 public:
 	void Render(HDC _hDC);
 	void Release();
+public:
+	inline const LINEINFO& getInfo()const { return m_tInfo; }
 };
 #endif
 

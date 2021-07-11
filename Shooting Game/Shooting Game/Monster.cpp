@@ -104,6 +104,8 @@ void CMonster::Render(HDC _hDC)
 
 void CMonster::Release()
 {
+	SAFE_DELETE_ARR(m_PolygonList);
+	SAFE_DELETE_ARR(m_iPosDisArr);
 }
 
 void CMonster::RendPosin(HDC _hDC)

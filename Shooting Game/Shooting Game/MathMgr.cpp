@@ -31,3 +31,31 @@ float CMathMgr::getAngle(CObj* _Dst, CObj* _Src)
 
 	return fAngle;
 }
+
+int CMathMgr::getHorizontal(POSLIST& pList)
+{
+	int iMax=0;
+	int iMin = 0;
+	for (auto pPos : pList)
+	{
+		if (pPos->fX > iMax || iMax == 0)
+			iMax = pPos->fX;
+		if (pPos->fX < iMin || iMin == 0)
+			iMin = pPos->fX;
+	}
+	return iMax-iMin;
+}
+
+int CMathMgr::getVertical(POSLIST& pList)
+{
+	int iMax = 0;
+	int iMin = 0;
+	for (auto pPos : pList)
+	{
+		if (pPos->fY > iMax || iMax == 0)
+			iMax = pPos->fY;
+		if (pPos->fY < iMin || iMin == 0)
+			iMin = pPos->fY;
+	}
+	return iMax - iMin;
+}

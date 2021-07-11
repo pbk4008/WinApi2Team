@@ -8,6 +8,8 @@ public:
 	static float getWidth(CObj* _Dst, CObj* _Src);
 	static float getHight(CObj* _Dst, CObj* _Src);
 	static float getAngle(CObj* _Dst, CObj* _Src);
+	static int getHorizontal(POSLIST& pList);
+	static int getVertical(POSLIST& pList);
 };
 #endif
 
