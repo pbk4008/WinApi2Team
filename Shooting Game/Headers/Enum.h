@@ -7,7 +7,7 @@ namespace OBJ//오브젝트 종류
 }
 namespace BUTTON//버튼 종류
 {
-	enum NAME{START,QUIT,END};
+	enum NAME{START,QUIT,REMOVE,SAVE,END};
 }
 namespace SCENE//씬 종류
 {
@@ -32,5 +32,12 @@ namespace ENEMY
 	enum TYPE { ENEMY_1, ENEMY_2, ENEMY_3, TYPE_END };
 	enum PATTERN { PATTERN_1, PATTERN_2 , PATTERN_END };
 }
-
+namespace EDIT_OBJ
+{
+	enum ID {MOUSE,BUTTON,END};
+}
+namespace EDIT_EVENT
+{
+	enum EVENT{NODRAW,REMOVE,SAVE,NOEVENT};
+}
 #endif

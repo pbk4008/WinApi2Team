@@ -16,5 +16,10 @@
 
 
 #include <list>
+#include <vector>
 #include <algorithm>
+using namespace std;
 #include "Include.h"
+
+#include "ObjMgr_Edit.h"
+#include "PosMgr_Edit.h"

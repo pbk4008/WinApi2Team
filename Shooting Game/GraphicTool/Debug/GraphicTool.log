@@ -1,2 +1,9 @@
-﻿  MainGraphic.cpp
+﻿  PosMgr_Edit.cpp
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Headers\Function.h(9,1): warning C4150: 불완전한 형식 'CLine'에 대한 포인터를 삭제했습니다. 소멸자가 호출되지 않습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\GraphicTool\PosMgr_Edit.h(4): message : 'CLine' 선언을 참조하십시오.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\GraphicTool\PosMgr_Edit.cpp(20): message : 컴파일되는 함수 템플릿 인스턴스화 'void Safe_Delete<CLine*>(T &)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=CLine *
+          ]
   GraphicTool.vcxproj -> C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Debug\GraphicTool.exe

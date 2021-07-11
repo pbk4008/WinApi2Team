@@ -24,7 +24,6 @@ private:
 	void Create_Bullet();
 	void Create_Shield();
 
-
 private:
 	list<CObj*>* m_pBullet;
 	int m_shieldCount;
