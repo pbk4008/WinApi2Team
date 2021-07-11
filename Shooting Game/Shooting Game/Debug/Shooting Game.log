@@ -1,9 +1,4 @@
-﻿  BackGround.cpp
-  Player.cpp
-  PlayerBullet.cpp
-  ScrewBullet.cpp
-  StageScene.cpp
-  StartScene.cpp
-  코드를 생성하고 있습니다...
-  LINK : C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Debug\Shooting Game.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
-  Shooting Game.vcxproj -> C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Debug\Shooting Game.exe
+﻿  Monster.cpp
+C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(165,41): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(165,29): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Shooting Game.vcxproj -> C:\Users\User\Documents\WinApi2Team\Shooting Game\Debug\Shooting Game.exe
