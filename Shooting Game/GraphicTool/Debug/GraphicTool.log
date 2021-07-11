@@ -1,4 +1,16 @@
-﻿  PosMgr_Edit.cpp
+﻿  Button_Edit.cpp
+  CLine.cpp
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\GraphicTool\CLine.cpp(21,47): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\GraphicTool\CLine.cpp(21,29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\GraphicTool\CLine.cpp(22,46): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\GraphicTool\CLine.cpp(22,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  GraphicTool.cpp
+  KeyMgr.cpp
+  MainGraphic.cpp
+  Mouse_Edit.cpp
+  ObjMgr_Edit.cpp
+  Obj_Edit.cpp
+  PosMgr_Edit.cpp
 C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Headers\Function.h(9,1): warning C4150: 불완전한 형식 'CLine'에 대한 포인터를 삭제했습니다. 소멸자가 호출되지 않습니다.
 C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\GraphicTool\PosMgr_Edit.h(4): message : 'CLine' 선언을 참조하십시오.
 C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\GraphicTool\PosMgr_Edit.cpp(20): message : 컴파일되는 함수 템플릿 인스턴스화 'void Safe_Delete<CLine*>(T &)'에 대한 참조를 확인하세요.
@@ -6,4 +18,6 @@ C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\GraphicTool\PosMgr_Edit.cpp(20
           [
               T=CLine *
           ]
+  코드를 생성하고 있습니다...
+  LINK : C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Debug\GraphicTool.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
   GraphicTool.vcxproj -> C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Debug\GraphicTool.exe
