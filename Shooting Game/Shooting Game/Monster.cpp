@@ -4,7 +4,8 @@
 
 CMonster::CMonster() : m_eType(ENEMY::TYPE_END), m_bIsSpawn(false), m_fPosinDis(0.f), m_eCurPattern(ENEMY::PATTERN_END), m_ePattern(ENEMY::PATTERN_END)
 	, m_bulletDelayTime(0)
-{
+{	
+	ZeroMemory(&m_tHitBox, sizeof(m_tHitBox));
 	ZeroMemory(&m_tPosin, sizeof(m_tPosin));
 }
 
@@ -15,8 +16,6 @@ CMonster::~CMonster()
 
 void CMonster::Initialize()
 {
-	m_bDead = true;
-
 	m_tInfo.iCX = 60;
 	m_tInfo.iCY = 60;
 
@@ -41,7 +40,6 @@ void CMonster::Initialize()
 
 void CMonster::LateInit()
 {	
-
 }
 
 int CMonster::Update()
@@ -51,12 +49,17 @@ int CMonster::Update()
 
 	if (m_pCollisionTarget)
 	{
-		m_pCollisionTarget->setDead(true);
+		//m_pCollisionTarget->setDead(true);
+		m_pCollisionTarget = nullptr;
 	}
 
 	if (m_eType == ENEMY::ENEMY_1)
 	{
 		m_tInfo.fY += m_fSpeed;
+		m_tHitBox.left = m_tInfo.fX - 10;
+		m_tHitBox.right = m_tInfo.fX + 10;
+		m_tHitBox.top = m_tInfo.fY - 10;
+		m_tHitBox.bottom = m_tInfo.fY + 10;
 	}	
 
 	setTarget(CObjMgr::getInstance()->getPlayer());
@@ -103,9 +106,7 @@ void CMonster::Render(HDC _hDC)
 		return;
 
 	if (m_eType == ENEMY::ENEMY_1)
-	{
-		
-
+	{	
 		MoveToEx(_hDC, m_tRect.left, m_tRect.top, nullptr);
 		LineTo(_hDC, m_tRect.right, m_tRect.top);
 		LineTo(_hDC, (m_tRect.right - m_tRect.left) / 2 + m_tRect.left, m_tRect.bottom);
@@ -116,7 +117,11 @@ void CMonster::Render(HDC _hDC)
 			RendPosin(_hDC);
 		}
 
-		Ellipse(_hDC, m_tRect.left, m_tRect.left, m_tRect.right, m_tRect.bottom);
+		Rectangle(_hDC, m_tHitBox.left, m_tHitBox.top, m_tHitBox.right, m_tHitBox.bottom);
+
+		//Rectangle(_hDC, m_tHitBox.left, m_tHitBox.top, m_tHitBox.right, m_tHitBox.bottom);
+
+		//Ellipse(_hDC, m_tRect.left, m_tRect.left, m_tRect.right, m_tRect.bottom);
 		//Rectangle(_hDC, m_tRect.left, m_tRect.left, m_tRect.right, m_tRect.bottom);
 
 		//Rectangle(_hDC, m_tPosin.x -5.f, m_tPosin.y +5.f , m_tPosin.x +5.f, m_tPosin.y + 35.f);

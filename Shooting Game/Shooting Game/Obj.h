@@ -6,6 +6,7 @@ class CObj
 protected:
 	INFO m_tInfo;
 	RECT m_tRect;
+	RECT m_tHitBox;
 	CObj* m_pCollisionTarget;
 	float m_fSpeed;
 	float m_fAngle;
@@ -39,6 +40,7 @@ public:
 	inline void setPollingCheck(bool _bPoolingCheck) { m_bPollingCheck = _bPoolingCheck; }
 	inline void setCollisionTarget(CObj* _pTarget) { m_pCollisionTarget = _pTarget; }
 	inline void setTarget(CObj* _pTarget) { m_pTarget = _pTarget; }
+	
 public:
 	inline SCENE::TAG getScene() { return m_eScene; }
 	inline bool getNotDestory() { return m_bNotDestroy; }
@@ -49,6 +51,7 @@ public:
 	inline float getAngle() { return m_fAngle; }
 	inline int getAtk() { return m_iAtk; }
 	inline int getHp() { return m_iCurrentHp; }
+	inline RECT& GetHitBox() { return m_tHitBox; }
 };
 #endif
 
