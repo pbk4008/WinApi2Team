@@ -38,6 +38,7 @@ void CPlayer::Initialize()
 		m_PolygonList[i] = pt;
 	}
 	setDis();
+	//PosUpdate();
 }
 
 void CPlayer::LateInit()
@@ -51,7 +52,6 @@ int CPlayer::Update()
 	{
 		return EVENT::DEAD;
 	}
-
 	else
 	{
 		if (CKeyMgr::Get_Instance()->Key_Pressing(VK_LEFT))
@@ -61,7 +61,6 @@ int CPlayer::Update()
 				m_tInfo.fX -= m_fSpeed / sqrtf(2.f);
 				m_tInfo.fY -= m_fSpeed / sqrtf(2.f);
 			}
-
 			else if (CKeyMgr::Get_Instance()->Key_Pressing(VK_DOWN))
 			{
 				m_tInfo.fX -= m_fSpeed / sqrtf(2.f);
@@ -70,7 +69,6 @@ int CPlayer::Update()
 			else
 				m_tInfo.fX -= m_fSpeed;
 		}
-
 		else if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT))
 		{
 			if (CKeyMgr::Get_Instance()->Key_Pressing(VK_UP))
@@ -78,7 +76,6 @@ int CPlayer::Update()
 				m_tInfo.fX += m_fSpeed / sqrtf(2.f);
 				m_tInfo.fY -= m_fSpeed / sqrtf(2.f);
 			}
-
 			else if (CKeyMgr::Get_Instance()->Key_Pressing(VK_DOWN))
 			{
 				m_tInfo.fX += m_fSpeed / sqrtf(2.f);
@@ -87,31 +84,24 @@ int CPlayer::Update()
 			else
 				m_tInfo.fX += m_fSpeed;
 		}
-
 		else if (CKeyMgr::Get_Instance()->Key_Pressing(VK_UP))
 		{
 			m_tInfo.fY -= m_fSpeed;
 		}
-
 		else if (CKeyMgr::Get_Instance()->Key_Pressing(VK_DOWN))
 		{
 			m_tInfo.fY += m_fSpeed;
 		}
-
 		if (CKeyMgr::Get_Instance()->Key_Pressing(VK_SPACE) && dwTime + 50 <= GetTickCount())
 		{
 			dwTime = GetTickCount();
 			Create_Bullet();
 		}
-
-		
 		if (CKeyMgr::Get_Instance()->Key_Pressing('S') && m_shieldCount <= 35)
 		{
 			++m_shieldCount;
-
 			Create_Shield();
 		}
-
 		if(CKeyMgr::Get_Instance()->Key_Up('S'))
 		{
 			for(auto& Shield : CObjMgr::getInstance()->getList(OBJ::SHIELD))
@@ -120,41 +110,31 @@ int CPlayer::Update()
 			}
 			m_shieldCount = 0;
 		}
-
-
 		if(CKeyMgr::Get_Instance()->Key_Pressing('A'))
 		{
 			CObjMgr::getInstance()->AddObject(OBJ::SCREWBULLET, Create_ScrewBullet());
 		}
-
-
 		if (CKeyMgr::Get_Instance()->Key_Pressing('D'))
 		{
 			CObjMgr::getInstance()->AddObject(OBJ::HOMINGBULLET, Create_HomingBullet());
 		}
-
-
 		if (m_pCollisionTarget)
 		{
 			--m_iCurrentHp;
 			m_pCollisionTarget->setDead(true);
 			m_pCollisionTarget = nullptr;
 		}
-
 	}
-
-
 	return EVENT::NOEVENT;
 }
 
 void CPlayer::LateUpdate()
 {
-	
+	PosUpdate();
 	if(0 == m_iCurrentHp)
 	{
 		m_bDead = true;
-	}
-	
+	}	
 	else
 	{
 		RectUpdate();
@@ -162,23 +142,19 @@ void CPlayer::LateUpdate()
 		{
 			m_tInfo.fX -= m_tRect.left;
 		}
-
 		if (WINCX <= m_tRect.right)
 		{
 			m_tInfo.fX -= m_tRect.right - WINCX;
 		}
-
 		if (0 >= m_tRect.top)
 		{
 			m_tInfo.fY -= m_tRect.top;
 		}
-
 		if (WINCY <= m_tRect.bottom)
 		{
 			m_tInfo.fY -= m_tRect.bottom - WINCY;
 		}
 	}
-	PosUpdate();
 }
 
 void CPlayer::Render(HDC _hDC)
