@@ -52,4 +52,6 @@ void CHpBar::Render(HDC _hDC)
 
 void CHpBar::Release()
 {
+	SAFE_DELETE_ARR(m_PolygonList);
+	SAFE_DELETE_ARR(m_iPosDisArr);
 }

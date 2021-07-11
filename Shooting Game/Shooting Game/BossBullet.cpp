@@ -126,6 +126,8 @@ void CBossBullet::Render(HDC _hDC)
 }
 void CBossBullet::Release()
 {
+	SAFE_DELETE_ARR(m_PolygonList);
+	SAFE_DELETE_ARR(m_iPosDisArr);
 }
 
 void CBossBullet::Split(float _Angle)

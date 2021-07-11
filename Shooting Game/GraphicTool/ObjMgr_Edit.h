@@ -18,9 +18,12 @@ public:
 	void Render(HDC _hDC);
 	void Release();
 public:
+	void Save_Point();
+public:
 	inline void AddObj(EDIT_OBJ::ID _eID, CObj_Edit* _pObj) { m_ObjList[_eID].emplace_back(_pObj); }
 public:
 	inline list<CObj_Edit*>* getList(EDIT_OBJ::ID _eID) { return &m_ObjList[_eID]; }
+
 };
 #endif
 

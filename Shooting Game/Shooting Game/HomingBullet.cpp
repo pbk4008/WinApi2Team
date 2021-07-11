@@ -95,6 +95,9 @@ void CHomingBullet::Render(HDC _hDC)
 
 void CHomingBullet::Release()
 {
+	SAFE_DELETE_ARR(m_PolygonList);
+	SAFE_DELETE_ARR(m_iPosDisArr);
+
 }
 
 CObj* CHomingBullet::Find_Monster()

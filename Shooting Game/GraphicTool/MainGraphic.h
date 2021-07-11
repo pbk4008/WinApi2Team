@@ -5,6 +5,9 @@ class MainGraphic
 {
 private:
 	HDC m_hDC;
+	HDC m_MemDC;
+	HBITMAP m_hBit;
+	HBITMAP m_hOldBit;
 public:
 	MainGraphic();
 	~MainGraphic();

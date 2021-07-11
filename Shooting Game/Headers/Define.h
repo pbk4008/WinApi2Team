@@ -11,6 +11,7 @@
 #define GAME_QUIT -1
 #define PI 3.14159265f
 #define SAFE_DELETE(p) if(p) {delete p; p= nullptr;}
+#define SAFE_DELETE_ARR(p) if(p) {delete[]p; p = nullptr;}
 #define DEGREE2RADIAN(angle) angle*PI/180.f
 #define RADIAN2DEGREE(radian) radian*180.f/PI
 #endif

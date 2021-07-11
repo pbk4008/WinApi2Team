@@ -35,4 +35,15 @@ typedef struct tagLineInfo
 		
 	}
 }LINEINFO;
+typedef struct tagDis
+{
+	int iCX;
+	int iCY;
+	tagDis()
+	{}
+	tagDis(int _icx, int _icy)
+		:iCX(_icx),iCY(_icy)
+	{
+	}
+}DISINFO;
 #endif

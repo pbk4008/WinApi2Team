@@ -15,6 +15,9 @@ protected:
 	bool m_bDead;
 	CObj* m_pTarget;
 	SCENE::TAG m_eScene;
+	POSLIST m_PosList;
+	POINT* m_PolygonList;
+	DISINFO* m_iPosDisArr;
 
 	int m_iMaxHp;
 	int m_iCurrentHp;
@@ -31,6 +34,11 @@ public:
 	virtual void Release() PURE;
 protected:
 	void RectUpdate();
+	void LoadPoint(const TCHAR* _str);
+	void SetGraphicPos();
+	void SetPivot();
+	void PosUpdate();
+	void setDis();
 public:
 	inline void setScene(SCENE::TAG _eTag) { m_eScene = _eTag; }
 	inline void setPos(float _x, float _y) { m_tInfo.fX = _x, m_tInfo.fY = _y; }

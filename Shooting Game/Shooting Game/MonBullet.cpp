@@ -70,4 +70,6 @@ void CMonBullet::Render(HDC _hDC)
 
 void CMonBullet::Release()
 {
+	SAFE_DELETE_ARR(m_PolygonList);
+	SAFE_DELETE_ARR(m_iPosDisArr);
 }

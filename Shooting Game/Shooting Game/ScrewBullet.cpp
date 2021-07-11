@@ -89,4 +89,6 @@ void CScrewBullet::Render(HDC _hDC)
 
 void CScrewBullet::Release()
 {
+	SAFE_DELETE_ARR(m_PolygonList);
+	SAFE_DELETE_ARR(m_iPosDisArr);
 }
