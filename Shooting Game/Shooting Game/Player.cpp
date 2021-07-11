@@ -29,7 +29,7 @@ void CPlayer::Initialize()
 	m_bPollingCheck = true;
 
 	LoadPoint(L"../Data/Player");
-	SetGraphicPos();
+   	SetGraphicPos();
 	SetPivot();
 	m_PolygonList = new POINT[m_PosList.size()];
 	for (int i = 0; i < m_PosList.size(); i++)
@@ -161,10 +161,10 @@ void CPlayer::Render(HDC _hDC)
 {
 	if(!m_bDead)
 	{
-		/*RectUpdate();
-		Ellipse(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);*/
+		RectUpdate();
+		Ellipse(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 
-		Polyline(_hDC, m_PolygonList, m_PosList.size());
+		//Polyline(_hDC, m_PolygonList, m_PosList.size());
 	}
 
 }

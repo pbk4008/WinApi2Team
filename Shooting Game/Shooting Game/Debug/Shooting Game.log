@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Player.cpp
 C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\Player.cpp(35,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
 C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\Player.cpp(37,28): warning C4838: 'float'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
@@ -5,3 +6,6 @@ C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\Player.cpp(37,28
 C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\Player.cpp(37,45): warning C4838: 'float'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
 C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\Player.cpp(37,45): warning C4244: '초기화 중': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Shooting Game.vcxproj -> C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Debug\Shooting Game.exe
+=======
+﻿  Shooting Game.vcxproj -> C:\Users\User\Documents\WinApi2Team\Shooting Game\Debug\Shooting Game.exe
+>>>>>>> 6d48960f18acf06c3826f342c9c778d5f1b178e6

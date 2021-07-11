@@ -3,7 +3,7 @@
 #include "MonBullet.h"
 
 CMonster::CMonster() : m_eType(ENEMY::TYPE_END), m_bIsSpawn(false), m_fPosinDis(0.f), m_eCurPattern(ENEMY::PATTERN_END), m_ePattern(ENEMY::PATTERN_END)
-	, m_bulletDelayTime(0)
+	, m_bulletDelayTime(0), m_eDir(ENEMY::DIR_END)
 {	
 	ZeroMemory(&m_tHitBox, sizeof(m_tHitBox));
 	ZeroMemory(&m_tPosin, sizeof(m_tPosin));
@@ -33,8 +33,6 @@ void CMonster::Initialize()
 	m_fAngle = -90.f;
 	m_pTarget = CObjMgr::getInstance()->getPlayer();
 
-	SetEnemy(ENEMY::ENEMY_1);	
-	m_eCurPattern = ENEMY::PATTERN_1;
 	SetPattern(ENEMY::PATTERN_1);
 }
 
@@ -46,21 +44,38 @@ int CMonster::Update()
 {
 	if (m_bDead)
 		return EVENT::DEAD;
-
+	
 	if (m_pCollisionTarget)
 	{
-		//m_pCollisionTarget->setDead(true);
 		m_pCollisionTarget = nullptr;
 	}
 
-	if (m_eType == ENEMY::ENEMY_1)
+	if (m_eType == ENEMY::ENEMY_1 && m_eDir == ENEMY::BOTTOM)
 	{
 		m_tInfo.fY += m_fSpeed;
 		m_tHitBox.left = m_tInfo.fX - 10;
 		m_tHitBox.right = m_tInfo.fX + 10;
 		m_tHitBox.top = m_tInfo.fY - 10;
 		m_tHitBox.bottom = m_tInfo.fY + 10;
-	}	
+	}
+
+	if (m_eType == ENEMY::ENEMY_1 && m_eDir == ENEMY::RIGHT)
+	{
+		m_tInfo.fX += m_fSpeed;
+		m_tHitBox.left = m_tInfo.fX - 10;
+		m_tHitBox.right = m_tInfo.fX + 10;
+		m_tHitBox.top = m_tInfo.fY - 10;
+		m_tHitBox.bottom = m_tInfo.fY + 10;
+	}
+
+	if (m_eType == ENEMY::ENEMY_1 && m_eDir == ENEMY::LEFT)
+	{
+		m_tInfo.fX -= m_fSpeed;
+		m_tHitBox.left = m_tInfo.fX - 10;
+		m_tHitBox.right = m_tInfo.fX + 10;
+		m_tHitBox.top = m_tInfo.fY - 10;
+		m_tHitBox.bottom = m_tInfo.fY + 10;
+	}
 
 	setTarget(CObjMgr::getInstance()->getPlayer());
 
@@ -96,8 +111,7 @@ void CMonster::LateUpdate()
 	{
 		m_bDead = true;	
 		setPos(m_tInfo.fX, 1200);
-	}
-	
+	}	
 }
 
 void CMonster::Render(HDC _hDC)
@@ -112,23 +126,12 @@ void CMonster::Render(HDC _hDC)
 		LineTo(_hDC, (m_tRect.right - m_tRect.left) / 2 + m_tRect.left, m_tRect.bottom);
 		LineTo(_hDC, m_tRect.left, m_tRect.top);		
 		
-		if (m_bIsSpawn)
-		{
-			RendPosin(_hDC);
-		}
+		RendPosin(_hDC);
 
 		Rectangle(_hDC, m_tHitBox.left, m_tHitBox.top, m_tHitBox.right, m_tHitBox.bottom);
-
-		//Rectangle(_hDC, m_tHitBox.left, m_tHitBox.top, m_tHitBox.right, m_tHitBox.bottom);
-
-		//Ellipse(_hDC, m_tRect.left, m_tRect.left, m_tRect.right, m_tRect.bottom);
-		//Rectangle(_hDC, m_tRect.left, m_tRect.left, m_tRect.right, m_tRect.bottom);
-
-		//Rectangle(_hDC, m_tPosin.x -5.f, m_tPosin.y +5.f , m_tPosin.x +5.f, m_tPosin.y + 35.f);
 	}
 	else if (m_eType == ENEMY::ENEMY_2)
 	{
-		//Rectangle(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 		MoveToEx(_hDC, m_tRect.left, m_tRect.top, nullptr);
 		LineTo(_hDC, m_tRect.right, m_tRect.top);
 		LineTo(_hDC, (m_tRect.right - m_tRect.left) / 2 + m_tRect.left, m_tRect.bottom);
@@ -142,6 +145,13 @@ void CMonster::Release()
 {
 	SAFE_DELETE_ARR(m_PolygonList);
 	SAFE_DELETE_ARR(m_iPosDisArr);
+}
+
+inline void CMonster::SetPattern(ENEMY::PATTERN _pattern)
+{
+	SetEnemy(ENEMY::ENEMY_1);
+	m_eCurPattern = _pattern;
+	m_ePattern = _pattern;
 }
 
 void CMonster::RendPosin(HDC _hDC)
@@ -166,13 +176,12 @@ void CMonster::PlayPattern(ENEMY::PATTERN _type)
 	switch (m_eCurPattern)
 	{
 	case ENEMY::PATTERN_1:
-		//m_tInfo.fX += m_fSpeed;
 		if (m_bulletDelayTime + 1000 <= GetTickCount())
 		{
 			m_bulletDelayTime = GetTickCount();
-			if(m_bIsSpawn)
-				CreateMonBullet(m_tPosin.x, m_tPosin.y);
+			CreateMonBullet(m_tPosin.x, m_tPosin.y);
 		}
 		break;
 	}
 }
+

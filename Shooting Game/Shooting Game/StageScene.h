@@ -25,6 +25,7 @@ private: int m_iPlayTime;
 private: int m_iControlTime;
 private: DWORD m_dwPlayTime;
 private: int m_iPattern;
+private: DWORD m_dwCheckPatternTime;
 
 
        // CScene을(를) 통해 상속됨
