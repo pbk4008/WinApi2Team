@@ -47,14 +47,22 @@ void CStageScene::LateUpdate()
 {
 	m_ObjMgr->LateUpdate();
 
+	//플레이어가 몬스터총알에 맞는 코드
 	//CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::PLAYER), CObjMgr::getInstance()->getList(OBJ::BOSSBULLET));
-	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::MONSTER), CObjMgr::getInstance()->getList(OBJ::HOMINGBULLET));
 
-	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::SHIELD), CObjMgr::getInstance()->getList(OBJ::BOSSBULLET));
+	//보스랑 몬스터 총알 실드로 막는 코드 
+	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::SHIELD), CObjMgr::getInstance()->getList(OBJ::BOSSBULLET)); //보스불렛
+	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::SHIELD), CObjMgr::getInstance()->getList(OBJ::MONBULLET)); //monster불렛
+
+	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::MONSTER), CObjMgr::getInstance()->getList(OBJ::BULLET)); //monster랑 플레이어총알이랑
+	
 	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::BULLET),
-		CObjMgr::getInstance()->getList(OBJ::BOSS));
+		CObjMgr::getInstance()->getList(OBJ::BOSS)); //보스
 	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::BULLET),
-		CObjMgr::getInstance()->getList(OBJ::BOSSBULLET));
+		CObjMgr::getInstance()->getList(OBJ::BOSSBULLET)); //3단계 패턴에서 적용됨
+	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::MONSTER), CObjMgr::getInstance()->getList(OBJ::HOMINGBULLET));
+	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::MONSTER), CObjMgr::getInstance()->getList(OBJ::SCREWBULLET));
+	
 }
 
 void CStageScene::Render(HDC _hDC)

@@ -130,8 +130,6 @@ int CPlayer::Update()
 			m_pCollisionTarget = nullptr;
 		}
 
-
-	
 	}
 
 

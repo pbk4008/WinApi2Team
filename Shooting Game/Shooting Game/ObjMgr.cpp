@@ -182,6 +182,11 @@ CObj* CObjMgr::getTarget(OBJ::ID _eID, CObj* _pObj)
 
 	for(auto& pDst : m_ObjList[_eID])
 	{
+		//if(pDst->getDead())
+		//{
+		//	return nullptr;
+		//}
+		
 		float fX = pDst->getInfo().fX - _pObj->getInfo().fX;
 		float fY = pDst->getInfo().fY - _pObj->getInfo().fY;
 		float fDia = sqrtf(fX * fX + fY * fY);

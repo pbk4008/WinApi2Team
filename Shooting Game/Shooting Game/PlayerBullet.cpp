@@ -31,6 +31,12 @@ int CPlayerBullet::Update()
 	}
 	else
 		m_tInfo.fY -= m_fSpeed;
+
+	if (m_pCollisionTarget)
+	{
+		m_pCollisionTarget->setDead(true);
+		m_pCollisionTarget = nullptr;
+	}
 	
 	return EVENT::NOEVENT;
 }

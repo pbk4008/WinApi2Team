@@ -55,6 +55,12 @@ int CScrewBullet::Update()
 
 		m_fAngle -= m_fSpeed;
 
+		if(m_pCollisionTarget)
+		{
+			m_pCollisionTarget->setDead(true);
+			m_pCollisionTarget = nullptr;
+		}
+
 		RectUpdate();
 	}
 
@@ -64,12 +70,16 @@ int CScrewBullet::Update()
 
 void CScrewBullet::LateUpdate()
 {
-	RectUpdate();
-
-	if (m_tRect.left <= 0 || m_tRect.top <= 0 || m_tRect.right >= WINCX || m_tRect.bottom >= WINCY)
+	if(!m_bDead)
 	{
-		m_bDead = true;
+		RectUpdate();
+
+		if (m_tRect.left <= 0 || m_tRect.top <= 0 || m_tRect.right >= WINCX || m_tRect.bottom >= WINCY)
+		{
+			m_bDead = true;
+		}
 	}
+
 }
 
 void CScrewBullet::Render(HDC _hDC)

@@ -24,10 +24,11 @@ float CMathMgr::getAngle(CObj* _Dst, CObj* _Src)
 	float fW = getWidth(_Dst, _Src);
 	float fD = getDist(_Dst, _Src);
 
-	float fAngle = acos(fW / fD);
+	float fAngle = acosf(fW / fD);
+	
 
-	if (_Dst->getInfo().fY > _Src->getInfo().fY)
-		fAngle *= -1;
+	//if (_Dst->getInfo().fY > _Src->getInfo().fY)
+	//	fAngle *= -1;
 
 	return fAngle;
 }

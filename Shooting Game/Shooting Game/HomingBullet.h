@@ -18,6 +18,9 @@ public:
 	void LateUpdate() override;
 	void Render(HDC _hDC) override;
 	void Release() override;
+
+public:
+	CObj* Find_Monster();
 };
 
 #endif
