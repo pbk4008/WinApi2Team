@@ -1,14 +1,12 @@
-<<<<<<< HEAD
-﻿  HomingBullet.cpp
-C:\heejeong\gitHub\team_Project\first\Shooting Game\Shooting Game\HomingBullet.cpp(121,14): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Shooting Game.vcxproj -> C:\heejeong\gitHub\team_Project\first\Shooting Game\Debug\Shooting Game.exe
-=======
 ﻿  Monster.cpp
-C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(59,31): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(60,32): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(61,30): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(62,33): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(172,41): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(172,29): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(56,31): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(57,32): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(58,30): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(59,33): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(65,31): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(66,32): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(67,30): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(68,33): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(171,40): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\User\Documents\WinApi2Team\Shooting Game\Shooting Game\Monster.cpp(171,28): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Shooting Game.vcxproj -> C:\Users\User\Documents\WinApi2Team\Shooting Game\Debug\Shooting Game.exe
->>>>>>> KSBranch

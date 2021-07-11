@@ -31,6 +31,7 @@ namespace ENEMY
 {
 	enum TYPE { ENEMY_1, ENEMY_2, ENEMY_3, TYPE_END };
 	enum PATTERN { PATTERN_1, PATTERN_2 , PATTERN_END };
+	enum DIR { TOP, LEFT, RIGHT, BOTTOM, DIR_END };
 }
 namespace EDIT_OBJ
 {

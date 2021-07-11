@@ -59,6 +59,7 @@ int CScrewBullet::Update()
 		{
 			m_pCollisionTarget->setDead(true);
 			m_pCollisionTarget = nullptr;
+			m_bDead = true;
 		}
 
 		RectUpdate();
