@@ -8,4 +8,31 @@ typedef struct tagInfo
 	int iCX;
 	int iCY;
 }INFO;
+typedef struct tagPos
+{
+	float fX;
+	float fY;
+	tagPos()
+	{}
+	tagPos(float _x, float _y)
+		:fX(_x), fY(_y)
+	{
+
+	}
+}POS;
+typedef struct tagLineInfo
+{
+	POS tLPos;
+	POS tRPos;
+	tagLineInfo()
+	{
+		ZeroMemory(&tLPos, sizeof(POS));
+		ZeroMemory(&tRPos, sizeof(POS));
+	}
+	tagLineInfo(POS _tLPos, POS _tRPos)
+		: tLPos(_tLPos),tRPos(_tRPos)
+	{
+		
+	}
+}LINEINFO;
 #endif

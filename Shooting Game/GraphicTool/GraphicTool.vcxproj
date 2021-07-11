@@ -140,15 +140,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Button_Edit.h" />
+    <ClInclude Include="CLine.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="GraphicTool.h" />
+    <ClInclude Include="KeyMgr.h" />
     <ClInclude Include="MainGraphic.h" />
+    <ClInclude Include="Mouse_Edit.h" />
+    <ClInclude Include="ObjMgr_Edit.h" />
+    <ClInclude Include="Obj_Edit.h" />
+    <ClInclude Include="PosMgr_Edit.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Button_Edit.cpp" />
+    <ClCompile Include="CLine.cpp" />
     <ClCompile Include="GraphicTool.cpp" />
+    <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="MainGraphic.cpp" />
+    <ClCompile Include="Mouse_Edit.cpp" />
+    <ClCompile Include="ObjMgr_Edit.cpp" />
+    <ClCompile Include="Obj_Edit.cpp" />
+    <ClCompile Include="PosMgr_Edit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GraphicTool.rc" />

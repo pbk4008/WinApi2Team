@@ -19,6 +19,30 @@
     <Filter Include="소스 파일\00.MainGraphic">
       <UniqueIdentifier>{599dc193-c430-4763-948e-30f1f403159c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\01.Obj">
+      <UniqueIdentifier>{8ee38413-c169-4fb2-9c6e-8dcd6e91bd2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\97.Manager">
+      <UniqueIdentifier>{cbb8868c-6d3c-4eb4-8a82-dd83554e75ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.Obj\00.Mouse">
+      <UniqueIdentifier>{dd3e340c-d219-406f-b710-975f12586ff8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.Obj\01.Button">
+      <UniqueIdentifier>{2ccbf580-03c2-459d-95ba-161001649d91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\97.Manager\00.ObjMgr">
+      <UniqueIdentifier>{4a04bbea-0322-46c5-be88-c460457bf6e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Line">
+      <UniqueIdentifier>{80cb40ea-b115-4d89-93c7-7d7c155a5c83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\97.Manager\01.PosMgr">
+      <UniqueIdentifier>{9bbba269-d949-46cd-8002-b9a4ae5e54a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\97.Manager\02.KeyMgr">
+      <UniqueIdentifier>{eb4fa0b6-97f6-401a-bb7f-041c592127a2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -36,6 +60,27 @@
     <ClInclude Include="MainGraphic.h">
       <Filter>소스 파일\00.MainGraphic</Filter>
     </ClInclude>
+    <ClInclude Include="Obj_Edit.h">
+      <Filter>소스 파일\01.Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse_Edit.h">
+      <Filter>소스 파일\01.Obj\00.Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMgr_Edit.h">
+      <Filter>소스 파일\97.Manager\00.ObjMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Button_Edit.h">
+      <Filter>소스 파일\01.Obj\01.Button</Filter>
+    </ClInclude>
+    <ClInclude Include="PosMgr_Edit.h">
+      <Filter>소스 파일\97.Manager\01.PosMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CLine.h">
+      <Filter>소스 파일\02.Line</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyMgr.h">
+      <Filter>소스 파일\97.Manager\02.KeyMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GraphicTool.cpp">
@@ -43,6 +88,27 @@
     </ClCompile>
     <ClCompile Include="MainGraphic.cpp">
       <Filter>소스 파일\00.MainGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="Obj_Edit.cpp">
+      <Filter>소스 파일\01.Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse_Edit.cpp">
+      <Filter>소스 파일\01.Obj\00.Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMgr_Edit.cpp">
+      <Filter>소스 파일\97.Manager\00.ObjMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Button_Edit.cpp">
+      <Filter>소스 파일\01.Obj\01.Button</Filter>
+    </ClCompile>
+    <ClCompile Include="PosMgr_Edit.cpp">
+      <Filter>소스 파일\97.Manager\01.PosMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CLine.cpp">
+      <Filter>소스 파일\02.Line</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyMgr.cpp">
+      <Filter>소스 파일\97.Manager\02.KeyMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
