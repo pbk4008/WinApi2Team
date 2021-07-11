@@ -57,11 +57,12 @@ int CBossBullet::Update()
 		if (m_bSizeCheck)
 		{
 			m_tInfo.fY += m_fSpeed;
-			if (m_dwCurTime + 500 < GetTickCount())
+			if (m_dwCurTime + 500 == GetTickCount())
 			{
-				m_bDead = true;
 				m_bSplitCheck = true;
+				m_bDead = true;
 			}
+			
 			if (m_bSplitCheck)
 			{
 				m_bSplitCheck = false;
@@ -82,6 +83,12 @@ int CBossBullet::Update()
 		m_fAngle = CMathMgr::getAngle(CObjMgr::getInstance()->getPlayer(), this);
 		m_tInfo.fX += cosf(m_fAngle) * m_fSpeed;
 		m_tInfo.fY -= sinf(m_fAngle) * m_fSpeed;
+		if (m_pCollisionTarget)
+		{
+			m_bDead = true;
+			m_pCollisionTarget->setDead(true);
+			m_pCollisionTarget = nullptr;
+		}
 		break;
 	}
 	return EVENT::NOEVENT;
@@ -105,7 +112,17 @@ void CBossBullet::LateUpdate()
 void CBossBullet::Render(HDC _hDC)
 {
 	if (!m_bDead)
+	{
+		HBRUSH hBrush;
+		if (m_ePattern == BOSS::PATTERN_3)
+			hBrush = (HBRUSH)CreateSolidBrush(RGB(0, 0, 255));
+		else
+			hBrush = (HBRUSH)CreateSolidBrush(RGB(255, 255, 255));
+		HBRUSH hObj = (HBRUSH)SelectObject(_hDC,hBrush);
 		Ellipse(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+		SelectObject(_hDC, hObj);
+		DeleteObject(hBrush);
+	}
 }
 void CBossBullet::Release()
 {

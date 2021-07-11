@@ -16,6 +16,7 @@ void CPlayerBullet::Initialize()
 	m_tInfo.iCY = 20;
 	m_iAtk = 1;
 	m_fSpeed = 10.f;
+	m_bPollingCheck = true;
 }
 
 void CPlayerBullet::LateInit()
@@ -28,25 +29,28 @@ int CPlayerBullet::Update()
 	{
 		return EVENT::DEAD;
 	}
-
-	m_tInfo.fY -= m_fSpeed;
-	
+	else
+		m_tInfo.fY -= m_fSpeed;
 	
 	return EVENT::NOEVENT;
 }
 
 void CPlayerBullet::LateUpdate()
 {
-	RectUpdate();
-	if(m_tRect.left <= 0 || m_tRect.top <= 0 || m_tRect.right >= WINCX || m_tRect.bottom >= WINCY)
+	if (!m_bDead)
 	{
-		m_bDead = true;
+		RectUpdate();
+		if (m_tRect.left <= 0 || m_tRect.top <= 0 || m_tRect.right >= WINCX || m_tRect.bottom >= WINCY)
+		{
+			m_bDead = true;
+		}
 	}
 }
 
 void CPlayerBullet::Render(HDC _hDC)
 {
-	Ellipse(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	if(!m_bDead)
+		Ellipse(_hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 }
 
 void CPlayerBullet::Release()

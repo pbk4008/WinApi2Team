@@ -92,7 +92,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>framework.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>../BK;../HJ;../KS;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Headers;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -157,12 +157,7 @@
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="MathMgr.h" />
     <ClInclude Include="Mouse.h" />
-    <ClInclude Include="Define.h" />
-    <ClInclude Include="Enum.h" />
-    <ClInclude Include="Extern.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="Function.h" />
-    <ClInclude Include="Include.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="Obj.h" />
     <ClInclude Include="ObjMgr.h" />
@@ -177,7 +172,6 @@
     <ClInclude Include="Stag1Boss.h" />
     <ClInclude Include="StageScene.h" />
     <ClInclude Include="StartScene.h" />
-    <ClInclude Include="Struct.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Typedef.h" />
   </ItemGroup>

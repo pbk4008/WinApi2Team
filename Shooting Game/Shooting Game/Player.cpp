@@ -89,8 +89,8 @@ int CPlayer::Update()
 
 		if (CKeyMgr::Get_Instance()->Key_Pressing(VK_SPACE) && dwTime + 50 <= GetTickCount())
 		{
-			CObjMgr::getInstance()->AddObject(OBJ::BULLET, Create_Bullet());
 			dwTime = GetTickCount();
+			Create_Bullet();
 		}
 
 		
@@ -185,10 +185,20 @@ void CPlayer::Release()
 {
 }
 
-CObj* CPlayer::Create_Bullet()
+void CPlayer::Create_Bullet()
 {
-	
-	return CAbstractFactory<CPlayerBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
+	CObj* pObj = nullptr;
+	pObj = CObjMgr::getInstance()->ObjPooling(OBJ::BULLET, this);
+	if (!pObj)
+	{
+		pObj = CAbstractFactory<CPlayerBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
+		pObj->LateInit();
+		CObjMgr::getInstance()->getList(OBJ::BULLET).emplace_back(pObj);
+	}
+	else
+	{
+		pObj->setAngle(0);
+	};
 	
 }
 
@@ -204,7 +214,6 @@ CObj* CPlayer::Create_HomingBullet()
 
 void CPlayer::Create_Shield()
 {
-	//return CAbstractFactory<CShield>::CreateObj(this);
 	CObj* pObj = nullptr;
 	pObj = CObjMgr::getInstance()->ObjPooling(OBJ::SHIELD, this);
 	if (!pObj)

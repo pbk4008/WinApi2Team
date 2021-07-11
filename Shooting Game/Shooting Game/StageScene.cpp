@@ -51,6 +51,10 @@ void CStageScene::LateUpdate()
 	//CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::PLAYER), CObjMgr::getInstance()->getList(OBJ::BOSSBULLET));
 
 	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::SHIELD), CObjMgr::getInstance()->getList(OBJ::BOSSBULLET));
+	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::BULLET),
+		CObjMgr::getInstance()->getList(OBJ::BOSS));
+	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::BULLET),
+		CObjMgr::getInstance()->getList(OBJ::BOSSBULLET));
 }
 
 void CStageScene::Render(HDC _hDC)
