@@ -15,13 +15,24 @@ CMonster::~CMonster()
 
 void CMonster::Initialize()
 {
+	m_bDead = true;
+
 	m_tInfo.iCX = 60;
 	m_tInfo.iCY = 60;
+
+	m_bPollingCheck = true;
+
+	if (!m_bIsSpawn)
+	{
+		m_tInfo.fX = -50.f;
+		m_tInfo.fY = -50.f;
+	}
 
 	m_fPosinDis = 50.f;
 	m_fSpeed = 3.f;
 
 	m_fAngle = -90.f;
+	m_pTarget = CObjMgr::getInstance()->getPlayer();
 
 	SetEnemy(ENEMY::ENEMY_1);	
 	m_eCurPattern = ENEMY::PATTERN_1;
@@ -29,7 +40,7 @@ void CMonster::Initialize()
 }
 
 void CMonster::LateInit()
-{
+{	
 
 }
 
@@ -37,6 +48,11 @@ int CMonster::Update()
 {
 	if (m_bDead)
 		return EVENT::DEAD;
+
+	if (m_pCollisionTarget)
+	{
+		m_pCollisionTarget->setDead(true);
+	}
 
 	if (m_eType == ENEMY::ENEMY_1)
 	{
@@ -58,35 +74,50 @@ int CMonster::Update()
 			m_fAngle *= -1.f;
 	}
 
-	m_tPosin.x = (LONG)(m_tInfo.fX + cosf(m_fAngle * PI / 180.f) * m_fPosinDis);
-	m_tPosin.y = (LONG)(m_tInfo.fY - sinf(m_fAngle * PI / 180.f) * m_fPosinDis);
-	
-
-	PlayPattern(ENEMY::PATTERN_1);	
-	
+	PlayPattern(ENEMY::PATTERN_1);
 	return EVENT::NOEVENT;
 }
 
 void CMonster::LateUpdate()
 {
+	m_tPosin.x = (LONG)(m_tInfo.fX + cosf(m_fAngle * PI / 180.f) * m_fPosinDis);
+	m_tPosin.y = (LONG)(m_tInfo.fY - sinf(m_fAngle * PI / 180.f) * m_fPosinDis);
+
+	setAngle(m_fAngle);
+
 	RectUpdate();
-	if (m_tRect.left <= 0 || m_tRect.right >= WINCX)
-		m_fSpeed *= -1;
+	if (m_tRect.left <= 0
+		|| m_tRect.right >= WINCX
+		|| m_tRect.top <= 0
+		|| m_tRect.bottom >= WINCY)
+	{
+		m_bDead = true;	
+		setPos(m_tInfo.fX, 1200);
+	}
+	
 }
 
 void CMonster::Render(HDC _hDC)
 {	
+	if (m_bDead)
+		return;
+
 	if (m_eType == ENEMY::ENEMY_1)
 	{
+		
+
 		MoveToEx(_hDC, m_tRect.left, m_tRect.top, nullptr);
 		LineTo(_hDC, m_tRect.right, m_tRect.top);
 		LineTo(_hDC, (m_tRect.right - m_tRect.left) / 2 + m_tRect.left, m_tRect.bottom);
-		LineTo(_hDC, m_tRect.left, m_tRect.top);
-
+		LineTo(_hDC, m_tRect.left, m_tRect.top);		
+		
 		if (m_bIsSpawn)
 		{
 			RendPosin(_hDC);
 		}
+
+		Ellipse(_hDC, m_tRect.left, m_tRect.left, m_tRect.right, m_tRect.bottom);
+		//Rectangle(_hDC, m_tRect.left, m_tRect.left, m_tRect.right, m_tRect.bottom);
 
 		//Rectangle(_hDC, m_tPosin.x -5.f, m_tPosin.y +5.f , m_tPosin.x +5.f, m_tPosin.y + 35.f);
 	}
@@ -118,7 +149,7 @@ void CMonster::CreateMonBullet(float _x, float _y)
 	pObj = CObjMgr::getInstance()->ObjPooling(OBJ::MONBULLET, this);
 	if (!pObj)
 	{
-		pObj = CAbstractFactory<CMonBullet>::CreateObj(_x, _y);
+		pObj = CAbstractFactory<CMonBullet>::CreateObj(_x, _y, m_fAngle);
 		CObjMgr::getInstance()->getList(OBJ::MONBULLET).emplace_back(pObj);
 	}
 }
@@ -132,7 +163,8 @@ void CMonster::PlayPattern(ENEMY::PATTERN _type)
 		if (m_bulletDelayTime + 1000 <= GetTickCount())
 		{
 			m_bulletDelayTime = GetTickCount();
-			CreateMonBullet(m_tPosin.x, m_tPosin.y);
+			if(m_bIsSpawn)
+				CreateMonBullet(m_tPosin.x, m_tPosin.y);
 		}
 		break;
 	}

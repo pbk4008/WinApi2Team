@@ -131,6 +131,8 @@ void CObjMgr::SceneObjectRemove(SCENE::TAG _eTag)
 	}
 }
 
+
+// 아 배열에 [MONSTER] 에 Create monster가 들어있어야겠구나.
 CObj* CObjMgr::ObjPooling(OBJ::ID _eID,CObj* _pTarget)
 {
 	if (m_ObjList[_eID].empty())

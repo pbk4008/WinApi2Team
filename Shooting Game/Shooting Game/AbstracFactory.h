@@ -19,9 +19,20 @@ public:
 	static CObj* CreateObj(float _x, float _y)
 	{
 		CObj* pObj = CreateObj();
+		pObj->Initialize();
 		pObj->setPos(_x, _y);
 		return pObj;
 	}
+
+	static CObj* CreateObj(float _x, float _y, float _angle)
+	{
+		CObj* pObj = CreateObj();
+		pObj->Initialize();
+		pObj->setPos(_x, _y);
+		pObj->setAngle(_angle);
+		return pObj;
+	}
+
 	static CObj* CreateObj(CObj* _pTarget)
 	{
 		CObj* pObj = CreateObj();

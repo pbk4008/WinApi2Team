@@ -17,11 +17,14 @@ public:
     virtual void Release() override;
 
 public: void MonPattern(ENEMY::PATTERN _pattern);
-public: void PlayTime(HDC _hDC);
+public: void PlayTime();
+public: CObj* CreateMonster();
+public: CObj* CreateMonster(float _x, float _y);
 
 private: int m_iPlayTime;
 private: int m_iControlTime;
 private: DWORD m_dwPlayTime;
+private: int m_iPattern;
 
 
        // CScene을(를) 통해 상속됨

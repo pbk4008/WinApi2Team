@@ -29,11 +29,18 @@ void CMonBullet::LateInit()
 int CMonBullet::Update()
 {
 	if (!m_pTarget || m_bDead)
+	{
 		return EVENT::DEAD;
+		if (m_pCollisionTarget)
+		{
+			m_pCollisionTarget->setDead(true);
+		}
+	}
 	switch (m_ePattern)
 	{
 	case ENEMY::PATTERN_1:
-		m_tInfo.fY += m_fSpeed;
+		m_tInfo.fX = (LONG)(m_tInfo.fX + cosf(m_fAngle * PI / 180.f) * m_fSpeed);
+		m_tInfo.fY = (LONG)(m_tInfo.fY - sinf(m_fAngle * PI / 180.f) * m_fSpeed);
 		break;
 	}
 	return EVENT::NOEVENT;
