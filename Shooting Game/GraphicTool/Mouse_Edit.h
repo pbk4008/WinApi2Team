@@ -9,6 +9,8 @@ class CMouse_Edit :
 private:
     RECT m_tBoard;
     bool m_bDrawCheck;
+    bool m_bDrawFirstCheck;
+    POS m_tPos[2];
 public:
     CMouse_Edit();
     virtual ~CMouse_Edit();
@@ -19,8 +21,10 @@ public:
     virtual void Release() override;
 private:
     bool moveCheck();
+    void Draw();
 public:
     inline void setBoard(RECT _Board) { m_tBoard = _Board; }
+
 
 };
 #endif

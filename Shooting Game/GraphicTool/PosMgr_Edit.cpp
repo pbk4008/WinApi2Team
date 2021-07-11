@@ -1,5 +1,6 @@
 #include "framework.h"
 #include "PosMgr_Edit.h"
+#include "CLine.h"
 
 CPosMgr_Edit* CPosMgr_Edit::m_pInstance = nullptr;
 CPosMgr_Edit::CPosMgr_Edit()
@@ -11,8 +12,12 @@ CPosMgr_Edit::~CPosMgr_Edit()
 	Release();
 }
 
-void CPosMgr_Edit::Render()
+void CPosMgr_Edit::Render(HDC _hDC)
 {
+	for (auto pLine : m_PosList)
+	{
+		pLine->Render(_hDC);
+	}
 }
 
 void CPosMgr_Edit::Release()

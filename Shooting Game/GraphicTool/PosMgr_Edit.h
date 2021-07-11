@@ -11,7 +11,7 @@ private:
 	CPosMgr_Edit();
 	~CPosMgr_Edit();
 public:
-	void Render();
+	void Render(HDC _hDC);
 	void Release();
 public:
 	static CPosMgr_Edit* getInstance();

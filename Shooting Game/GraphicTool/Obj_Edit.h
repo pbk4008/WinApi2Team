@@ -6,6 +6,7 @@ class CObj_Edit
 protected:
 	INFO m_tInfo;
 	RECT m_tRect;
+	CObj_Edit* m_pCollisonTarget;
 public:
 	CObj_Edit();
 	virtual ~CObj_Edit();
@@ -16,6 +17,10 @@ public:
 	virtual void Release()PURE;
 protected:
 	void RectUpdate();
+public:
+	inline void setCollisionTarget(CObj_Edit* _pObj) { m_pCollisonTarget = _pObj; }
+public:
+	inline const INFO& getInfo() const { return m_tInfo; }
 };
 #endif
 

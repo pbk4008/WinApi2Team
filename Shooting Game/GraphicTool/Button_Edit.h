@@ -21,6 +21,8 @@ private:
     inline void setName(BUTTON::NAME _eName) { m_Button = _eName; }
 public:
     inline void setPos(float _x, float _y) { m_tInfo.fX=_x; m_tInfo.fY=_y; }
+public:
+    inline BUTTON::NAME getName() { return m_Button; }
     
 };
 #endif

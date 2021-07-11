@@ -1,8 +1,11 @@
 #include "framework.h"
 #include "Mouse_Edit.h"
+#include "Button_Edit.h"
+#include "CLine.h"
 
-CMouse_Edit::CMouse_Edit() : m_bDrawCheck(false)
+CMouse_Edit::CMouse_Edit() : m_bDrawCheck(false), m_bDrawFirstCheck(false)
 {
+	ZeroMemory(&m_tPos, sizeof(POS));
 }
 
 CMouse_Edit::~CMouse_Edit()
@@ -26,13 +29,28 @@ int CMouse_Edit::Update()
 	m_tInfo.fY = (float)pt.y;
 
 	RectUpdate();
-	if (m_bDrawCheck=moveCheck())
-		return EDIT_EVENT::NODRAW;
-
-	if (m_bDrawCheck)
+	if (m_bDrawCheck = moveCheck())
 	{
-
+		if (m_pCollisonTarget)
+		{
+			if (!CCollisionMgr::RectCheck(this, m_pCollisonTarget))
+			{
+				m_pCollisonTarget = nullptr;
+				return EDIT_EVENT::NODRAW;
+			}
+			if (CKeyMgr::Get_Instance()->Key_Down(VK_LBUTTON))
+			{
+				switch (dynamic_cast<CButton_Edit*>(m_pCollisonTarget)->getName())
+				{
+				case BUTTON::REMOVE:
+					return EDIT_EVENT::REMOVE;
+				case BUTTON::SAVE:
+					return EDIT_EVENT::SAVE;
+				}
+			}
+		}
 	}
+	Draw();
 
 	return EDIT_EVENT::NOEVENT;
 }
@@ -57,4 +75,29 @@ bool CMouse_Edit::moveCheck()
 		return true;
 	}
 	return false;
+}
+
+void CMouse_Edit::Draw()
+{
+	if (!m_bDrawCheck)
+	{
+		if (CKeyMgr::Get_Instance()->Key_Down(VK_LBUTTON))
+		{
+			if (!m_bDrawFirstCheck)
+			{
+				m_tPos[0] = { m_tInfo.fX, m_tInfo.fY };
+				m_bDrawFirstCheck = true;
+			}
+			else
+			{
+				m_tPos[1] = { m_tInfo.fX, m_tInfo.fY };
+				CPosMgr_Edit::getInstance()->AddPos(new CLine(m_tPos[0], m_tPos[1]));
+				memcpy(&m_tPos[0], &m_tPos[1], sizeof(POS));
+			}
+		}
+		if (CKeyMgr::Get_Instance()->Key_Down(VK_RBUTTON))
+		{
+			m_bDrawFirstCheck = false;
+		}
+	}
 }

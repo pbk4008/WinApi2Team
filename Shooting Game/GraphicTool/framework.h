@@ -23,3 +23,6 @@ using namespace std;
 
 #include "ObjMgr_Edit.h"
 #include "PosMgr_Edit.h"
+#include "KeyMgr.h"
+#include "MathMgr.h"
+#include "CollisionMgr.h"

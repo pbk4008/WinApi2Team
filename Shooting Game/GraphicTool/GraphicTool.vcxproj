@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClInclude Include="Button_Edit.h" />
     <ClInclude Include="CLine.h" />
+    <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="GraphicTool.h" />
     <ClInclude Include="KeyMgr.h" />
@@ -156,9 +157,11 @@
   <ItemGroup>
     <ClCompile Include="Button_Edit.cpp" />
     <ClCompile Include="CLine.cpp" />
+    <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="GraphicTool.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="MainGraphic.cpp" />
+    <ClCompile Include="MathMgr.cpp" />
     <ClCompile Include="Mouse_Edit.cpp" />
     <ClCompile Include="ObjMgr_Edit.cpp" />
     <ClCompile Include="Obj_Edit.cpp" />

@@ -36,6 +36,8 @@ void MainGraphic::Initialize()
 void MainGraphic::Update()
 {
 	CObjMgr_Edit::getInstance()->Update();
+
+	CCollisionMgr::CollisionRect(*CObjMgr_Edit::getInstance()->getList(EDIT_OBJ::MOUSE), *CObjMgr_Edit::getInstance()->getList(EDIT_OBJ::BUTTON));
 }
 
 void MainGraphic::Render()
@@ -43,6 +45,7 @@ void MainGraphic::Render()
 	Rectangle(m_hDC,0, 0, EDITWINCX, EDITWINCY);
 	Rectangle(m_hDC,300, 100, 700, 500);
 	CObjMgr_Edit::getInstance()->Render(m_hDC);
+	CPosMgr_Edit::getInstance()->Render(m_hDC);
 }
 
 void MainGraphic::Release()

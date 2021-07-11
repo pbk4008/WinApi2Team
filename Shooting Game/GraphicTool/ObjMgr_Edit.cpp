@@ -39,6 +39,7 @@ void CObjMgr_Edit::Update()
 			case EDIT_EVENT::NOEVENT:
 				break;
 			case EDIT_EVENT::REMOVE:
+				CPosMgr_Edit::getInstance()->Release();
 				break;
 			case EDIT_EVENT::SAVE:
 				break;

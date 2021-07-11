@@ -43,6 +43,12 @@
     <Filter Include="소스 파일\97.Manager\02.KeyMgr">
       <UniqueIdentifier>{eb4fa0b6-97f6-401a-bb7f-041c592127a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\97.Manager\03.CollisionMgr">
+      <UniqueIdentifier>{0cbf82c8-08ca-43df-8c51-55af77e24c33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\97.Manager\04.MathMgr">
+      <UniqueIdentifier>{4227e88e-d871-437d-bc2d-5a045b67c771}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -81,6 +87,9 @@
     <ClInclude Include="KeyMgr.h">
       <Filter>소스 파일\97.Manager\02.KeyMgr</Filter>
     </ClInclude>
+    <ClInclude Include="CollisionMgr.h">
+      <Filter>소스 파일\97.Manager\03.CollisionMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GraphicTool.cpp">
@@ -109,6 +118,12 @@
     </ClCompile>
     <ClCompile Include="KeyMgr.cpp">
       <Filter>소스 파일\97.Manager\02.KeyMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionMgr.cpp">
+      <Filter>소스 파일\97.Manager\03.CollisionMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="MathMgr.cpp">
+      <Filter>소스 파일\97.Manager\04.MathMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 #include "framework.h"
 #include "Obj_Edit.h"
 
-CObj_Edit::CObj_Edit()
+CObj_Edit::CObj_Edit() : m_pCollisonTarget(nullptr)
 {
 	ZeroMemory(&m_tInfo, sizeof(m_tInfo));
 	ZeroMemory(&m_tRect, sizeof(m_tRect));
