@@ -5,9 +5,12 @@
 class CStageScene :
     public CScene
 {
+private:
+    bool m_bFirstCheck[4];
 public:
     CStageScene();
     virtual ~CStageScene();
+
 public:
     virtual void Initialize() override;
     virtual void LateInit() override;

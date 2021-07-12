@@ -4,9 +4,11 @@
 #include "CollisionMgr.h"
 #include "Player.h"
 #include "Monster.h"
+#include "BackGround.h"
 
 CStageScene::CStageScene() : m_iPlayTime(0), m_iControlTime(0), m_dwPlayTime(0), m_iPattern(1), m_dwCheckPatternTime(0)
-{	
+{
+	/*ZeroMemory(&m_bFirstCheck,sizeof(m_bFirstCheck));*/
 }
 
 CStageScene::~CStageScene()
@@ -18,6 +20,9 @@ void CStageScene::Initialize()
 {
 	m_ObjMgr = CObjMgr::getInstance();
 	m_ObjMgr->AddObject(OBJ::PLAYER, CAbstractFactory<CPlayer>::CreateObj());
+
+	
+
 }
 
 void CStageScene::LateInit()
@@ -27,6 +32,13 @@ void CStageScene::LateInit()
 
 int CStageScene::Update()
 {
+	
+
+
+
+
+
+
 	int iEvent=m_ObjMgr->Update();	
 
 	PlayTime();
@@ -90,8 +102,11 @@ void CStageScene::LateUpdate()
 
 void CStageScene::Render(HDC _hDC)
 {
-	/*HBRUSH hBrush = CreateSolidBrush(RGB)*/
+	HBRUSH hBrush = CreateSolidBrush(RGB(0, 191, 255));
+	HBRUSH hObj = (HBRUSH)SelectObject(_hDC, hBrush);
 	Rectangle(_hDC, 0, 0, WINCX, WINCY);
+	SelectObject(_hDC, hObj);
+	DeleteObject(hBrush);
 	m_ObjMgr->Render(_hDC);
 	TCHAR szText[32] = {};
 

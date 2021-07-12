@@ -28,6 +28,16 @@ void CStag1Boss::Initialize()
 
 void CStag1Boss::LateInit()
 {
+	LoadPoint(L"../Data/Boss");
+	SetGraphicPos();
+	SetPivot();
+	m_PolygonList = new POINT[m_PosList.size()];
+	for (int i = 0; i < m_PosList.size(); i++)
+	{
+		POINT pt = { m_PosList[i]->fX,m_PosList[i]->fY };
+		m_PolygonList[i] = pt;
+	}
+	setDis();
 	CObjMgr::getInstance()->AddObject(OBJ::HPBAR, CAbstractFactory<CHpBar>::CreateObj());
 }
 
@@ -53,11 +63,17 @@ void CStag1Boss::LateUpdate()
 	RectUpdate();
 	if (m_tRect.left <= 0 || m_tRect.right >= WINCX)
 		m_fSpeed *= -1;
+	PosUpdate();
 }
 
 void CStag1Boss::Render(HDC _hDC)
 {
-	Rectangle(_hDC, m_tRect.left, m_tRect.top,m_tRect.right, m_tRect.bottom);
+	//Rectangle(_hDC, m_tRect.left, m_tRect.top,m_tRect.right, m_tRect.bottom);
+	HBRUSH hBrush = (HBRUSH)CreateSolidBrush(RGB(251,152,146));
+	HBRUSH hObj = (HBRUSH)SelectObject(_hDC, hBrush);
+	Polygon(_hDC, m_PolygonList, m_PosList.size());
+	SelectObject(_hDC, hObj);
+	DeleteObject(hBrush);
 }
 
 void CStag1Boss::Release()
@@ -101,8 +117,8 @@ void CStag1Boss::RunPattern()
 		}
 		break;
 	case BOSS::PATTERN_1:
-		m_fBulletAngle = 0.f;
-		m_tInfo.fX = float(WINCX >> 1);
+		m_fBulletAngle = 0;
+		m_tInfo.fX += m_fSpeed;
 		if (m_bulletDelayTime + 150 <= GetTickCount())
 		{
 			m_bulletDelayTime = GetTickCount();

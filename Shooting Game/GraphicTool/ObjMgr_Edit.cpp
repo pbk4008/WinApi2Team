@@ -71,7 +71,7 @@ void CObjMgr_Edit::Release()
 
 void CObjMgr_Edit::Save_Point()
 {
-	HANDLE hFile = (HANDLE)CreateFile(L"../Data/Player", GENERIC_WRITE, 0, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
+	HANDLE hFile = (HANDLE)CreateFile(L"../Data/Bird1", GENERIC_WRITE, 0, 0, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
 
 	if (hFile == INVALID_HANDLE_VALUE)
 	{

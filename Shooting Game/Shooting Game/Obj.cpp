@@ -19,8 +19,8 @@ void CObj::setDis()
 	m_iPosDisArr = new DISINFO[m_PosList.size()];
 	for (int i = 0; i < m_PosList.size(); i++)
 	{
-		int iCX = abs(m_PolygonList[i].x - m_tInfo.fX);
-		int iCY = abs(m_PolygonList[i].y - m_tInfo.fY);
+		int iCX = m_PolygonList[i].x - m_tInfo.fX;
+		int iCY = m_PolygonList[i].y - m_tInfo.fY;
 		DISINFO argInfo = { iCX,iCY };
 		m_iPosDisArr[i] = argInfo;
 	}
@@ -102,13 +102,7 @@ void CObj::PosUpdate()
 {
 	for(int i=0; i< m_PosList.size(); i++)
 	{
-		if (m_PolygonList[i].x < m_tInfo.fX)
-			m_PolygonList[i].x = m_tInfo.fX - m_iPosDisArr[i].iCX;
-		if(m_PolygonList[i].x > m_tInfo.fX)
-			m_PolygonList[i].x = m_tInfo.fX + m_iPosDisArr[i].iCX;
-		if(m_PolygonList[i].y < m_tInfo.fY)
-			m_PolygonList[i].y = m_tInfo.fY - m_iPosDisArr[i].iCY;
-		if(m_PolygonList[i].y > m_tInfo.fY)
-			m_PolygonList[i].y = m_tInfo.fY + m_iPosDisArr[i].iCY;
+		m_PolygonList[i].x = m_tInfo.fX + m_iPosDisArr[i].iCX;
+		m_PolygonList[i].y = m_tInfo.fY + m_iPosDisArr[i].iCY;
 	}
 }
