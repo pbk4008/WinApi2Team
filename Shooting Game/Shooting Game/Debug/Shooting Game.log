@@ -1,1 +1,18 @@
-﻿  Shooting Game.vcxproj -> C:\heejeong\gitHub\team_Project\first\Shooting Game\Debug\Shooting Game.exe
+﻿  BackGround.cpp
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\BackGround.cpp(36,26): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\BackGround.cpp(40,26): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\BackGround.cpp(137,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\BackGround.cpp(139,28): warning C4838: 'float'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\BackGround.cpp(139,28): warning C4244: '초기화 중': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\BackGround.cpp(139,45): warning C4838: 'float'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\BackGround.cpp(139,45): warning C4244: '초기화 중': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  HomingBullet.cpp
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\HomingBullet.cpp(139,14): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  HpBar.cpp
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\HpBar.cpp(36,31): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Shooting Game\HpBar.cpp(43,55): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  ScrewBullet.cpp
+  StartScene.cpp
+  코드를 생성하고 있습니다...
+  LINK : C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Debug\Shooting Game.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
+  Shooting Game.vcxproj -> C:\Users\pbk40\Desktop\ShootingGame\Shooting Game\Debug\Shooting Game.exe

@@ -37,28 +37,21 @@ int CHomingBullet::Update()
 	}
 
 	else
-	{
-		list<CObj*> listMonster = CObjMgr::getInstance()->getList(OBJ::MONSTER);
-		
+	{	
 		m_pTarget = Find_Monster();
 		
 		if(!m_pTarget && !CObjMgr::getInstance()->getList(OBJ::BOSS).empty())
 		{
 			m_pTarget = CObjMgr::getInstance()->getTarget(OBJ::BOSS, this);
 		}
-		
-		
-		
-		if(!m_pTarget)
+
+		if (!m_pTarget)
 		{
 			m_fAngle = 90.f;
 		}
-
 		else
 		{
 			m_fAngle = CMathMgr::getAngle(m_pTarget, this) * 180.f / PI;
-			
-
 			if (m_pTarget->getInfo().fY >= m_tInfo.fY)
 			{
 				m_fAngle *= -1.f;
@@ -128,7 +121,6 @@ CObj* CHomingBullet::Find_Monster()
 	
 	CObj* pObj= nullptr;
 	int length = 0;
-	
 	for (auto& Monster : listMonster)
 	{
 		bool bMonDead = Monster->getDead();

@@ -6,9 +6,8 @@
 #include "Monster.h"
 #include "BackGround.h"
 
-CStageScene::CStageScene() : m_iPlayTime(0), m_iControlTime(0), m_dwPlayTime(0), m_iPattern(1), m_dwCheckPatternTime(0)
+CStageScene::CStageScene() : m_iPlayTime(0), m_iControlTime(0), m_dwPlayTime(0), m_iPattern(1), m_dwCheckPatternTime(0), m_iBackPattern(0)
 {
-	/*ZeroMemory(&m_bFirstCheck,sizeof(m_bFirstCheck));*/
 }
 
 CStageScene::~CStageScene()
@@ -20,9 +19,7 @@ void CStageScene::Initialize()
 {
 	m_ObjMgr = CObjMgr::getInstance();
 	m_ObjMgr->AddObject(OBJ::PLAYER, CAbstractFactory<CPlayer>::CreateObj());
-
-	
-
+	m_dwBackTime = GetTickCount();
 }
 
 void CStageScene::LateInit()
@@ -32,7 +29,40 @@ void CStageScene::LateInit()
 
 int CStageScene::Update()
 {
-	
+	if (m_dwBackTime + 5000 < GetTickCount())
+	{
+		m_dwBackTime = GetTickCount();
+		CObj* pBack = CAbstractFactory<CBackGround>::CreateObj();
+		dynamic_cast<CBackGround*>(pBack)->setSize(100, 100);
+		int iargX = rand() % WINCX;
+		pBack->setPos(iargX, 100);
+		switch (m_iBackPattern)
+		{
+		case 0:
+			dynamic_cast<CBackGround*>(pBack)->setSize(200, 100);
+			dynamic_cast<CBackGround*>(pBack)->setGraphic(L"../Data/Cloud");
+			dynamic_cast<CBackGround*>(pBack)->setType(OBJ::CLOUD);
+			break;
+		case 1:
+			
+			dynamic_cast<CBackGround*>(pBack)->setGraphic(L"../Data/Cloud1");
+			dynamic_cast<CBackGround*>(pBack)->setType(OBJ::CLOUD);
+			break;
+		case 3:
+			dynamic_cast<CBackGround*>(pBack)->setGraphic(L"../Data/Cloud2");
+			dynamic_cast<CBackGround*>(pBack)->setType(OBJ::CLOUD);
+		case 4:
+			dynamic_cast<CBackGround*>(pBack)->setGraphic(L"../Data/Bird1");
+			dynamic_cast<CBackGround*>(pBack)->setType(OBJ::BIRD);
+			break;
+		case 5:
+			dynamic_cast<CBackGround*>(pBack)->setGraphic(L"../Data/Cloud3");
+			dynamic_cast<CBackGround*>(pBack)->setType(OBJ::CLOUD);
+		}
+		dynamic_cast<CBackGround*>(pBack)->setDir(DIRECTION::UP);
+		m_ObjMgr->AddObject(OBJ::BACKGROUND, pBack);
+		m_iBackPattern++;
+	}
 
 
 
