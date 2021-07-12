@@ -6,7 +6,8 @@ class CStageScene :
     public CScene
 {
 private:
-    bool m_bFirstCheck[4];
+    int m_iBackPattern;
+    DWORD m_dwBackTime;
 public:
     CStageScene();
     virtual ~CStageScene();

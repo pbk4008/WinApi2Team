@@ -94,11 +94,15 @@ void CBackGround::Render(HDC _hDC)
 {
 	HBRUSH hBrush;
 	HBRUSH hObj;
+	HPEN hPen = (HPEN)GetStockObject(NULL_PEN);
+	HPEN hObjPen = (HPEN)SelectObject(_hDC, hPen);
 	setColor(hBrush);
 	hObj = (HBRUSH)SelectObject(_hDC, hBrush);
 	Polygon(_hDC, m_PolygonList, m_PosList.size());
+	SelectObject(_hDC, hObjPen);
 	SelectObject(_hDC, hObj);
 	DeleteObject(hBrush);
+	DeleteObject(hPen);
 }
 
 void CBackGround::Release()
