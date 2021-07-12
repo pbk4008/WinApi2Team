@@ -78,7 +78,7 @@ void CStageScene::LateUpdate()
 	m_ObjMgr->LateUpdate();
 
 	//플레이어가 몬스터총알에 맞는 코드
-	//CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::PLAYER), CObjMgr::getInstance()->getList(OBJ::BOSSBULLET));
+	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::PLAYER), CObjMgr::getInstance()->getList(OBJ::BOSSBULLET));
 
 	//player가 Monster충돌 or MonsterBulle과 충돌 시 Player --HP;
 	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::MONSTER), CObjMgr::getInstance()->getList(OBJ::PLAYER));
@@ -94,8 +94,12 @@ void CStageScene::LateUpdate()
 	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::BULLET),
 		CObjMgr::getInstance()->getList(OBJ::BOSS)); //보스
 	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::BULLET),
+		CObjMgr::getInstance()->getList(OBJ::MONSTER)); //몬스터
+	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::BULLET),
 		CObjMgr::getInstance()->getList(OBJ::BOSSBULLET)); //3단계 패턴에서 적용됨
 	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::MONSTER), CObjMgr::getInstance()->getList(OBJ::HOMINGBULLET));
+	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::BOSS), CObjMgr::getInstance()->getList(OBJ::HOMINGBULLET));
+	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::BOSS), CObjMgr::getInstance()->getList(OBJ::SCREWBULLET));
 	CCollisionMgr::CollisionSphere(CObjMgr::getInstance()->getList(OBJ::MONSTER), CObjMgr::getInstance()->getList(OBJ::SCREWBULLET));
 	
 }

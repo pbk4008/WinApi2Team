@@ -21,6 +21,9 @@ public:
 
 public:
 	CObj* Find_Monster();
+
+private:
+	CObj* m_BossTarget;
 };
 
 #endif

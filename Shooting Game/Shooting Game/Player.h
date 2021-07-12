@@ -19,8 +19,8 @@ public:
 	virtual void Release() override;
 
 private:
-	CObj* Create_ScrewBullet();
-	CObj* Create_HomingBullet();
+	void Create_ScrewBullet();
+	void Create_HomingBullet();
 	void Create_Bullet();
 	void Create_Shield();
 

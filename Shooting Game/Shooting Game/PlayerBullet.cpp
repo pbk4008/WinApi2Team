@@ -35,7 +35,12 @@ int CPlayerBullet::Update()
 	if (m_pCollisionTarget)
 	{
 		if(!CObjMgr::getInstance()->getInstance()->getList(OBJ::BOSS).empty()
-			&& CObjMgr::getInstance()->getObj(OBJ::BOSS)!=m_pCollisionTarget)
+			&& CObjMgr::getInstance()->getObj(OBJ::BOSS) == m_pCollisionTarget)
+		{
+			//m_pCollisionTarget->setDead(true);
+			//m_pCollisionTarget = nullptr;
+		}
+		else
 		{
 			m_pCollisionTarget->setDead(true);
 			m_pCollisionTarget = nullptr;

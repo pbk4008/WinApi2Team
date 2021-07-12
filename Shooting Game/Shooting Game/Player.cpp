@@ -102,6 +102,7 @@ int CPlayer::Update()
 			++m_shieldCount;
 			Create_Shield();
 		}
+		
 		if(CKeyMgr::Get_Instance()->Key_Up('S'))
 		{
 			for(auto& Shield : CObjMgr::getInstance()->getList(OBJ::SHIELD))
@@ -110,20 +111,26 @@ int CPlayer::Update()
 			}
 			m_shieldCount = 0;
 		}
+		
 		if(CKeyMgr::Get_Instance()->Key_Pressing('A'))
 		{
-			CObjMgr::getInstance()->AddObject(OBJ::SCREWBULLET, Create_ScrewBullet());
+			//CObjMgr::getInstance()->AddObject(OBJ::SCREWBULLET, Create_ScrewBullet());
+			Create_ScrewBullet();
 		}
 		if (CKeyMgr::Get_Instance()->Key_Pressing('D'))
 		{
-			CObjMgr::getInstance()->AddObject(OBJ::HOMINGBULLET, Create_HomingBullet());
+			//CObjMgr::getInstance()->AddObject(OBJ::HOMINGBULLET, Create_HomingBullet());
+			Create_HomingBullet();
 		}
+
+		
 		if (m_pCollisionTarget)
 		{
 			--m_iCurrentHp;
 			m_pCollisionTarget->setDead(true);
 			m_pCollisionTarget = nullptr;
 		}
+		
 	}
 	return EVENT::NOEVENT;
 }
@@ -194,14 +201,43 @@ void CPlayer::Create_Bullet()
 	
 }
 
-CObj* CPlayer::Create_ScrewBullet()
+void CPlayer::Create_ScrewBullet()
 {
-	return CAbstractFactory<CScrewBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
+	//return CAbstractFactory<CScrewBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
+	CObj* pObj = nullptr;
+	pObj = CObjMgr::getInstance()->ObjPooling(OBJ::SCREWBULLET, this);
+	if (!pObj)
+	{
+		pObj = CAbstractFactory<CScrewBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
+		pObj->LateInit();
+		CObjMgr::getInstance()->getList(OBJ::SCREWBULLET).emplace_back(pObj);
+	}
+
+	else
+	{
+		pObj->setAngle(0);
+	}
+	
 }
 
-CObj* CPlayer::Create_HomingBullet()
+void CPlayer::Create_HomingBullet()
 {
-	return CAbstractFactory<CHomingBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
+	//return CAbstractFactory<CHomingBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
+
+	CObj* pObj = nullptr;
+	pObj = CObjMgr::getInstance()->ObjPooling(OBJ::HOMINGBULLET, this);
+	if (!pObj)
+	{
+		pObj = CAbstractFactory<CHomingBullet>::CreateObj(m_tInfo.fX, m_tInfo.fY);
+		pObj->LateInit();
+		CObjMgr::getInstance()->getList(OBJ::HOMINGBULLET).emplace_back(pObj);
+	}
+
+	else
+	{
+		pObj->setAngle(0);
+	}
+
 }
 
 void CPlayer::Create_Shield()

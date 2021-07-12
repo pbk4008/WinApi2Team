@@ -21,6 +21,7 @@ void CScrewBullet::Initialize()
 
 	m_fCenterSpeed = 5.f;
 	m_fAngle = 90;
+	m_iAtk = 1;
 }
 
 void CScrewBullet::LateInit()
@@ -57,9 +58,16 @@ int CScrewBullet::Update()
 
 		if(m_pCollisionTarget)
 		{
-			m_pCollisionTarget->setDead(true);
-			m_pCollisionTarget = nullptr;
-			m_bDead = true;
+			if (CObjMgr::getInstance()->getObj(OBJ::BOSS) && m_pCollisionTarget == CObjMgr::getInstance()->getObj(OBJ::BOSS))
+			{
+
+			}
+			else
+			{
+				m_pCollisionTarget->setDead(true);
+				m_pCollisionTarget = nullptr;
+				m_bDead = true;
+			}
 		}
 
 		RectUpdate();

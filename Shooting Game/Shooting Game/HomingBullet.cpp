@@ -1,9 +1,11 @@
 #include "framework.h"
 #include "HomingBullet.h"
 
-CHomingBullet::CHomingBullet()
+CHomingBullet::CHomingBullet() : m_BossTarget(nullptr)
 {
+	
 }
+
 
 CHomingBullet::~CHomingBullet()
 {
@@ -18,6 +20,8 @@ void CHomingBullet::Initialize()
 	m_fSpeed =10.f;
 
 	m_fAngle = 90.f;
+
+	m_iAtk = 1;
 }
 
 void CHomingBullet::LateInit()
@@ -35,10 +39,16 @@ int CHomingBullet::Update()
 	else
 	{
 		list<CObj*> listMonster = CObjMgr::getInstance()->getList(OBJ::MONSTER);
-		//m_pTarget = CObjMgr::getInstance()->getTarget(OBJ::MONSTER, this);
-
+		
 		m_pTarget = Find_Monster();
-
+		
+		if(!m_pTarget && !CObjMgr::getInstance()->getList(OBJ::BOSS).empty())
+		{
+			m_pTarget = CObjMgr::getInstance()->getTarget(OBJ::BOSS, this);
+		}
+		
+		
+		
 		if(!m_pTarget)
 		{
 			m_fAngle = 90.f;
@@ -47,6 +57,7 @@ int CHomingBullet::Update()
 		else
 		{
 			m_fAngle = CMathMgr::getAngle(m_pTarget, this) * 180.f / PI;
+			
 
 			if (m_pTarget->getInfo().fY >= m_tInfo.fY)
 			{
@@ -62,9 +73,19 @@ int CHomingBullet::Update()
 
 	if (m_pCollisionTarget)
 	{
-		m_pCollisionTarget->setDead(true);
-		m_pCollisionTarget = nullptr;
-		m_bDead = true;
+		if (m_pCollisionTarget)
+		{
+			if (!CObjMgr::getInstance()->getList(OBJ::BOSS).empty() && m_pCollisionTarget == CObjMgr::getInstance()->getObj(OBJ::BOSS))
+			{
+
+			}
+			else
+			{
+				m_pCollisionTarget->setDead(true);
+				m_pCollisionTarget = nullptr;
+				m_bDead = true;
+			}
+		}
 	}
 
 	RectUpdate();
@@ -104,6 +125,7 @@ void CHomingBullet::Release()
 CObj* CHomingBullet::Find_Monster()
 {
 	list<CObj*> listMonster = CObjMgr::getInstance()->getList(OBJ::MONSTER);
+	
 	CObj* pObj= nullptr;
 	int length = 0;
 	
